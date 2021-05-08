@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # pylint: disable=line-too-long
-""""Easing the CSAF way."""
+"""Easing the CSAF way."""
 import pathlib
 import os
 import sys
