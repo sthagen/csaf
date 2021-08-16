@@ -18,4 +18,4 @@ CSAF versions 1.1 and 1.2 are out of scope.
 ## Status
 Experimental
 
-**Note**: The default branch is default.
+**Note**: The default branch is `default`.
