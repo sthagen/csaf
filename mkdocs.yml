@@ -26,9 +26,9 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/sthagen/fluffy-funicular
+      link: https://github.com/sthagen/csaf
     - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/shagen/csaf-lint
+      link: https://hub.docker.com/r/shagen/csaf
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/shage
 
