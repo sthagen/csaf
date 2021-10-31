@@ -6,4 +6,8 @@ If and when this endeavor succeeds, other langugaes can easily derive form the a
 
 CSAF versions 1.1 and 1.2 are out of scope.
 
+## Status
 
+Experimental.
+
+**Note**: The default branch is `default`.
