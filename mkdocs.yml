@@ -44,8 +44,11 @@ plugins:
 
 nav:
   - Introduction: 'index.md'
+  - Quickstart: 'quick.md'
   - Install: 'install.md'
   - Usage: 'usage.md'
+  - API: 'api.md'
+  - CLI: 'cli.md'
   - Background: 'background.md'
   - Changes: 'changes.md'
 
