@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://github.com/sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([f8a45f64 ...](https://raw.githubusercontent.com/sthagen/csaf/default/sbom.json.sha256 "sha256:f8a45f641946bd15081fadfbd913122e4006afe81a16b3dcb1b16c3535bc2745")).
-<!--[[[end]]] (checksum: a13da5f4159b28dd2142f784de9f8842)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://github.com/sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([5259b192 ...](https://raw.githubusercontent.com/sthagen/csaf/default/sbom.json.sha256 "sha256:5259b192c23b3dcf1af96b223b84032a25a041f44f8dd455878a86c02a5b04a8")).
+<!--[[[end]]] (checksum: e8974e90906a91fe42e5a2860a9bbff9)-->
 ## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -32,7 +32,7 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 | [click](https://palletsprojects.com/p/click/)                                                  | [8.0.4](https://pypi.org/project/click/8.0.4/)             | BSD License                        | Armin Ronacher         | Composable command line interface toolkit              |
 | [pyrsistent](http://github.com/tobgu/pyrsistent/)                                              | [0.18.1](https://pypi.org/project/pyrsistent/0.18.1/)      | MIT License                        | Tobias Gustafsson      | Persistent/Functional/Immutable data structures        |
 | [typing-extensions](https://github.com/python/typing/blob/master/typing_extensions/README.rst) | [4.1.1](https://pypi.org/project/typing-extensions/4.1.1/) | Python Software Foundation License | The Python Typing Team | Backported and Experimental Type Hints for Python 3.6+ |
- <!--[[[end]]] (checksum: b728114860512b2085276f5fbc53c226)-->
+<!--[[[end]]] (checksum: b728114860512b2085276f5fbc53c226)-->
 
 ## Dependency Tree(s)
 
