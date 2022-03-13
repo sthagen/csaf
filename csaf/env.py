@@ -27,6 +27,7 @@ def report() -> str:
                 'orjson',
                 'pydantic',
                 'scooby',
+                'setuptools',
                 'typer',
             ]
 
