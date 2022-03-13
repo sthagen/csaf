@@ -1,0 +1,61 @@
+[
+    {
+        "key": "jmespath",
+        "package_name": "jmespath",
+        "installed_version": "0.10.0",
+        "required_version": "0.10.0",
+        "dependencies": []
+    },
+    {
+        "key": "jsonschema",
+        "package_name": "jsonschema",
+        "installed_version": "4.4.0",
+        "required_version": "4.4.0",
+        "dependencies": [
+            {
+                "key": "attrs",
+                "package_name": "attrs",
+                "installed_version": "21.4.0",
+                "required_version": ">=17.4.0",
+                "dependencies": []
+            },
+            {
+                "key": "pyrsistent",
+                "package_name": "pyrsistent",
+                "installed_version": "0.18.1",
+                "required_version": ">=0.14.0,!=0.17.2,!=0.17.1,!=0.17.0",
+                "dependencies": []
+            }
+        ]
+    },
+    {
+        "key": "pydantic",
+        "package_name": "pydantic",
+        "installed_version": "1.9.0",
+        "required_version": "1.9.0",
+        "dependencies": [
+            {
+                "key": "typing-extensions",
+                "package_name": "typing-extensions",
+                "installed_version": "4.1.1",
+                "required_version": ">=3.7.4.3",
+                "dependencies": []
+            }
+        ]
+    },
+    {
+        "key": "typer",
+        "package_name": "typer",
+        "installed_version": "0.4.0",
+        "required_version": "0.4.0",
+        "dependencies": [
+            {
+                "key": "click",
+                "package_name": "click",
+                "installed_version": "8.0.4",
+                "required_version": ">=7.1.1,<9.0.0",
+                "dependencies": []
+            }
+        ]
+    }
+]
