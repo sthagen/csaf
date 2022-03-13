@@ -48,11 +48,16 @@ testcov: test
 .PHONY: all
 all: lint mypy testcov
 
+.PHONY: dark
+dark:
+	@black -l120 -S csaf tests
+
 .PHONY: sbom
 sbom:
 	@./gen-sbom
 	@cog -I. -P -c -r --check --markers="[[fill ]]] [[[end]]]" -p "from gen_sbom import *;from gen_licenses import *" docs/third-party/README.md
 	@if [ $$(grep -c UNKNOWN docs/third-party/README.md) -ne 0 ]; then echo "3rd party NOT_OK"; exit 1; else echo "3rd party documentation OK"; fi
+
 .PHONY: version
 version:
 	@cog -I. -P -c -r --check --markers="[[fill ]]] [[[end]]]" -p "from gen_version import *" pyproject.toml csaf/__init__.py
