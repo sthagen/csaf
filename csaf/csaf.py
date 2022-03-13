@@ -77,7 +77,7 @@ def process(argv=None, abort=False, debug=None):
     LOG.info('Starting validation visiting a forest with %d tree%s',
              num_trees, '' if num_trees == 1 else 's')
     failure_path_reason = 'Failed validation for path %s with error: %s'
-    total, folders, ignored, csvs, inis, jsons, tomls, xmls, yamls = 0, 0, 0, 0, 0, 0, 0, 0, 0
+    total, folders, ignored, jsons = 0, 0, 0, 0
     failures = 0
     for tree in forest:
         for path in visit(tree):
@@ -89,9 +89,9 @@ def process(argv=None, abort=False, debug=None):
 
             final_suffix = '' if not path.suffixes else path.suffixes[-1].lower()
 
-            if final_suffix.lower() == ".json":
+            if final_suffix.lower() == '.json':
                 loader = json.load
-                with open(path, "rt", encoding="utf-8") as handle:
+                with open(path, 'rt', encoding=csaf.ENCODING) as handle:
                     try:
                         _ = loader(handle)
                         jsons += 1
