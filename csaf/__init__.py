@@ -51,8 +51,8 @@ init_logger(name=APP_ENV, level=logging.DEBUG if DEBUG else None)
 from csaf.csaf import is_valid  # noqa
 
 # [[[fill git_describe()]]]
-__version__ = '2022.3.12+parent.9f9d5c6c'
-# [[[end]]] (checksum: 7182123dfa2b2a28b4aa06b778ac03a3)
+__version__ = '2022.3.12+parent.6025942a'
+# [[[end]]] (checksum: d85951f2810256678d1dca05ce7d7310)
 __version_info__ = tuple(
     e if '-' not in e else e.split('-')[0] for part in __version__.split('+') for e in part.split('.') if e != 'parent'
 )
