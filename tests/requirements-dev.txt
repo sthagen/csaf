@@ -1,4 +1,12 @@
-black
-mypy
-pylint
--r requirements-test.txt
+bandit==1.7.4
+black==22.1.0
+flake8==4.0.1
+flake8-quotes==3.3.1
+isort==5.10.1
+mkautodoc==0.1.0
+mkdocstrings==0.18.1
+mypy==0.940
+pycodestyle==2.8.0
+pyflakes==2.4.0
+types-jmespath==0.10.2
+types-requests==2.27.11
