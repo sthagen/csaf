@@ -8,7 +8,7 @@ import scooby  # type: ignore
 @no_type_check
 def report() -> str:
     """Return either text options for the user to report her env or the report of the environment for support."""
-    import langcodes  # type: ignore # noqa
+    import langcodes  # noqa
 
     packages = pkg_resources.working_set  # noqa
     monkey_lc = [p.version for p in packages if p.project_name == 'langcodes'][0]  # noqa
