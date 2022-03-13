@@ -17,6 +17,10 @@ HEADER_LABELS = ('Name', 'Version', 'License', 'Author', 'Description (from pack
 FALLBACK_URLS = {
     'typing-extensions': 'https://github.com/python/typing/blob/master/typing_extensions/README.rst',
 }
+FALLBACK_AUTHORS = {
+    'lazr.uri': '"LAZR Developers" team',
+    'typing-extensions': 'The Python Typing Team',
+}
 TARGET = """\
 __version__ = '$version$+parent.$revision$'\
 """
@@ -36,8 +40,8 @@ def _fetch_direct_dependency_names():
 def _generate_dependency_information() -> None:
     """Use pip-licenses for creation of diverse databases and graphs."""
     install_requires = _fetch_direct_dependency_names()
-    tokens = set(list(string.ascii_letters + '-_'))
-    direct_names = [''.join(c for c in term if c in tokens) for term in install_requires]
+    tokens = set(list(string.ascii_letters + '-_.'))
+    direct_names = [''.join(c for c in term if c in tokens).strip('.') for term in install_requires]
     direct_vector = [
         'pip-licenses', '--format', 'json', '-p', *direct_names,
         '--with-authors', '--with-description', '--with-urls', '--with-license-file', '--with-notice-file',
@@ -119,6 +123,8 @@ def _extract_rows(data):
         ver_sion = f'[{ver}](https://pypi.org/project/{nam}/{ver}/)'
         lic = record['License']
         aut = record['Author']
+        if aut == 'UNKNOWN' and nam in FALLBACK_AUTHORS:
+            aut = FALLBACK_AUTHORS[nam]
         des = record['Description']
         rows.append((nam_e, ver_sion, lic, aut, des))
     rows.sort()
