@@ -90,13 +90,13 @@ def document_optional_acknowledgments(values):
     ack_known_props = {el for el in ack_opt_props}
     for pos, value in enumerate(values):
         jp = f'properties of {parent}.{prop}[{pos}]'
-        # print(pos, value)
+        # log.info(pos, value)
         ack_found_props = {el for el in value}
-        # print(ack_found_props)
+        # log.info(ack_found_props)
         if ack_found_props <= ack_known_props:
-            print(f'set of {jp} only contains known properties')
+            log.info(f'set of {jp} only contains known properties')
         if ack_found_props < ack_known_props:
-            print(f'set of {jp} is a proper subset of the known properties')
+            log.info(f'set of {jp} is a proper subset of the known properties')
         nr_distinct_found_props = len(ack_found_props)
         if nr_distinct_found_props < min_props:
             return 1, f'found too few properties ({nr_distinct_found_props}) for {jp}'
@@ -149,9 +149,9 @@ def document_aggregate_severity(value):
     min_props, max_props = 1, len(agg_known_props)
     agg_found_props = {el for el in value}
     if agg_found_props <= agg_known_props:
-        print(f'set of {jp} properties only contains known properties')
+        log.info(f'set of {jp} properties only contains known properties')
     if agg_found_props < agg_known_props:
-        print(f'set of {jp} properties is a proper subset of the known properties')
+        log.info(f'set of {jp} properties is a proper subset of the known properties')
     nr_distinct_found_props = len(agg_found_props)
     if nr_distinct_found_props < min_props:
         return 1, f'found too few properties ({nr_distinct_found_props}) for {jp}'
@@ -255,9 +255,9 @@ def document_optional(document):
 
     found_props = {el for el in document}
     if found_props <= known_props:
-        print(f'set of {parent} properties only contains known properties')
+        log.info(f'set of {parent} properties only contains known properties')
     if found_props < known_props:
-        print(f'set of {parent} properties is a proper subset of the known properties')
+        log.info(f'set of {parent} properties is a proper subset of the known properties')
 
     return 0, 'NotImplemented'
 
@@ -273,7 +273,7 @@ def verify_document(document):
     parent = 'document'
     prop = 'category'
     if not jmespath.search(f'{prop}', document).strip():
-        print(f'warning - {parent} property {prop} value is space-only')
+        log.warning(f'warning - {parent} property {prop} value is space-only')
     error, message = document_category(document[prop])
     if error:
         return error, message
@@ -300,7 +300,7 @@ def verify_document(document):
     parent = 'document'
     prop = 'title'
     if not jmespath.search(f'{prop}', document).strip():
-        print(f'warning - {parent} property {prop} value is space-only')
+        log.warning(f'warning - {parent} property {prop} value is space-only')
 
     # Tracking (tracking) is object requires:
     # ('current_release_date', 'id', 'initial_release_date', 'revision_history', 'status', 'version')
@@ -444,11 +444,9 @@ def process(command: str, transaction_mode: str, path: str, options: Mapping[str
     guess = peek(data)
 
     if guess == 'TOO_SHORT':
-        log.error('advisory is too short to be valid')
         return 1, 'advisory is too short to be valid'
 
     if guess == 'UNKNOWN':
-        log.error('advisory is of unknown format')
         return 1, 'advisory is of unknown format'
 
     if guess == 'JSON':
@@ -464,25 +462,17 @@ def process(command: str, transaction_mode: str, path: str, options: Mapping[str
             # Why not execute the rules multiple times (until we have traits in place to report the failing rule)?
             if not is_valid_category(doc):
                 messages.append('invalid category')
-                print('- invalid category')
             if not is_valid_defined_group_ids(doc):
                 messages.append('undefined group ids')
-                print('- undefined group ids')
             if not is_valid_defined_product_ids(doc):
                 messages.append('undefined product ids')
-                print('- undefined product ids')
             if not is_valid_translator(doc):
                 messages.append('invalid translator')
-                print('- invalid translator')
             if not is_valid_unique_group_ids(doc):
                 messages.append('non-unique group ids')
-                print('- non-unique group ids')
             if not is_valid_unique_product_ids(doc):
                 messages.append('non-unique product ids')
-                print('- non-unique product ids')
-            log.error(', '.join(messages))
             return 1, ', '.join(messages)
-        log.info('OK')
-        return 0, 'OK'
+        return 0, ''
 
     return 1, 'XML IS OUT OF SCOPE'
