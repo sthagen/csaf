@@ -3,7 +3,7 @@
 # pylint: disable=line-too-long
 """Commandline API gateway for csaf."""
 import sys
-from typing import List
+from typing import List, Mapping
 
 import typer
 
@@ -143,7 +143,10 @@ def validate(
     if transaction_mode == 'dry-run':
         csaf.DRY_RUN = True
 
-    options = {
+    configuration = cfg.read_configuration(str(conf)) if conf else {}
+
+    options: Mapping[str, object] = {
+        'configuration': configuration,
         'bail_out': bail_out,
         'quiet': quiet,
         'strict': strict,
@@ -151,10 +154,10 @@ def validate(
     }
 
     paths = (inp,) if inp else tuple(source)
-    code, message = lint.process(command, transaction_mode, paths, options)
+    code, message = lint.process(command, transaction_mode, paths[0], options)
     if message:
         log.error(message)
-    sys.exit(code)
+    return code
 
 
 @app.command('version')

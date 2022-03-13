@@ -6,16 +6,16 @@ import csaf.cli as cli
 
 
 def test_main_no_args(capsys):
-    with pytest.raises(TypeError, match='expected str, bytes or os.PathLike object, not OptionInfo'):
-        cli.validate([''])
+    assert cli.validate(source=[''], inp='', conf='') == 2
     out, err = capsys.readouterr()
     assert not out
     assert not err
 
 
 def test_main_bad_arg(capsys):
-    with pytest.raises(SystemExit, match='0'):
-        cli.validate(source=['non-existing-thing'], inp='', bail_out=True)
+    message = r"\[Errno 2\] No such file or directory: 'non-existing-thing'"
+    with pytest.raises(FileNotFoundError, match=message):
+        cli.validate(source=['non-existing-thing'], inp='', conf='', bail_out=True)
     out, err = capsys.readouterr()
-    assert out.strip() == 'OK'
+    assert not out
     assert not err
