@@ -1,4 +1,2 @@
-PyYAML==6.0
 jmespath==0.10.0
 jsonschema==4.4.0
-toml==0.10.2
