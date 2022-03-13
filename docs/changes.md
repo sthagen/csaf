@@ -1,5 +1,9 @@
 # Change History
 
+## 2022.3.13
+
+* Added setuptools information to environment report
+
 ## 2022.3.12
 
 * First partial implementation with command line api
