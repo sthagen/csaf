@@ -1,6 +1,6 @@
-jmespath
-jsonschema
-lxml
-pyyaml
-toml
-xmlschema
+PyYAML==6.0
+jmespath==0.10.0
+jsonschema==4.4.0
+lxml==4.8.0
+toml==0.10.2
+xmlschema==1.10.0
