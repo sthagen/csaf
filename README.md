@@ -6,7 +6,7 @@ In this project the attempt is made, to provide API and tools to support the CSA
 
 If, and when this endeavor succeeds, other languages can easily derive form the approach (as long as these offer similar capabilties to keep the effort in check).
 
-**Note**: CSAF versions 1.1 and 1.2 are out of scope.
+**Note**: CSAF predecessor CVRF versions 1.1 and 1.2 are out of scope.
 
 [License: MIT](https://github.com/sthagen/csaf/blob/default/LICENSE)
 
