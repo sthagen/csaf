@@ -4,6 +4,7 @@ cogapp==3.3.0
 cyclonedx-bom==3.1.0
 flake8==4.0.1
 flake8-quotes==3.3.1
+graphviz==0.19.1
 isort==5.10.1
 mkautodoc==0.1.0
 mkdocstrings==0.18.1
