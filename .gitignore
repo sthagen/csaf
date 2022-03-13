@@ -132,3 +132,4 @@ dmypy.json
 *~
 .idea
 local_publi.sh
+current-bandit.json
