@@ -189,7 +189,7 @@ Options:
 
 ```console
 $ csaf version
-Common Security Advisory Framework (CSAF) Verification and Validation. version 2022.3.12+parent.9f9d5c6c
+Common Security Advisory Framework (CSAF) Verification and Validation. version 2022.3.12+parent.6025942a
 ```
 
 ### Help
