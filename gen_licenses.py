@@ -49,6 +49,7 @@ def _generate_dependency_information() -> None:
     indirect_names = [  # TODO(sthagen) these indirect deps may diverge ...
         'attrs',
         'pyrsistent',
+        'setuptools',
         'typing-extensions',
         'click',
     ]
@@ -61,8 +62,9 @@ def _generate_dependency_information() -> None:
         raise RuntimeError(noise)
 
     """
-    pipdeptree --packages jmespath,jsonschema,pydantic,scooby,typer --graph-output svg > docs/third-party/package-dependency-tree.svg
-    pipdeptree --packages jmespath,jsonschema,pydantic,scooby,typer --json-tree --warn silence > docs/third-party/package-dependency-tree.json
+    direct_deps='jmespath,jsonschema,langcodes,lazr.uri,orjson,pydantic,scooby,typer'
+    pipdeptree --packages "${direct_deps}" --graph-output svg > docs/third-party/package-dependency-tree.svg
+    pipdeptree --packages "${direct_deps}" --json-tree --warn silence > docs/third-party/package-dependency-tree.json
     """
     base_vector = ['pipdeptree', '--packages', ','.join(direct_names)]
     jobs = (

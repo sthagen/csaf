@@ -29,6 +29,20 @@
         ]
     },
     {
+        "key": "langcodes",
+        "package_name": "langcodes",
+        "installed_version": "3.3.0",
+        "required_version": "3.3.0",
+        "dependencies": []
+    },
+    {
+        "key": "orjson",
+        "package_name": "orjson",
+        "installed_version": "3.6.7",
+        "required_version": "3.6.7",
+        "dependencies": []
+    },
+    {
         "key": "pydantic",
         "package_name": "pydantic",
         "installed_version": "1.9.0",
