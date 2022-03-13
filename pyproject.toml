@@ -2,8 +2,8 @@
 name = "casf"
 py_version = "3.8"
 # [[[fill version_sync()]]]
-version = "2022.3.12"
-# [[[end]]] (checksum: 745e84f28c64e43a101dbb5731b86b5d)
+version = "2022.3.13"
+# [[[end]]] (checksum: 4872d6faee07b3d19f1ae9b794284f52)
 authors = ["Stefan Hagen <stefan@hagen.link>"]
 
 [tool.pyflow.scripts]
