@@ -13,6 +13,7 @@ FAKE_SECRET = '*' * 13
 
 DEFAULT_CONFIG_NAME = f'.{APP_ALIAS}.json'
 
+ABORT = bool(os.getenv(f'{APP_ENV}_ABORT', ''))
 DEBUG = bool(os.getenv(f'{APP_ENV}_DEBUG', ''))
 DRY_RUN = bool(os.getenv(f'{APP_ENV}_DRY_RUN', ''))
 QUIET = bool(os.getenv(f'{APP_ENV}_QUIET', ''))

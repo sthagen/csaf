@@ -7,7 +7,7 @@ import pathlib
 import sys
 
 # import jmespath
-import jsonschema  # type: ignore
+# import jsonschema  # type: ignore
 
 import csaf
 
@@ -52,7 +52,7 @@ def visit(tree_or_file_path):
     if thing.is_file():
         yield thing
     else:
-        for path in thing.rglob("*"):
+        for path in thing.rglob('*'):
             yield path
 
 
