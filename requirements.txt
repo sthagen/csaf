@@ -1,4 +1,5 @@
 jmespath==0.10.0
 jsonschema==4.4.0
 pydantic==1.9.0
+scooby==0.5.12
 typer==0.4.0
