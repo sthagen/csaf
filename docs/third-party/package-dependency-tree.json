@@ -44,6 +44,13 @@
         ]
     },
     {
+        "key": "scooby",
+        "package_name": "scooby",
+        "installed_version": "0.5.12",
+        "required_version": "0.5.12",
+        "dependencies": []
+    },
+    {
         "key": "typer",
         "package_name": "typer",
         "installed_version": "0.4.0",

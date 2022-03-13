@@ -2,7 +2,8 @@
 # pylint: disable=expression-not-assigned,line-too-long,missing-module-docstring
 import sys
 
-from csaf.cli import main
+import csaf
+from csaf.cli import app
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv[1:]))  # pragma: no cover
+    sys.exit(app(prog_name=csaf.APP_ALIAS))  # pragma: no cover

@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://github.com/sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([4c4ba951 ...](https://raw.githubusercontent.com/sthagen/csaf/default/sbom.json.sha256 "sha256:4c4ba95190190dbf1727a1d5aeee6f1f6d6e42fd87629c211e0d481d2b91c613")).
-<!--[[[end]]] (checksum: 6f98c9974fff75b42cc2241bc0a55a7f)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://github.com/sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([504e44ce ...](https://raw.githubusercontent.com/sthagen/csaf/default/sbom.json.sha256 "sha256:504e44ce99ca7f2a7b96160feb6782297116472cd4263e652410ea1587b8f666")).
+<!--[[[end]]] (checksum: 4ae62dfadc7fcc55f777acbb342f14ee)-->
 ## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -10,13 +10,14 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 ### Direct Dependencies
 
 <!--[[[fill direct_dependencies_table()]]]-->
-| Name                                                 | Version                                             | License     | Author             | Description (from packaging data)                                     |
-|:-----------------------------------------------------|:----------------------------------------------------|:------------|:-------------------|:----------------------------------------------------------------------|
-| [jmespath](https://github.com/jmespath/jmespath.py)  | [0.10.0](https://pypi.org/project/jmespath/0.10.0/) | MIT License | James Saryerwinnie | JSON Matching Expressions                                             |
-| [jsonschema](https://github.com/Julian/jsonschema)   | [4.4.0](https://pypi.org/project/jsonschema/4.4.0/) | MIT License | Julian Berman      | An implementation of JSON Schema validation for Python                |
-| [pydantic](https://github.com/samuelcolvin/pydantic) | [1.9.0](https://pypi.org/project/pydantic/1.9.0/)   | MIT License | Samuel Colvin      | Data validation and settings management using python 3.6 type hinting |
-| [typer](https://github.com/tiangolo/typer)           | [0.4.0](https://pypi.org/project/typer/0.4.0/)      | MIT License | Sebastián Ramírez  | Typer, build great CLIs. Easy to code. Based on Python type hints.    |
-<!--[[[end]]] (checksum: 70f9d229a9d04775fa318d3660bd9564)-->
+| Name                                                 | Version                                             | License     | Author                             | Description (from packaging data)                                     |
+|:-----------------------------------------------------|:----------------------------------------------------|:------------|:-----------------------------------|:----------------------------------------------------------------------|
+| [jmespath](https://github.com/jmespath/jmespath.py)  | [0.10.0](https://pypi.org/project/jmespath/0.10.0/) | MIT License | James Saryerwinnie                 | JSON Matching Expressions                                             |
+| [jsonschema](https://github.com/Julian/jsonschema)   | [4.4.0](https://pypi.org/project/jsonschema/4.4.0/) | MIT License | Julian Berman                      | An implementation of JSON Schema validation for Python                |
+| [pydantic](https://github.com/samuelcolvin/pydantic) | [1.9.0](https://pypi.org/project/pydantic/1.9.0/)   | MIT License | Samuel Colvin                      | Data validation and settings management using python 3.6 type hinting |
+| [scooby](https://github.com/banesullivan/scooby)     | [0.5.12](https://pypi.org/project/scooby/0.5.12/)   | MIT License | Dieter Werthmüller & Bane Sullivan | A Great Dane turned Python environment detective                      |
+| [typer](https://github.com/tiangolo/typer)           | [0.4.0](https://pypi.org/project/typer/0.4.0/)      | MIT License | Sebastián Ramírez                  | Typer, build great CLIs. Easy to code. Based on Python type hints.    |
+<!--[[[end]]] (checksum: e70f1c15dc14381ad21463d0612076ae)-->
 
 ### Indirect Dependencies
 
@@ -49,7 +50,8 @@ jsonschema==4.4.0
   - pyrsistent [required: >=0.14.0,!=0.17.2,!=0.17.1,!=0.17.0, installed: 0.18.1]
 pydantic==1.9.0
   - typing-extensions [required: >=3.7.4.3, installed: 4.1.1]
+scooby==0.5.12
 typer==0.4.0
   - click [required: >=7.1.1,<9.0.0, installed: 8.0.4]
 ````
-<!--[[[end]]] (checksum: 9c1263662612d794ea22472cb0155913)-->
+<!--[[[end]]] (checksum: c7f557dc171dc0a7cf7c5b06082df1dc)-->

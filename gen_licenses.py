@@ -61,8 +61,8 @@ def _generate_dependency_information() -> None:
         raise RuntimeError(noise)
 
     """
-    pipdeptree --packages jmespath,jsonschema,pydantic,typer --graph-output svg > docs/third-party/package-dependency-tree.svg
-    pipdeptree --packages jmespath,jsonschema,pydantic,typer --json-tree --warn silence > docs/third-party/package-dependency-tree.json
+    pipdeptree --packages jmespath,jsonschema,pydantic,scooby,typer --graph-output svg > docs/third-party/package-dependency-tree.svg
+    pipdeptree --packages jmespath,jsonschema,pydantic,scooby,typer --json-tree --warn silence > docs/third-party/package-dependency-tree.json
     """
     base_vector = ['pipdeptree', '--packages', ','.join(direct_names)]
     jobs = (

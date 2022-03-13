@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
-  "serialNumber": "urn:uuid:753f8955-70ef-4558-99c4-4db7c2a3054e",
+  "serialNumber": "urn:uuid:ef2b7641-3037-43b5-a85f-b47437f607a7",
   "version": 1,
   "metadata": {
-    "timestamp": "2022-03-13T12:58:35.931442+00:00",
+    "timestamp": "2022-03-13T15:18:11.947246+00:00",
     "tools": [
       {
         "vendor": "CycloneDX",
@@ -18,36 +18,36 @@
         "version": "2.0.0",
         "externalReferences": [
           {
-            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/issues",
-            "type": "issue-tracker"
-          },
-          {
-            "url": "https://pypi.org/project/cyclonedx-python-lib/",
-            "type": "distribution"
-          },
-          {
-            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/CHANGELOG.md",
-            "type": "release-notes"
+            "url": "https://cyclonedx.org",
+            "type": "website"
           },
           {
             "url": "https://github.com/CycloneDX/cyclonedx-python-lib/actions",
             "type": "build-system"
           },
           {
+            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/LICENSE",
+            "type": "license"
+          },
+          {
             "url": "https://github.com/CycloneDX/cyclonedx-python-lib",
             "type": "vcs"
+          },
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/issues",
+            "type": "issue-tracker"
+          },
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/CHANGELOG.md",
+            "type": "release-notes"
           },
           {
             "url": "https://cyclonedx.github.io/cyclonedx-python-lib/",
             "type": "documentation"
           },
           {
-            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/LICENSE",
-            "type": "license"
-          },
-          {
-            "url": "https://cyclonedx.org",
-            "type": "website"
+            "url": "https://pypi.org/project/cyclonedx-python-lib/",
+            "type": "distribution"
           }
         ]
       }
@@ -56,31 +56,38 @@
   "components": [
     {
       "type": "library",
-      "bom-ref": "717087e8-5c45-4789-b868-d333d3540952",
-      "name": "jmespath",
-      "version": "0.10.0",
-      "purl": "pkg:pypi/jmespath@0.10.0"
+      "bom-ref": "b19eaabf-da66-434a-b87a-f1fdf9c6ba53",
+      "name": "typer",
+      "version": "0.4.0",
+      "purl": "pkg:pypi/typer@0.4.0"
     },
     {
       "type": "library",
-      "bom-ref": "9d6499b7-30da-476b-8da2-7848293397a4",
-      "name": "jsonschema",
-      "version": "4.4.0",
-      "purl": "pkg:pypi/jsonschema@4.4.0"
-    },
-    {
-      "type": "library",
-      "bom-ref": "c17d682e-994b-46af-adfe-ff484d3b3f3f",
+      "bom-ref": "ca4d0240-b5db-4679-b17e-dcfe90c367de",
       "name": "pydantic",
       "version": "1.9.0",
       "purl": "pkg:pypi/pydantic@1.9.0"
     },
     {
       "type": "library",
-      "bom-ref": "e001eb89-7051-4235-96be-91c3a776db23",
-      "name": "typer",
-      "version": "0.4.0",
-      "purl": "pkg:pypi/typer@0.4.0"
+      "bom-ref": "4127e0df-998d-4489-99bf-286a3b09164e",
+      "name": "jmespath",
+      "version": "0.10.0",
+      "purl": "pkg:pypi/jmespath@0.10.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "789ffc1e-1e19-47d2-ac99-e5f25bd4d732",
+      "name": "scooby",
+      "version": "0.5.12",
+      "purl": "pkg:pypi/scooby@0.5.12"
+    },
+    {
+      "type": "library",
+      "bom-ref": "f4b636b6-d213-4e40-b0aa-78ee7a29694e",
+      "name": "jsonschema",
+      "version": "4.4.0",
+      "purl": "pkg:pypi/jsonschema@4.4.0"
     }
   ]
 }

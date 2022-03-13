@@ -2,34 +2,22 @@
 # pylint: disable=c-extension-no-member,expression-not-assigned,line-too-long,logging-fstring-interpolation
 """Do the lint."""
 import json
-import logging
 import pathlib
-import sys
+from typing import Mapping, Sequence, Tuple, no_type_check
 
 import csaf
-
-LOG = logging.getLogger()  # Temporary refactoring: module level logger
-LOG_FOLDER = pathlib.Path('logs')
-LOG_FILE = f'{csaf.APP_ALIAS}.log'
-LOG_PATH = pathlib.Path(LOG_FOLDER, LOG_FILE) if LOG_FOLDER.is_dir() else pathlib.Path(LOG_FILE)
-LOG_LEVEL = logging.INFO
+from csaf import log
 
 
-def init_logger(name=None, level=None):
-    """Initialize module level logger"""
-    global LOG  # pylint: disable=global-statement
-
-    log_format = {
-        'format': '%(asctime)s.%(msecs)03d %(levelname)s [%(name)s]: %(message)s',
-        'datefmt': '%Y-%m-%dT%H:%M:%S',
-        # 'filename': LOG_PATH,
-        'level': LOG_LEVEL if level is None else level,
-    }
-    logging.basicConfig(**log_format)
-    LOG = logging.getLogger(csaf.APP_ENV if name is None else name)
-    LOG.propagate = True
+def is_valid(path: str, options: Mapping[str, bool]) -> bool:
+    """Public API."""
+    code, message = process('validate', 'commit', [path], options)
+    if message:
+        log.error(message)
+    return bool(code)
 
 
+@no_type_check
 def walk_tree_explicit(base_path):
     """Visit the files in the folders below base path."""
     if base_path.is_file():
@@ -43,6 +31,7 @@ def walk_tree_explicit(base_path):
                 yield entry
 
 
+@no_type_check
 def visit(tree_or_file_path):
     """Visit tree and yield the leaves."""
     thing = pathlib.Path(tree_or_file_path)
@@ -53,31 +42,39 @@ def visit(tree_or_file_path):
             yield path
 
 
+@no_type_check
 def slugify(error):
     """Replace newlines by space."""
     return str(error).replace('\n', '')
 
 
-def process(argv=None, abort=False, debug=None):
+def process(command: str, transaction_mode: str, paths: Sequence[str], options: Mapping[str, bool]) -> Tuple[int, str]:
     """Drive the verification and validation.
     This function acts as the command line interface backend.
     There is some duplication to support testability.
     """
-    init_logger(level=logging.DEBUG if debug else None)
-    forest = argv if argv else sys.argv[1:]
+    bail_out = options.get('bail_out', False)
+    if command != 'validate':
+        log.error('Usage: csaf validate ...')
+        return 2, 'USAGE'
+    forest = paths
     if not forest:
-        print('Usage: csaf paths-to-files')
-        return 0, 'USAGE'
-    num_trees = len(forest)
-    LOG.debug('Guarded dispatch forest=%s, num_trees=%d', forest, num_trees)
+        log.error('Usage: csaf validate paths-to-files')
+        return 2, 'USAGE'
 
-    LOG.info('Starting validation visiting a forest with %d tree%s', num_trees, '' if num_trees == 1 else 's')
+    if transaction_mode == 'dry-run':
+        log.info('Operating in dry run mode (no changes persisted).')
+
+    num_trees = len(forest)
+    log.debug('Guarded dispatch forest=%s, num_trees=%d', forest, num_trees)
+
+    log.info('Starting validation visiting a forest with %d tree%s', num_trees, '' if num_trees == 1 else 's')
     failure_path_reason = 'Failed validation for path %s with error: %s'
     total, folders, ignored, jsons = 0, 0, 0, 0
     failures = 0
     for tree in forest:
         for path in visit(tree):
-            LOG.debug(' - path=%s, total=%d', path, total)
+            log.debug(' - path=%s, total=%d', path, total)
             total += 1
             if not path.is_file():
                 folders += 1
@@ -92,8 +89,8 @@ def process(argv=None, abort=False, debug=None):
                         _ = loader(handle)
                         jsons += 1
                     except Exception as err:
-                        LOG.error(failure_path_reason, path, slugify(err))
-                        if abort:
+                        log.error(failure_path_reason, path, slugify(err))
+                        if bail_out:
                             return 1, str(err)
                         failures += 1
             else:
@@ -104,10 +101,10 @@ def process(argv=None, abort=False, debug=None):
     pairs = ((jsons, 'JSON'),)
     for count, kind in pairs:
         if count:
-            LOG.info('- %s %d total %s file%s.', success, count, kind, '' if count == 1 else 's')
+            log.info('- %s %d total %s file%s.', success, count, kind, '' if count == 1 else 's')
 
     configs = jsons
-    LOG.info(  # TODO remove f-strings also here
+    log.info(  # TODO remove f-strings also here
         f'Finished validation of {configs} configuration file{"" if configs == 1 else "s"}'
         f' with {failures} failure{"" if failures == 1 else "s"}'
         f' visiting {total} path{"" if total == 1 else "s"}'

@@ -1,0 +1,15 @@
+digraph {
+	typer [label="typer\n0.4.0"]
+	typer -> click [label=">=7.1.1,<9.0.0"]
+	click [label="click\n8.0.4"]
+	scooby [label="scooby\n0.5.12"]
+	pydantic [label="pydantic\n1.9.0"]
+	pydantic -> "typing-extensions" [label=">=3.7.4.3"]
+	"typing-extensions" [label="typing-extensions\n4.1.1"]
+	jsonschema [label="jsonschema\n4.4.0"]
+	jsonschema -> pyrsistent [label=">=0.14.0,!=0.17.2,!=0.17.1,!=0.17.0"]
+	jsonschema -> attrs [label=">=17.4.0"]
+	attrs [label="attrs\n21.4.0"]
+	pyrsistent [label="pyrsistent\n0.18.1"]
+	jmespath [label="jmespath\n0.10.0"]
+}
