@@ -12,9 +12,9 @@ digraph {
 	setuptools [label="setuptools\n60.9.3"]
 	langcodes [label="langcodes\n3.3.0"]
 	jsonschema [label="jsonschema\n4.4.0"]
-	jsonschema -> attrs [label=">=17.4.0"]
 	jsonschema -> pyrsistent [label=">=0.14.0,!=0.17.2,!=0.17.1,!=0.17.0"]
-	pyrsistent [label="pyrsistent\n0.18.1"]
+	jsonschema -> attrs [label=">=17.4.0"]
 	attrs [label="attrs\n21.4.0"]
+	pyrsistent [label="pyrsistent\n0.18.1"]
 	jmespath [label="jmespath\n0.10.0"]
 }

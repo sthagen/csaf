@@ -2,16 +2,25 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
-  "serialNumber": "urn:uuid:7fc92317-4694-4849-b450-8fe2dc9956f3",
+  "serialNumber": "urn:uuid:4860f0f3-214d-4c56-bb07-0f54564d200d",
   "version": 1,
   "metadata": {
-    "timestamp": "2022-03-13T16:37:44.440970+00:00",
+    "timestamp": "2022-03-13T16:51:00.136577+00:00",
     "tools": [
+      {
+        "vendor": "CycloneDX",
+        "name": "cyclonedx-bom",
+        "version": "3.1.0"
+      },
       {
         "vendor": "CycloneDX",
         "name": "cyclonedx-python-lib",
         "version": "2.0.0",
         "externalReferences": [
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/CHANGELOG.md",
+            "type": "release-notes"
+          },
           {
             "url": "https://cyclonedx.github.io/cyclonedx-python-lib/",
             "type": "documentation"
@@ -21,94 +30,85 @@
             "type": "license"
           },
           {
-            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/actions",
-            "type": "build-system"
-          },
-          {
-            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/CHANGELOG.md",
-            "type": "release-notes"
+            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/issues",
+            "type": "issue-tracker"
           },
           {
             "url": "https://pypi.org/project/cyclonedx-python-lib/",
             "type": "distribution"
           },
           {
-            "url": "https://cyclonedx.org",
-            "type": "website"
+            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/actions",
+            "type": "build-system"
           },
           {
             "url": "https://github.com/CycloneDX/cyclonedx-python-lib",
             "type": "vcs"
           },
           {
-            "url": "https://github.com/CycloneDX/cyclonedx-python-lib/issues",
-            "type": "issue-tracker"
+            "url": "https://cyclonedx.org",
+            "type": "website"
           }
         ]
-      },
-      {
-        "vendor": "CycloneDX",
-        "name": "cyclonedx-bom",
-        "version": "3.1.0"
       }
     ]
   },
   "components": [
     {
       "type": "library",
-      "bom-ref": "49969922-9d29-4199-b27f-27cadc2b02a8",
-      "name": "scooby",
-      "version": "0.5.12",
-      "purl": "pkg:pypi/scooby@0.5.12"
+      "bom-ref": "742c745f-c785-4b89-8618-78940afe0e04",
+      "name": "jsonschema",
+      "version": "4.4.0",
+      "purl": "pkg:pypi/jsonschema@4.4.0"
     },
     {
       "type": "library",
-      "bom-ref": "2e8206c4-5071-41e4-911c-43176c4af3e8",
-      "name": "orjson",
-      "version": "3.6.7",
-      "purl": "pkg:pypi/orjson@3.6.7"
-    },
-    {
-      "type": "library",
-      "bom-ref": "ecd9d49b-f171-4ac4-b924-afbea9c997f3",
-      "name": "pydantic",
-      "version": "1.9.0",
-      "purl": "pkg:pypi/pydantic@1.9.0"
-    },
-    {
-      "type": "library",
-      "bom-ref": "483f486f-9ecb-4297-80a0-c6bc16e05474",
+      "bom-ref": "82f3712e-a76b-47f8-a55d-1678c9f1d079",
       "name": "jmespath",
       "version": "0.10.0",
       "purl": "pkg:pypi/jmespath@0.10.0"
     },
     {
       "type": "library",
-      "bom-ref": "8fca7673-a344-4bd0-bf08-360c3d12861c",
-      "name": "langcodes",
-      "version": "3.3.0",
-      "purl": "pkg:pypi/langcodes@3.3.0"
-    },
-    {
-      "type": "library",
-      "bom-ref": "0e916d91-4fe5-4346-a35f-8f581bc5e6fe",
+      "bom-ref": "19e81b34-698d-44a3-9169-5f35d24602cf",
       "name": "lazr.uri",
       "version": "1.0.6",
       "purl": "pkg:pypi/lazr.uri@1.0.6"
     },
     {
       "type": "library",
-      "bom-ref": "519d5f97-257a-4ab1-8920-5c4205e047e5",
+      "bom-ref": "69e2c501-db64-4ceb-ae0b-f56fa3f200d1",
+      "name": "pydantic",
+      "version": "1.9.0",
+      "purl": "pkg:pypi/pydantic@1.9.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "955ae944-1703-4bf1-87a3-7620d5ed4c64",
+      "name": "scooby",
+      "version": "0.5.12",
+      "purl": "pkg:pypi/scooby@0.5.12"
+    },
+    {
+      "type": "library",
+      "bom-ref": "3bdb683c-83f7-4b90-b1e2-e85c4312537e",
       "name": "typer",
       "version": "0.4.0",
       "purl": "pkg:pypi/typer@0.4.0"
     },
     {
       "type": "library",
-      "bom-ref": "f29c5f93-1008-4c8b-a2db-2a9373ab4a1c",
-      "name": "jsonschema",
-      "version": "4.4.0",
-      "purl": "pkg:pypi/jsonschema@4.4.0"
+      "bom-ref": "4b452897-877b-43b7-a900-07c0e1dc38c9",
+      "name": "orjson",
+      "version": "3.6.7",
+      "purl": "pkg:pypi/orjson@3.6.7"
+    },
+    {
+      "type": "library",
+      "bom-ref": "09bb99dd-b87d-481d-83e4-94e89aa676aa",
+      "name": "langcodes",
+      "version": "3.3.0",
+      "purl": "pkg:pypi/langcodes@3.3.0"
     }
   ]
 }
