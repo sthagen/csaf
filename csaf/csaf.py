@@ -6,9 +6,6 @@ import logging
 import pathlib
 import sys
 
-# import jmespath
-# import jsonschema  # type: ignore
-
 import csaf
 
 LOG = logging.getLogger()  # Temporary refactoring: module level logger
@@ -26,7 +23,7 @@ def init_logger(name=None, level=None):
         'format': '%(asctime)s.%(msecs)03d %(levelname)s [%(name)s]: %(message)s',
         'datefmt': '%Y-%m-%dT%H:%M:%S',
         # 'filename': LOG_PATH,
-        'level': LOG_LEVEL if level is None else level
+        'level': LOG_LEVEL if level is None else level,
     }
     logging.basicConfig(**log_format)
     LOG = logging.getLogger(csaf.APP_ENV if name is None else name)
@@ -74,8 +71,7 @@ def process(argv=None, abort=False, debug=None):
     num_trees = len(forest)
     LOG.debug('Guarded dispatch forest=%s, num_trees=%d', forest, num_trees)
 
-    LOG.info('Starting validation visiting a forest with %d tree%s',
-             num_trees, '' if num_trees == 1 else 's')
+    LOG.info('Starting validation visiting a forest with %d tree%s', num_trees, '' if num_trees == 1 else 's')
     failure_path_reason = 'Failed validation for path %s with error: %s'
     total, folders, ignored, jsons = 0, 0, 0, 0
     failures = 0
@@ -105,13 +101,10 @@ def process(argv=None, abort=False, debug=None):
                 continue
 
     success = 'Successfully validated'
-    pairs = (
-        (jsons, 'JSON'),
-    )
+    pairs = ((jsons, 'JSON'),)
     for count, kind in pairs:
         if count:
-            LOG.info(
-                '- %s %d total %s file%s.', success, count, kind, '' if count == 1 else 's')
+            LOG.info('- %s %d total %s file%s.', success, count, kind, '' if count == 1 else 's')
 
     configs = jsons
     LOG.info(  # TODO remove f-strings also here

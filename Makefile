@@ -34,7 +34,7 @@ lint:
 
 .PHONY: mypy
 mypy:
-	mypy laskea
+	mypy csaf
 
 .PHONY: test
 test: clean
@@ -59,7 +59,7 @@ version:
 
 .PHONY: secure
 secure:
-	@bandit --output current-bandit.json --baseline baseline-bandit.json --format json --recursive --quiet --exclude ./tests,./build laskea
+	@bandit --output current-bandit.json --baseline baseline-bandit.json --format json --recursive --quiet --exclude ./tests,./build csaf
 	@diff -Nu {baseline,current}-bandit.json; printf "^ Only the timestamps ^^ ^^ ^^ ^^ ^^ ^^ should differ. OK?\n"
 
 .PHONY: baseline
