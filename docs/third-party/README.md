@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://github.com/sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([c9f1cbb1 ...](https://raw.githubusercontent.com/sthagen/csaf/default/sbom.json.sha256 "sha256:c9f1cbb184426d4079acfc02f4f30d5253cbc1cbc15d6c845d24eac96c37dd7d")).
-<!--[[[end]]] (checksum: 702eb9cc74c3df71d841a9b775bc7b0c)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://github.com/sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([45b8c3d4 ...](https://raw.githubusercontent.com/sthagen/csaf/default/sbom.json.sha256 "sha256:45b8c3d4afa8d4a10161768046f3ed1f60f959d38ba2193378c44c4214724f61")).
+<!--[[[end]]] (checksum: 7953f588b89637fe37151959680c80d0)-->
 ## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -25,13 +25,14 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 ### Indirect Dependencies
 
 <!--[[[fill indirect_dependencies_table()]]]-->
-| Name                                                                                           | Version                                                    | License                            | Author                 | Description (from packaging data)                      |
-|:-----------------------------------------------------------------------------------------------|:-----------------------------------------------------------|:-----------------------------------|:-----------------------|:-------------------------------------------------------|
-| [attrs](https://www.attrs.org/)                                                                | [21.4.0](https://pypi.org/project/attrs/21.4.0/)           | MIT License                        | Hynek Schlawack        | Classes Without Boilerplate                            |
-| [click](https://palletsprojects.com/p/click/)                                                  | [8.0.4](https://pypi.org/project/click/8.0.4/)             | BSD License                        | Armin Ronacher         | Composable command line interface toolkit              |
-| [pyrsistent](http://github.com/tobgu/pyrsistent/)                                              | [0.18.1](https://pypi.org/project/pyrsistent/0.18.1/)      | MIT License                        | Tobias Gustafsson      | Persistent/Functional/Immutable data structures        |
-| [typing-extensions](https://github.com/python/typing/blob/master/typing_extensions/README.rst) | [4.1.1](https://pypi.org/project/typing-extensions/4.1.1/) | Python Software Foundation License | The Python Typing Team | Backported and Experimental Type Hints for Python 3.6+ |
- <!--[[[end]]] (checksum: b728114860512b2085276f5fbc53c226)-->
+| Name                                                                                           | Version                                                    | License                            | Author                     | Description (from packaging data)                                       |
+|:-----------------------------------------------------------------------------------------------|:-----------------------------------------------------------|:-----------------------------------|:---------------------------|:------------------------------------------------------------------------|
+| [attrs](https://www.attrs.org/)                                                                | [21.4.0](https://pypi.org/project/attrs/21.4.0/)           | MIT License                        | Hynek Schlawack            | Classes Without Boilerplate                                             |
+| [click](https://palletsprojects.com/p/click/)                                                  | [8.0.4](https://pypi.org/project/click/8.0.4/)             | BSD License                        | Armin Ronacher             | Composable command line interface toolkit                               |
+| [pyrsistent](http://github.com/tobgu/pyrsistent/)                                              | [0.18.1](https://pypi.org/project/pyrsistent/0.18.1/)      | MIT License                        | Tobias Gustafsson          | Persistent/Functional/Immutable data structures                         |
+| [setuptools](https://github.com/pypa/setuptools)                                               | [60.9.3](https://pypi.org/project/setuptools/60.9.3/)      | MIT License                        | Python Packaging Authority | Easily download, build, install, upgrade, and uninstall Python packages |
+| [typing-extensions](https://github.com/python/typing/blob/master/typing_extensions/README.rst) | [4.1.1](https://pypi.org/project/typing-extensions/4.1.1/) | Python Software Foundation License | The Python Typing Team     | Backported and Experimental Type Hints for Python 3.6+                  |
+ <!--[[[end]]] (checksum: df40192e701bab2010820fb73f5adc8f)-->
 
 ## Dependency Tree(s)
 

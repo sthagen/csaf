@@ -5,6 +5,7 @@ import pathlib
 import pkg_resources
 import string
 import subprocess  # nosec
+import sys
 from typing import List, Tuple
 
 __all__ = ['dependency_tree_console_text', 'direct_dependencies_table', 'indirect_dependencies_table']
@@ -53,14 +54,15 @@ def _generate_dependency_information() -> None:
     indirect_names = [  # TODO(sthagen) these indirect deps may diverge ...
         'attrs',
         'pyrsistent',
-        'setuptools',
         'typing-extensions',
         'click',
     ]
     full_vector = [
         'pip-licenses', '--format', 'json', '-p', *direct_names, *indirect_names,
         '--with-authors', '--with-description', '--with-urls', '--with-license-file', '--with-notice-file',
+        '--with-system',  # HACK A DID ACK for setuptools
         '--output-file', str(TP_PATH / 'all-dependency-licenses.json')]
+    print('Licenses search per:', ' '.join(full_vector), file=sys.stderr)
     noise = subprocess.run(full_vector, capture_output=True, encoding=ENCODING, text=True).stdout.strip()  # nosec
     if not noise.startswith('created path: ') or not noise.endswith('all-dependency-licenses.json'):
         raise RuntimeError(noise)
