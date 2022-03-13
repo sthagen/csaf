@@ -43,9 +43,13 @@ def _generate_dependency_information() -> None:
     install_requires = _fetch_direct_dependency_names()
     tokens = set(list(string.ascii_letters + '-_.'))
     direct_names = [''.join(c for c in term if c in tokens).strip('.') for term in install_requires]
+    print('Direct dependencies identified as:', file=sys.stderr)
+    for d_dep in direct_names:
+        print(f'- {d_dep}', file=sys.stderr)
     direct_vector = [
         'pip-licenses', '--format', 'json', '-p', *direct_names,
         '--with-authors', '--with-description', '--with-urls', '--with-license-file', '--with-notice-file',
+        '--with-system',  # HACK A DID ACK for setuptools
         '--output-file', str(TP_PATH / 'direct-dependency-licenses.json')]
     noise = subprocess.run(direct_vector, capture_output=True, encoding=ENCODING, text=True).stdout.strip()  # nosec
     if not noise.startswith('created path: ') or not noise.endswith('direct-dependency-licenses.json'):
@@ -68,7 +72,7 @@ def _generate_dependency_information() -> None:
         raise RuntimeError(noise)
 
     """
-    direct_deps='jmespath,jsonschema,langcodes,lazr.uri,orjson,pydantic,scooby,typer'
+    direct_deps='jmespath,jsonschema,langcodes,lazr.uri,orjson,pydantic,scooby,setuptools,typer'
     pipdeptree --packages "${direct_deps}" --graph-output svg > docs/third-party/package-dependency-tree.svg
     pipdeptree --packages "${direct_deps}" --json-tree --warn silence > docs/third-party/package-dependency-tree.json
     """
@@ -136,7 +140,11 @@ def _extract_rows(data):
 def direct_dependencies_table() -> None:
     """Fill in the data from the direct dependencies."""
     _generate_dependency_information()
-    print(_markdown_table(_extract_rows(_fetch_dependencies(direct_only=True))))
+    data = _fetch_dependencies(direct_only=True)
+    print('Direct dependencies at table generation:', file=sys.stderr)
+    for d_dep in data:
+        print(f'- {d_dep["Name"]}', file=sys.stderr)
+    print(_markdown_table(_extract_rows(data)))
 
 
 def indirect_dependencies_table() -> None:
@@ -144,6 +152,10 @@ def indirect_dependencies_table() -> None:
     direct_data = _fetch_dependencies(direct_only=True)
     direct_names = tuple(record['Name'] for record in direct_data)
     indirect_only_data = [rec for rec in _fetch_dependencies(direct_only=False) if rec['Name'] not in direct_names]
+    print('Indirect dependencies at table generation:', file=sys.stderr)
+    for ind_dep in indirect_only_data:
+        print(f'- {ind_dep["Name"]}', file=sys.stderr)
+
     print(_markdown_table(_extract_rows(indirect_only_data)))
 
 
