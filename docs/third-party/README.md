@@ -3,7 +3,7 @@
 <!--[[[fill sbom_sha256()]]]-->
 The [SBOM in CycloneDX v1.4 JSON format](https://github.com/sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([6e37d422 ...](https://raw.githubusercontent.com/sthagen/csaf/default/sbom.json.sha256 "sha256:6e37d422c0fe3f830daa67ee3910901755e520457b2a630e6dc7196be119f5f2")).
 <!--[[[end]]] (checksum: a6bb49df1742afdf7e3fd3ecd4431f52)-->
-## Licenses 
+## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
 
@@ -37,7 +37,7 @@ JSON file with the complete package dependency tree info of: [the full dependenc
 
 Base graphviz file in dot format: [Trees of the direct dependencies](package-dependency-tree.dot.txt)
 
-<img src="https://raw.githubusercontent.com/sthagen/laskea/default/docs/third-party/package-dependency-tree.svg" alt="Trees of the direct dependencies" title="Trees of the direct dependencies"/>
+<img src="https://raw.githubusercontent.com/sthagen/csaf/default/docs/third-party/package-dependency-tree.svg" alt="Trees of the direct dependencies" title="Trees of the direct dependencies"/>
 
 ### Console Representation
 
