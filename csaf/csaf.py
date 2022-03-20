@@ -36,6 +36,7 @@ from csaf.vulnerability import Vulnerability
 
 ENCODING_ERRORS_POLICY = 'ignore'
 CSAF_MIN_BYTES = 92
+CSAF_WARN_MAX_BYTES = 15 << 20
 CSAF_VERSION_STRING = '2.0'
 
 
@@ -337,9 +338,11 @@ def peek(data: str) -> str:
     """Determine trivial format of data."""
     if len(data) < CSAF_MIN_BYTES:
         return 'TOO_SHORT'
+
     sample = data[:CSAF_MIN_BYTES].strip()
     if sample.startswith('{'):
-        return 'JSON'
+        warn_size = '_MAYBE_TOO_LARGE' if len(data) > CSAF_WARN_MAX_BYTES else ''
+        return f'JSON{warn_size}'
     if sample.startswith('<'):
         return 'XML'
     return 'UNKNOWN'
@@ -449,7 +452,9 @@ def process(command: str, transaction_mode: str, path: str, options: Mapping[str
     if guess == 'UNKNOWN':
         return 1, 'advisory is of unknown format'
 
-    if guess == 'JSON':
+    if guess.startswith('JSON'):
+        if guess.endswith('_MAYBE_TOO_LARGE'):
+            log.warning('File of %d bytes may be above known file size limits' % len(data))
         error, message, strings, doc = verify_json(data)
         if error:
             log.error(message)
