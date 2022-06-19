@@ -88,6 +88,7 @@ def is_valid_unique_group_ids(document: dict) -> bool:
 def is_valid_defined_product_ids(document: dict) -> bool:
     """Temporary implementation of rule for defined product ids."""
     defined_prod_ids = jmespath.search(def_pro_ids.TRIGGER_JMES_PATH, document)
+    # TODO(sthagen) too shallow tree visiting # print("DEBUG>>>", defined_prod_ids)
     if defined_prod_ids is None:
         defined_prod_ids = []
     known_prod_ids = set(defined_prod_ids)
