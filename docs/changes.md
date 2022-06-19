@@ -1,5 +1,9 @@
 # Change History
 
+## 2022.3.20
+
+* Added warning for CSAF files with more than 15 Megabytes
+
 ## 2022.3.13
 
 * Added setuptools information to environment report
