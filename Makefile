@@ -3,7 +3,7 @@ package = shagen/csaf
 
 .DEFAULT_GOAL := all
 isort = isort csaf tests
-black = black -S -l 120 --target-version py38 csaf tests
+black = black -S -l 120 --target-version py39 csaf tests
 
 .PHONY: install
 install:
@@ -15,7 +15,7 @@ install:
 install-all: install
 	pip install -r tests/requirements-dev.txt
 
-.PHONY: isort
+.PHONY: format
 format:
 	$(isort)
 	$(black)
@@ -38,7 +38,7 @@ mypy:
 
 .PHONY: test
 test: clean
-	pytest --cov=csaf --log-format="%(levelname)s %(message)s" --asyncio-mode=strict
+	pytest --asyncio-mode=strict --cov=csaf --log-format="%(levelname)s %(message)s"
 
 .PHONY: testcov
 testcov: test
