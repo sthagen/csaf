@@ -1,0 +1,70 @@
+{
+  "document": {
+    "csaf_version": "2.0",
+    "category": "csaf document type",
+    "title": "csaf document title1",
+    "publisher": {
+      "name": "Publisher Name",
+      "namespace": "https://example.com",
+      "category": "vendor"
+    },
+    "tracking": {
+      "id": "branch",
+      "current_release_date": "2022-01-01T00:00:00.000+00:00",
+      "initial_release_date": "2022-01-01T00:00:00.000+00:00",
+      "status": "interim",
+      "revision_history": [
+        {
+          "date": "2022-01-01T00:00:00.000+00:00",
+          "number": "1.0.0",
+          "summary": "Revision Description"
+        }
+      ],
+      "version": "1.0.0",
+      "generator": {
+        "date": "2022-03-16T08:31:50.649+00:00",
+        "engine": {
+          "name": "CVRF-CSAF-Converter",
+          "version": "1.0.0rc1"
+        }
+      }
+    }
+  },
+  "product_tree": {
+    "branches": [
+      {
+        "name": "branch1",
+        "category": "product_version",
+        "product": {
+          "product_id": "prod1",
+          "name": "prod1"
+        }
+      }
+    ]
+  },
+  "vulnerabilities": [
+    {
+      "discovery_date": "2022-01-01T00:00:00.000+00:00",
+      "id": {
+        "system_name": "token",
+        "text": "Vulnerability id"
+      },
+      "product_status": {
+        "known_affected": [
+          "prod1"
+        ]
+      },
+      "threats": [
+        {
+          "details": "Threat description",
+          "category": "impact",
+          "product_ids": [
+            "prod1"
+          ],
+          "date": "2022-01-01T00:00:00.000+00:00"
+        }
+      ],
+      "title": "Vulnerability title"
+    }
+  ]
+}
