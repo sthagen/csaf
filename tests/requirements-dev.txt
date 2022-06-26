@@ -13,5 +13,5 @@ pip-licenses==3.5.4
 pipdeptree==2.2.1
 pycodestyle==2.8.0
 pyflakes==2.4.0
-types-jmespath==0.10.2
-types-setuptools==57.4.17
+types-jmespath==0.10.3
+types-setuptools==57.4.18
