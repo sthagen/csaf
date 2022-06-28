@@ -1,7 +1,7 @@
 bandit==1.7.4
-black==22.3.0
+black==22.6.0
 cogapp==3.3.0
-cyclonedx-bom==3.4.0
+cyclonedx-bom==3.5.0
 flake8==4.0.1
 flake8-quotes==3.3.1
 graphviz==0.20
@@ -13,5 +13,5 @@ pip-licenses==3.5.4
 pipdeptree==2.2.1
 pycodestyle==2.8.0
 pyflakes==2.4.0
-types-jmespath==0.10.3
+types-jmespath==1.0.0
 types-setuptools==57.4.18
