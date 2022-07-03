@@ -6,4 +6,4 @@ orjson==3.7.5
 pydantic==1.9.1
 scooby==0.5.12
 setuptools==62.6.0
-typer==0.4.1
+typer==0.4.2
