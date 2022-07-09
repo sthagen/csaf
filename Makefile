@@ -2,18 +2,18 @@ SHELL = /bin/bash
 package = shagen/csaf
 
 .DEFAULT_GOAL := all
-isort = isort csaf tests
-black = black -S -l 120 --target-version py39 csaf tests
+isort = isort csaf test
+black = black -S -l 120 --target-version py39 csaf test
 
 .PHONY: install
 install:
 	pip install -U pip wheel
-	pip install -r tests/requirements.txt
+	pip install -r test/requirements.txt
 	pip install -U .
 
 .PHONY: install-all
 install-all: install
-	pip install -r tests/requirements-dev.txt
+	pip install -r test/requirements-dev.txt
 
 .PHONY: format
 format:
@@ -22,13 +22,13 @@ format:
 
 .PHONY: init
 init:
-	pip install -r tests/requirements.txt
-	pip install -r tests/requirements-dev.txt
+	pip install -r test/requirements.txt
+	pip install -r test/requirements-dev.txt
 
 .PHONY: lint
 lint:
 	python setup.py check -ms
-	flake8 csaf/ tests/
+	flake8 csaf/ test/
 	$(isort) --check-only --df
 	$(black) --check --diff
 
@@ -50,7 +50,7 @@ all: lint mypy testcov
 
 .PHONY: dark
 dark:
-	@black -l120 -S csaf tests
+	@black -l120 -S csaf test
 
 .PHONY: sbom
 sbom:
@@ -64,12 +64,12 @@ version:
 
 .PHONY: secure
 secure:
-	@bandit --output current-bandit.json --baseline baseline-bandit.json --format json --recursive --quiet --exclude ./tests,./build csaf
+	@bandit --output current-bandit.json --baseline baseline-bandit.json --format json --recursive --quiet --exclude ./test,./build csaf
 	@diff -Nu {baseline,current}-bandit.json; printf "^ Only the timestamps ^^ ^^ ^^ ^^ ^^ ^^ should differ. OK?\n"
 
 .PHONY: baseline
 baseline:
-	@bandit --output baseline-bandit.json --format json --recursive --quiet --exclude ./tests,./build csaf
+	@bandit --output baseline-bandit.json --format json --recursive --quiet --exclude ./test,./build csaf
 	@cat baseline-bandit.json; printf "\n^ The new baseline ^^ ^^ ^^ ^^ ^^ ^^. OK?\n"
 
 .PHONY: clean
