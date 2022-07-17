@@ -81,3 +81,4 @@ clean:
 	@rm -rf .cache htmlcov *.egg-info build dist/*
 	@rm -f .coverage .coverage.* *.log current-bandit.json .csaf_cache.sqlite
 	python setup.py clean
+	@rm -fr site/*
