@@ -1,13 +1,8 @@
-[tool.pyflow]
-name = "casf"
-py_version = "3.8"
-# [[[fill version_sync()]]]
-version = "2022.3.14"
-# [[[end]]] (checksum: 3239a27d9a4b91f89023d7d20de106cd)
-authors = ["Stefan Hagen <stefan@hagen.link>"]
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
-[tool.pyflow.scripts]
-
-[tool.pyflow.dependencies]
-
-[tool.pyflow.dev-dependencies]
+[tool.black]
+line-length = 120
+skip-string-normalization = "True"
+target-version = ["py38", "py39", "py310"]
