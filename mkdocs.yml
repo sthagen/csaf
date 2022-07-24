@@ -51,6 +51,7 @@ nav:
   - CLI: 'cli.md'
   - Background: 'background.md'
   - Changes: 'changes.md'
+  - Test Coverage: https://codes.dilettant.life/coverage/csaf
   - Third-Party: 'third-party/README.md'
 
 markdown_extensions:
