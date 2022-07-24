@@ -1,5 +1,4 @@
 SHELL = /bin/bash
-package = shagen/csaf
 
 .DEFAULT_GOAL := all
 isort = isort csaf test
@@ -72,13 +71,17 @@ baseline:
 	@bandit --output baseline-bandit.json --format json --recursive --quiet --exclude ./test,./build csaf
 	@cat baseline-bandit.json; printf "\n^ The new baseline ^^ ^^ ^^ ^^ ^^ ^^. OK?\n"
 
+.PHONY: clocal
+clocal:
+	rm -f current-bandit.json .csaf_cache.sqlite
+
 .PHONY: clean
-clean:
+clean:  clocal
 	@rm -rf `find . -name __pycache__`
 	@rm -f `find . -type f -name '*.py[co]' `
 	@rm -f `find . -type f -name '*~' `
 	@rm -f `find . -type f -name '.*~' `
 	@rm -rf .cache htmlcov *.egg-info build dist/*
-	@rm -f .coverage .coverage.* *.log current-bandit.json .csaf_cache.sqlite
+	@rm -f .coverage .coverage.* *.log
 	python setup.py clean
 	@rm -fr site/*
