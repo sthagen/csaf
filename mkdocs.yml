@@ -26,16 +26,14 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/sthagen/csaf
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/shagen/csaf
+      link: https://git.sr.ht/~sthagen/csaf
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/shage
 
-copyright: Copyright &copy; 2021 Stefan Hagen under the MIT license
+copyright: Copyright &copy; 2022 Stefan Hagen under the MIT license
 
-repo_name: sthagen/csaf
-repo_url: https://github.com/sthagen/csaf
+repo_name: ~sthagen/csaf
+repo_url: https://git.sr.ht/~sthagen/csaf
 edit_uri: ""
 
 plugins:
