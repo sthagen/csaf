@@ -8,7 +8,7 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 
 **Note**: CSAF predecessor CVRF versions 1.1 and 1.2 are out of scope.
 
-[License: MIT](https://github.com/sthagen/csaf/blob/default/LICENSE)
+[License: MIT](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE)
 
 [![version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![downloads](https://pepy.tech/badge/csaf/month)](https://pepy.tech/project/csaf)
@@ -16,8 +16,11 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 [![supported-versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 
-## Status
+## Bug Tracker
 
-Experimental.
+Feature requests and bug reports are bested entered in the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).
 
-**Note**: The default branch is `default`.
+## Primary Source repository
+
+The primary source repository of [csaf is at sourcehut](https://git.sr.ht/~sthagen/csaf)
+a collection of tools useful for software development.

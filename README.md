@@ -2,7 +2,7 @@
 
 Common Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API).
 
-[License: MIT](https://github.com/sthagen/csaf/blob/default/LICENSE)
+[License: MIT](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE)
 
 In this project the attempt is made, to provide API and tools to support the CSAF communities from a single repository in the easy to prototype python language.
 
@@ -15,6 +15,19 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 [![wheel](https://img.shields.io/pypi/wheel/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
+
+## Documentation
+
+User and developer [documentation of csaf](https://codes.dilettant.life/docs/csaf).
+
+## Bug Tracker
+
+Feature requests and bug reports are bested entered in the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).
+
+## Primary Source repository
+
+The primary source repository of [csaf is at sourcehut](https://git.sr.ht/~sthagen/csaf)
+a collection of tools useful for software development.
 
 ## Status
 
