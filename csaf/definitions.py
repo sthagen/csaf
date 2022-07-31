@@ -89,6 +89,7 @@ class Acknowledgment(BaseModel):
 
     @no_type_check
     @validator('names', 'organization', 'summary', 'urls')
+    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('optional element present but empty')
@@ -111,6 +112,7 @@ class Acknowledgments(BaseModel):
 
     @no_type_check
     @validator('__root__')
+    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('optional element present but empty')
@@ -164,6 +166,7 @@ class ProductGroupIds(BaseModel):
 
     @no_type_check
     @validator('__root__')
+    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')
@@ -232,6 +235,7 @@ class ListOfProductIds(BaseModel):
 
     @no_type_check
     @validator('product_ids')
+    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')
@@ -331,6 +335,7 @@ class Notes(BaseModel):
 
     @no_type_check
     @validator('__root__')
+    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')

@@ -101,6 +101,7 @@ class Tracking(BaseModel):
 
     @no_type_check
     @validator('revision_history')
+    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')

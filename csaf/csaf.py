@@ -72,6 +72,7 @@ class CSAF(BaseModel):
 
     @no_type_check
     @validator('vulnerabilities')
+    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('vulnerabilities present but empty')
