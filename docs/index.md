@@ -18,7 +18,7 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 
 ## Bug Tracker
 
-Feature requests and bug reports are bested entered in the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).
+Feature requests and bug reports are best entered in the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).
 
 ## Primary Source repository
 
