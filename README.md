@@ -22,7 +22,7 @@ User and developer [documentation of csaf](https://codes.dilettant.life/docs/csa
 
 ## Bug Tracker
 
-Feature requests and bug reports are bested entered in the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).
+Feature requests and bug reports are best entered in the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).
 
 ## Primary Source repository
 
