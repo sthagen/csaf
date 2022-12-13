@@ -10,6 +10,8 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 
 [License: MIT](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE)
 
+Third party dependencies are documented in the folder [third-party](third-party/README.md).
+
 [![version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![downloads](https://pepy.tech/badge/csaf/month)](https://pepy.tech/project/csaf)
 [![wheel](https://img.shields.io/pypi/wheel/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
