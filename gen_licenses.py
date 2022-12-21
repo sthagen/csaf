@@ -21,6 +21,7 @@ FALLBACK_URLS = {
 FALLBACK_AUTHORS = {
     'lazr.uri': '"LAZR Developers" team',
     'typing-extensions': 'The Python Typing Team',
+    'msgspec': 'Jim Crist-Harif',
 }
 TARGET = """\
 __version__ = '$version$+parent.$revision$'\
