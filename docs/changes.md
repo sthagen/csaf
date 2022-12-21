@@ -1,5 +1,9 @@
 # Change History
 
+## Source
+
+* Migrated from orjson to msgspec
+
 ## 2022.3.20
 
 * Added warning for CSAF files with more than 15 Megabytes
