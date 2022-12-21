@@ -379,7 +379,7 @@ def verify_json(data: str) -> Tuple[int, str, List[str], Dict[str, object]]:
     """Verify the JSON as CSAF."""
     try:
         doc = msgspec.json.decode(data)
-    except msgspec.ValidationError:
+    except msgspec.DecodeError:
         return 1, 'advisory is no valid JSON', [], {}
 
     error, message = level_zero(doc)
