@@ -1,9 +1,9 @@
 jmespath==1.0.1
-jsonschema==4.16.0
+jsonschema==4.17.3
 langcodes==3.3.0
 lazr.uri==1.0.6
-orjson==3.8.0
+orjson==3.8.3
 pydantic==1.10.2
-scooby==0.6.0
-setuptools==65.3.0
-typer==0.6.1
+scooby==0.7.0
+setuptools==65.6.3
+typer==0.7.0
