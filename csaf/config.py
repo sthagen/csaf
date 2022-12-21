@@ -2,7 +2,7 @@
 import pathlib
 from typing import Any, Mapping, Union
 
-import orjson
+import msgspec
 
 TEMPLATE_EXAMPLE = """\
 {
@@ -29,4 +29,4 @@ def generate_template() -> str:
 def read_configuration(path: Union[pathlib.Path, str]) -> Union[Any, Mapping[str, object]]:
     """LaterAlligator."""
     with open(str(path), 'rb') as handle:
-        return orjson.loads(handle.read())
+        return msgspec.json.decode(handle.read())

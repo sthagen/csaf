@@ -14,7 +14,7 @@ from itertools import chain
 from typing import Annotated, Dict, Iterator, List, Mapping, Optional, Tuple, no_type_check
 
 import jmespath
-import orjson
+import msgspec
 from langcodes import tag_is_valid
 from lazr.uri import URI, InvalidURIError  # type: ignore
 from pydantic import BaseModel, Field, validator
@@ -378,8 +378,8 @@ def verify_request(argv: Optional[List[str]]) -> Tuple[int, str, List[str]]:
 def verify_json(data: str) -> Tuple[int, str, List[str], Dict[str, object]]:
     """Verify the JSON as CSAF."""
     try:
-        doc = orjson.loads(data)
-    except orjson.JSONDecodeError:
+        doc = msgspec.json.decode(data)
+    except msgspec.ValidationError:
         return 1, 'advisory is no valid JSON', [], {}
 
     error, message = level_zero(doc)
