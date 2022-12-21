@@ -9,8 +9,8 @@
     {
         "key": "jsonschema",
         "package_name": "jsonschema",
-        "installed_version": "4.8.0",
-        "required_version": "4.8.0",
+        "installed_version": "4.17.3",
+        "required_version": "4.17.3",
         "dependencies": [
             {
                 "key": "attrs",
@@ -44,30 +44,30 @@
             {
                 "key": "setuptools",
                 "package_name": "setuptools",
-                "installed_version": "65.3.0",
+                "installed_version": "65.6.3",
                 "required_version": "Any",
                 "dependencies": []
             }
         ]
     },
     {
-        "key": "orjson",
-        "package_name": "orjson",
-        "installed_version": "3.7.12",
-        "required_version": "3.7.12",
+        "key": "msgspec",
+        "package_name": "msgspec",
+        "installed_version": "0.11.0",
+        "required_version": "0.11.0",
         "dependencies": []
     },
     {
         "key": "pydantic",
         "package_name": "pydantic",
-        "installed_version": "1.9.2",
-        "required_version": "1.9.2",
+        "installed_version": "1.10.2",
+        "required_version": "1.10.2",
         "dependencies": [
             {
                 "key": "typing-extensions",
                 "package_name": "typing-extensions",
                 "installed_version": "4.2.0",
-                "required_version": ">=3.7.4.3",
+                "required_version": ">=4.1.0",
                 "dependencies": []
             }
         ]
@@ -75,15 +75,15 @@
     {
         "key": "scooby",
         "package_name": "scooby",
-        "installed_version": "0.6.0",
-        "required_version": "0.6.0",
+        "installed_version": "0.7.0",
+        "required_version": "0.7.0",
         "dependencies": []
     },
     {
         "key": "typer",
         "package_name": "typer",
-        "installed_version": "0.6.1",
-        "required_version": "0.6.1",
+        "installed_version": "0.7.0",
+        "required_version": "0.7.0",
         "dependencies": [
             {
                 "key": "click",
