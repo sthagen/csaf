@@ -15,14 +15,14 @@
             {
                 "key": "attrs",
                 "package_name": "attrs",
-                "installed_version": "21.4.0",
+                "installed_version": "22.2.0",
                 "required_version": ">=17.4.0",
                 "dependencies": []
             },
             {
                 "key": "pyrsistent",
                 "package_name": "pyrsistent",
-                "installed_version": "0.18.1",
+                "installed_version": "0.19.2",
                 "required_version": ">=0.14.0,!=0.17.2,!=0.17.1,!=0.17.0",
                 "dependencies": []
             }
@@ -66,7 +66,7 @@
             {
                 "key": "typing-extensions",
                 "package_name": "typing-extensions",
-                "installed_version": "4.2.0",
+                "installed_version": "4.4.0",
                 "required_version": ">=4.1.0",
                 "dependencies": []
             }
