@@ -1,0 +1,7 @@
+---
+packages:
+- attrs
+- click
+- pyrsistent
+- setuptools
+- typing-extensions

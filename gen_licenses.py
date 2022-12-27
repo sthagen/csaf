@@ -8,6 +8,8 @@ import subprocess  # nosec
 import sys
 from typing import List, Tuple
 
+import yaml
+
 __all__ = ['dependency_tree_console_text', 'direct_dependencies_table', 'indirect_dependencies_table']
 
 ENCODING = 'utf-8'
@@ -15,14 +17,42 @@ TP_PATH = pathlib.Path('docs', 'third-party')
 
 TABLE_KEYS = (('Name', 'URL'), 'Version', 'License', 'Author', 'Description')
 HEADER_LABELS = ('Name', 'Version', 'License', 'Author', 'Description (from packaging data)')
-FALLBACK_URLS = {
-    'typing-extensions': 'https://github.com/python/typing/blob/master/typing_extensions/README.rst',
-}
-FALLBACK_AUTHORS = {
-    'lazr.uri': '"LAZR Developers" team',
-    'typing-extensions': 'The Python Typing Team',
-    'msgspec': 'Jim Crist-Harif',
-}
+
+fallbacks, FALLBACK_URLS, FALLBACK_AUTHORS, FALLBACK_DESCRIPTIONS = {}, {}, {}, {}
+
+THIRD_PARTY_FALLBACKS = 'third-party-fallbacks.yml'
+TPF_PATH = pathlib.Path(THIRD_PARTY_FALLBACKS)
+if TPF_PATH.is_file():
+    print(f'Reading fallback values from file ({TPF_PATH})', file=sys.stderr)
+    with open(TPF_PATH, 'rt', encoding=ENCODING) as handle:
+        fallbacks = yaml.safe_load(handle)
+
+if fallbacks:
+    if fallbacks.get('urls', {}):
+        FALLBACK_URLS = {**FALLBACK_URLS, **fallbacks['urls']}
+    if fallbacks.get('authors', {}):
+        FALLBACK_AUTHORS = {**FALLBACK_AUTHORS, **fallbacks['authors']}
+    if fallbacks.get('descriptions', {}):
+        FALLBACK_DESCRIPTIONS = {**FALLBACK_DESCRIPTIONS, **fallbacks['descriptions']}
+
+indirect_names, INDIRECT_NAMES = [], []
+
+INDIRECT_PACKAGE_NAMES = 'indirect-package-names.yml'
+IPN_PATH = pathlib.Path(INDIRECT_PACKAGE_NAMES)
+if IPN_PATH.is_file():
+    print(f'Reading indirect names from file ({IPN_PATH})', file=sys.stderr)
+    with open(IPN_PATH, 'rt', encoding=ENCODING) as handle:
+        indirect_names = yaml.safe_load(handle)
+
+if indirect_names:
+    print(f'Indirect names from file gives map ({indirect_names})', file=sys.stderr)
+    if (the_names := indirect_names.get('packages', [])):
+        print(f'Extending indirect packages ({the_names}) from file', file=sys.stderr)
+        INDIRECT_NAMES.extend(the_names)
+        INDIRECT_NAMES = sorted(set(INDIRECT_NAMES))
+else:
+    print(f'No indirect names from file ({IPN_PATH})', file=sys.stderr)
+
 TARGET = """\
 __version__ = '$version$+parent.$revision$'\
 """
@@ -56,14 +86,8 @@ def _generate_dependency_information() -> None:
     if not noise.startswith('created path: ') or not noise.endswith('direct-dependency-licenses.json'):
         raise RuntimeError(noise)
 
-    indirect_names = [  # TODO(sthagen) these indirect deps may diverge ...
-        'attrs',
-        'pyrsistent',
-        'typing-extensions',
-        'click',
-    ]
     full_vector = [
-        'pip-licenses', '--format', 'json', '-p', *direct_names, *indirect_names,
+        'pip-licenses', '--format', 'json', '-p', *direct_names, *INDIRECT_NAMES,
         '--with-authors', '--with-description', '--with-urls', '--with-license-file', '--with-notice-file',
         '--with-system',  # HACK A DID ACK for setuptools
         '--output-file', str(TP_PATH / 'all-dependency-licenses.json')]
@@ -133,6 +157,8 @@ def _extract_rows(data):
         if aut == 'UNKNOWN' and nam in FALLBACK_AUTHORS:
             aut = FALLBACK_AUTHORS[nam]
         des = record['Description']
+        if des == 'UNKNOWN' and nam in FALLBACK_DESCRIPTIONS:
+            des = FALLBACK_DESCRIPTIONS[nam]
         rows.append((nam_e, ver_sion, lic, aut, des))
     rows.sort()
     return rows
