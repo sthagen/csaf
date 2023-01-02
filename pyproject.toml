@@ -114,6 +114,7 @@ inline-quotes = "single"
 
 [tool.ruff.per-file-ignores]
 "__init__.py" = ["E402"]
+"document.py" = ["E402"]
 
 [tool.ruff.flake8-import-conventions.aliases]
 altair = "alt"
