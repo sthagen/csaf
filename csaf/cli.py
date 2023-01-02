@@ -1,6 +1,3 @@
-#! /usr/bin/env python3
-# -*- coding: utf-8 -*-
-# pylint: disable=line-too-long
 """Commandline API gateway for csaf."""
 import sys
 from typing import List, Mapping
