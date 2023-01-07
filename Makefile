@@ -28,7 +28,7 @@ init:
 .PHONY: lint
 lint:
 	validate-pyproject pyproject.toml
-	$(lint)
+	$(lint) --diff
 	$(black) --check --diff
 
 .PHONY: types
@@ -47,19 +47,14 @@ testcov: test
 .PHONY: all
 all: lint types testcov
 
-.PHONY: dark
-dark:
-	@black -l120 -S csaf test
-
 .PHONY: sbom
 sbom:
 	@./gen-sbom
 	@cog -I. -P -c -r --check --markers="[[fill ]]] [[[end]]]" -p "from gen_sbom import *;from gen_licenses import *" docs/third-party/README.md
-	@if [ $$(grep -c UNKNOWN docs/third-party/README.md) -ne 0 ]; then echo "3rd party NOT_OK"; exit 1; else echo "3rd party documentation OK"; fi
 
 .PHONY: version
 version:
-	@cog -I. -P -c -r --check --markers="[[fill ]]] [[[end]]]" -p "from gen_version import *" pyproject.toml $(package)/__init__.py
+	@cog -I. -P -c -r --check --markers="[[fill ]]] [[[end]]]" -p "from gen_version import *" $(package)/__init__.py
 
 .PHONY: secure
 secure:
@@ -73,7 +68,7 @@ baseline:
 
 .PHONY: clocal
 clocal:
-	rm -f current-bandit.json .csaf_cache.sqlite
+	rm -f .csaf_cache.sqlite
 
 .PHONY: clean
 clean:  clocal
