@@ -4,7 +4,7 @@ Common Security Advisory Framework (CSAF) Verification, Validation, and Applicat
 
 [License: MIT](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE)
 
-Third party dependencies are documented in the folder [third-party](third-party/README.md).
+Third party dependencies are documented in the folder [third-party](docs/third-party/README.md).
 
 In this project the attempt is made, to provide API and tools to support the CSAF communities from a single repository in the easy to prototype python language.
 
