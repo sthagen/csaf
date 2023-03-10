@@ -33,7 +33,7 @@ $ csaf validate empty.json
 Hypothetical valid file:
 
 ```
-$ csaf vaidate minimal_whatever.json
+$ csaf validate minimal_whatever.json
 2022-03-13T20:46:30.618 INFO [CSAF]: set of document properties only contains known properties
 2022-03-13T20:46:30.618 INFO [CSAF]: set of document properties is a proper subset of the known properties
 ```
