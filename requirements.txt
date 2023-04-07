@@ -2,7 +2,7 @@ jmespath==1.0.1
 jsonschema==4.17.3
 langcodes==3.3.0
 lazr.uri==1.0.6
-msgspec==0.14.0
+msgspec==0.14.1
 pydantic==1.10.7
 scooby==0.7.1
 setuptools==67.6.1
