@@ -5,5 +5,5 @@ lazr.uri==1.0.6
 msgspec==0.14.2
 pydantic==1.10.7
 scooby==0.7.1
-setuptools==67.7.0
+setuptools==67.7.1
 typer==0.7.0
