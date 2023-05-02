@@ -32,9 +32,9 @@ dependencies = [
     "lazr.uri >= 1.0.1",
     "msgspec >= 0.14.2",
     "pydantic >= 1.10.7",
-    "scooby >= 0.7.1",
+    "scooby >= 0.7.2",
     "setuptools >= 67.7.2",
-    "typer >= 0.7.0",
+    "typer >= 0.9.0",
 ]
 requires-python = ">=3.9"
 
