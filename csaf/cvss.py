@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Annotated, Optional
+from typing import Annotated, Optional, no_type_check
 
 from pydantic import BaseModel, Field
 
@@ -61,7 +61,7 @@ class CVSS2(BaseModel):
     vector_string: Annotated[
         str,
         Field(
-            alias='vector_string',
+            alias='vectorString',
             regex=(
                 '^((AV:[NAL]|AC:[LMH]|Au:[MSN]|[CIA]:[NPC]|E:(U|POC|F|H|ND)|RL:(OF|TF|W|U|ND)|RC:(UC|UR|C|ND)|CDP:'
                 '(N|L|LM|MH|H|ND)|TD:(N|L|M|H|ND)|[CIA]R:(L|M|H|ND))/)*(AV:[NAL]|AC:[LMH]|Au:[MSN]|[CIA]:[NPC]|E:'
@@ -70,28 +70,33 @@ class CVSS2(BaseModel):
             ),
         ),
     ]
-    access_vector: Annotated[Optional[AccessVectorType], Field(alias='access_vector')] = None
-    access_complexity: Annotated[Optional[AccessComplexityType], Field(alias='access_complexity')] = None
+    access_vector: Annotated[Optional[AccessVectorType], Field(alias='accessVector')] = None
+    access_complexity: Annotated[Optional[AccessComplexityType], Field(alias='accessComplexity')] = None
     authentication: Optional[AuthenticationType] = None
-    confidentiality_impact: Annotated[Optional[CiaType], Field(alias='confidentiality_impact')] = None
-    integrity_impact: Annotated[Optional[CiaType], Field(alias='integrity_impact')] = None
-    availability_impact: Annotated[Optional[CiaType], Field(alias='availability_impact')] = None
-    base_score: Annotated[ScoreType, Field(alias='base_score')]
+    confidentiality_impact: Annotated[Optional[CiaType], Field(alias='confidentialityImpact')] = None
+    integrity_impact: Annotated[Optional[CiaType], Field(alias='integrityImpact')] = None
+    availability_impact: Annotated[Optional[CiaType], Field(alias='availabilityImpact')] = None
+    base_score: Annotated[ScoreType, Field(alias='baseScore')]
     exploitability: Optional[ExploitabilityType] = None
-    remediation_level: Annotated[Optional[RemediationLevelType], Field(alias='remediation_level')] = None
-    report_confidence: Annotated[Optional[ReportConfidenceType], Field(alias='report_confidence')] = None
-    temporal_score: Annotated[Optional[ScoreType], Field(alias='temporal_score')] = None
+    remediation_level: Annotated[Optional[RemediationLevelType], Field(alias='remediationLevel')] = None
+    report_confidence: Annotated[Optional[ReportConfidenceType], Field(alias='reportConfidence')] = None
+    temporal_score: Annotated[Optional[ScoreType], Field(alias='temporalScore')] = None
     collateral_damage_potential: Annotated[
         Optional[CollateralDamagePotentialType],
-        Field(alias='collateral_damage_potential'),
+        Field(alias='collateralDamagePotential'),
     ] = None
-    target_distribution: Annotated[Optional[TargetDistributionType], Field(alias='target_distribution')] = None
+    target_distribution: Annotated[Optional[TargetDistributionType], Field(alias='targetDistribution')] = None
     confidentiality_requirement: Annotated[
-        Optional[CiaRequirementType], Field(alias='confidentiality_requirement')
+        Optional[CiaRequirementType], Field(alias='confidentialityRequirement')
     ] = None
-    integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrity_requirement')] = None
-    availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availability_requirement')] = None
-    environmental_score: Annotated[Optional[ScoreType], Field(alias='environmental_score')] = None
+    integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrityRequirement')] = None
+    availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availabilityRequirement')] = None
+    environmental_score: Annotated[Optional[ScoreType], Field(alias='environmentalScore')] = None
+
+    @no_type_check
+    def json(self, *args, **kwargs):
+        kwargs.setdefault('by_alias', True)
+        return super().json(*args, **kwargs)
 
 
 class CVSS30(BaseModel):
@@ -99,7 +104,7 @@ class CVSS30(BaseModel):
     vector_string: Annotated[
         str,
         Field(
-            alias='vector_string',
+            alias='vectorString',
             regex=(
                 '^CVSS:3[.]0/((AV:[NALP]|AC:[LH]|PR:[UNLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|'
                 '[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XUNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])/)*(AV:[NALP]|'
@@ -108,47 +113,50 @@ class CVSS30(BaseModel):
             ),
         ),
     ]
-    attack_vector: Annotated[Optional[AttackVectorType], Field(alias='attack_vector')] = None
-    attack_complexity: Annotated[Optional[AttackComplexityType], Field(alias='attack_complexity')] = None
-    privileges_required: Annotated[Optional[PrivilegesRequiredType], Field(alias='privileges_required')] = None
-    user_interaction: Annotated[Optional[UserInteractionType], Field(alias='user_interaction')] = None
+    attack_vector: Annotated[Optional[AttackVectorType], Field(alias='attackVector')] = None
+    attack_complexity: Annotated[Optional[AttackComplexityType], Field(alias='attackComplexity')] = None
+    privileges_required: Annotated[Optional[PrivilegesRequiredType], Field(alias='privilegesRequired')] = None
+    user_interaction: Annotated[Optional[UserInteractionType], Field(alias='userInteraction')] = None
     scope: Optional[ScopeType] = None
-    confidentiality_impact: Annotated[Optional[CiaType], Field(alias='confidentiality_impact')] = None
-    integrity_impact: Annotated[Optional[CiaType], Field(alias='integrity_impact')] = None
-    availability_impact: Annotated[Optional[CiaType], Field(alias='availability_impact')] = None
-    base_score: Annotated[ScoreType, Field(alias='base_score')]
-    base_severity: Annotated[SeverityType, Field(alias='base_severity')]
-    exploit_code_maturity: Annotated[Optional[ExploitCodeMaturityType], Field(alias='exploit_code_maturity')] = None
-    remediation_level: Annotated[Optional[RemediationLevelType], Field(alias='remediation_level')] = None
-    report_confidence: Annotated[Optional[ConfidenceType], Field(alias='report_confidence')] = None
-    temporal_score: Annotated[Optional[ScoreType], Field(alias='temporal_score')] = None
-    temporal_severity: Annotated[Optional[SeverityType], Field(alias='temporal_severity')] = None
+    confidentiality_impact: Annotated[Optional[CiaType], Field(alias='confidentialityImpact')] = None
+    integrity_impact: Annotated[Optional[CiaType], Field(alias='integrityImpact')] = None
+    availability_impact: Annotated[Optional[CiaType], Field(alias='availabilityImpact')] = None
+    base_score: Annotated[ScoreType, Field(alias='baseScore')]
+    base_severity: Annotated[SeverityType, Field(alias='baseSeverity')]
+    exploit_code_maturity: Annotated[Optional[ExploitCodeMaturityType], Field(alias='exploitCodeMaturity')] = None
+    remediation_level: Annotated[Optional[RemediationLevelType], Field(alias='remediationLevel')] = None
+    report_confidence: Annotated[Optional[ConfidenceType], Field(alias='reportConfidence')] = None
+    temporal_score: Annotated[Optional[ScoreType], Field(alias='temporalScore')] = None
+    temporal_severity: Annotated[Optional[SeverityType], Field(alias='temporalSeverity')] = None
     confidentiality_requirement: Annotated[
-        Optional[CiaRequirementType], Field(alias='confidentiality_requirement')
+        Optional[CiaRequirementType], Field(alias='confidentialityRequirement')
     ] = None
-    integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrity_requirement')] = None
-    availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availability_requirement')] = None
-    modified_attack_vector: Annotated[Optional[ModifiedAttackVectorType], Field(alias='modified_attack_vector')] = None
+    integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrityRequirement')] = None
+    availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availabilityRequirement')] = None
+    modified_attack_vector: Annotated[Optional[ModifiedAttackVectorType], Field(alias='modifiedAttackVector')] = None
     modified_attack_complexity: Annotated[
-        Optional[ModifiedAttackComplexityType], Field(alias='modified_attack_complexity')
+        Optional[ModifiedAttackComplexityType], Field(alias='modifiedAttackComplexity')
     ] = None
     modified_privileges_required: Annotated[
         Optional[ModifiedPrivilegesRequiredType],
-        Field(alias='modified_privileges_required'),
+        Field(alias='modifiedPrivilegesRequired'),
     ] = None
     modified_user_interaction: Annotated[
-        Optional[ModifiedUserInteractionType], Field(alias='modified_user_interaction')
+        Optional[ModifiedUserInteractionType], Field(alias='modifiedUserInteraction')
     ] = None
-    modified_scope: Annotated[Optional[ModifiedScopeType], Field(alias='modified_scope')] = None
+    modified_scope: Annotated[Optional[ModifiedScopeType], Field(alias='modifiedScope')] = None
     modified_confidentiality_impact: Annotated[
-        Optional[ModifiedCiaType], Field(alias='modified_confidentiality_impact')
+        Optional[ModifiedCiaType], Field(alias='modifiedConfidentialityImpact')
     ] = None
-    modified_integrity_impact: Annotated[Optional[ModifiedCiaType], Field(alias='modified_integrity_impact')] = None
-    modified_availability_impact: Annotated[
-        Optional[ModifiedCiaType], Field(alias='modified_availability_impact')
-    ] = None
-    environmental_score: Annotated[Optional[ScoreType], Field(alias='environmental_score')] = None
-    environmental_severity: Annotated[Optional[SeverityType], Field(alias='environmental_severity')] = None
+    modified_integrity_impact: Annotated[Optional[ModifiedCiaType], Field(alias='modifiedIntegrityImpact')] = None
+    modified_availability_impact: Annotated[Optional[ModifiedCiaType], Field(alias='modifiedAvailabilityImpact')] = None
+    environmental_score: Annotated[Optional[ScoreType], Field(alias='environmentalScore')] = None
+    environmental_severity: Annotated[Optional[SeverityType], Field(alias='environmentalSeverity')] = None
+
+    @no_type_check
+    def json(self, *args, **kwargs):
+        kwargs.setdefault('by_alias', True)
+        return super().json(*args, **kwargs)
 
 
 class CVSS31(BaseModel):
@@ -156,7 +164,7 @@ class CVSS31(BaseModel):
     vector_string: Annotated[
         str,
         Field(
-            alias='vector_string',
+            alias='vectorString',
             regex=(
                 '^CVSS:3[.]1/((AV:[NALP]|AC:[LH]|PR:[NLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:'
                 '[XURC]|[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])/)*'
@@ -165,44 +173,47 @@ class CVSS31(BaseModel):
             ),
         ),
     ]
-    attack_vector: Annotated[Optional[AttackVectorType], Field(alias='attack_vector')] = None
-    attack_complexity: Annotated[Optional[AttackComplexityType], Field(alias='attack_complexity')] = None
-    privileges_required: Annotated[Optional[PrivilegesRequiredType], Field(alias='privileges_required')] = None
-    user_interaction: Annotated[Optional[UserInteractionType], Field(alias='user_interaction')] = None
+    attack_vector: Annotated[Optional[AttackVectorType], Field(alias='attackVector')] = None
+    attack_complexity: Annotated[Optional[AttackComplexityType], Field(alias='attackComplexity')] = None
+    privileges_required: Annotated[Optional[PrivilegesRequiredType], Field(alias='privilegesRequired')] = None
+    user_interaction: Annotated[Optional[UserInteractionType], Field(alias='userInteraction')] = None
     scope: Optional[ScopeType] = None
-    confidentiality_impact: Annotated[Optional[CiaType], Field(alias='confidentiality_impact')] = None
-    integrity_impact: Annotated[Optional[CiaType], Field(alias='integrity_impact')] = None
-    availability_impact: Annotated[Optional[CiaType], Field(alias='availability_impact')] = None
-    base_score: Annotated[ScoreType, Field(alias='base_score')]
-    base_severity: Annotated[SeverityType, Field(alias='base_severity')]
-    exploit_code_maturity: Annotated[Optional[ExploitCodeMaturityType], Field(alias='exploit_code_maturity')] = None
-    remediation_level: Annotated[Optional[RemediationLevelType], Field(alias='remediation_level')] = None
-    report_confidence: Annotated[Optional[ConfidenceType], Field(alias='report_confidence')] = None
-    temporal_score: Annotated[Optional[ScoreType], Field(alias='temporal_score')] = None
-    temporal_severity: Annotated[Optional[SeverityType], Field(alias='temporal_severity')] = None
+    confidentiality_impact: Annotated[Optional[CiaType], Field(alias='confidentialityImpact')] = None
+    integrity_impact: Annotated[Optional[CiaType], Field(alias='integrityImpact')] = None
+    availability_impact: Annotated[Optional[CiaType], Field(alias='availabilityImpact')] = None
+    base_score: Annotated[ScoreType, Field(alias='baseScore')]
+    base_severity: Annotated[SeverityType, Field(alias='baseSeverity')]
+    exploit_code_maturity: Annotated[Optional[ExploitCodeMaturityType], Field(alias='exploitCodeMaturity')] = None
+    remediation_level: Annotated[Optional[RemediationLevelType], Field(alias='remediationLevel')] = None
+    report_confidence: Annotated[Optional[ConfidenceType], Field(alias='reportConfidence')] = None
+    temporal_score: Annotated[Optional[ScoreType], Field(alias='temporalScore')] = None
+    temporal_severity: Annotated[Optional[SeverityType], Field(alias='temporalSeverity')] = None
     confidentiality_requirement: Annotated[
-        Optional[CiaRequirementType], Field(alias='confidentiality_requirement')
+        Optional[CiaRequirementType], Field(alias='confidentialityRequirement')
     ] = None
-    integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrity_requirement')] = None
-    availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availability_requirement')] = None
-    modified_attack_vector: Annotated[Optional[ModifiedAttackVectorType], Field(alias='modified_attack_vector')] = None
+    integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrityRequirement')] = None
+    availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availabilityRequirement')] = None
+    modified_attack_vector: Annotated[Optional[ModifiedAttackVectorType], Field(alias='modifiedAttackVector')] = None
     modified_attack_complexity: Annotated[
-        Optional[ModifiedAttackComplexityType], Field(alias='modified_attack_complexity')
+        Optional[ModifiedAttackComplexityType], Field(alias='modifiedAttackComplexity')
     ] = None
     modified_privileges_required: Annotated[
         Optional[ModifiedPrivilegesRequiredType],
-        Field(alias='modified_privileges_required'),
+        Field(alias='modifiedPrivilegesRequired'),
     ] = None
     modified_user_interaction: Annotated[
-        Optional[ModifiedUserInteractionType], Field(alias='modified_user_interaction')
+        Optional[ModifiedUserInteractionType], Field(alias='modifiedUserInteraction')
     ] = None
-    modified_scope: Annotated[Optional[ModifiedScopeType], Field(alias='modified_scope')] = None
+    modified_scope: Annotated[Optional[ModifiedScopeType], Field(alias='modifiedScope')] = None
     modified_confidentiality_impact: Annotated[
-        Optional[ModifiedCiaType], Field(alias='modified_confidentiality_impact')
+        Optional[ModifiedCiaType], Field(alias='modifiedConfidentialityImpact')
     ] = None
-    modified_integrity_impact: Annotated[Optional[ModifiedCiaType], Field(alias='modified_integrity_impact')] = None
-    modified_availability_impact: Annotated[
-        Optional[ModifiedCiaType], Field(alias='modified_availability_impact')
-    ] = None
-    environmental_score: Annotated[Optional[ScoreType], Field(alias='environmental_score')] = None
-    environmental_severity: Annotated[Optional[SeverityType], Field(alias='environmental_severity')] = None
+    modified_integrity_impact: Annotated[Optional[ModifiedCiaType], Field(alias='modifiedIntegrityImpact')] = None
+    modified_availability_impact: Annotated[Optional[ModifiedCiaType], Field(alias='modifiedAvailabilityImpact')] = None
+    environmental_score: Annotated[Optional[ScoreType], Field(alias='environmentalScore')] = None
+    environmental_severity: Annotated[Optional[SeverityType], Field(alias='environmentalSeverity')] = None
+
+    @no_type_check
+    def json(self, *args, **kwargs):
+        kwargs.setdefault('by_alias', True)
+        return super().json(*args, **kwargs)
