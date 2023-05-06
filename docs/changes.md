@@ -2,6 +2,7 @@
 
 ## Source
 
+* Fixed product_id should be a string (<https://todo.sr.ht/~sthagen/csaf/3>)
 * Migrated from orjson to msgspec
 
 ## 2022.3.20
