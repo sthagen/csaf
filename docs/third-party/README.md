@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([c1cc4763 ...](https://git.sr.ht/~sthagen/csaf/blob/default/sbom.json.sha256 "sha256:c1cc476308f85db7c91ccf94222332ffd00d395a71c9ca5d80d1051c492e4e14")).
-<!--[[[end]]] (checksum: 2b6e14509003d31d7f774ba7b0dd526b)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/sbom.json) with SHA256 checksum ([e59a3c2d ...](https://git.sr.ht/~sthagen/csaf/blob/default/sbom.json.sha256 "sha256:e59a3c2d5c1aa58528b696a263c4780da3177286619dc7b55a17e9d78c9941a1")).
+<!--[[[end]]] (checksum: 92df7c1e15e814aea6e85f2e1b66d09e)-->
 ## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -10,28 +10,29 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 ### Direct Dependencies
 
 <!--[[[fill direct_dependencies_table()]]]-->
-| Name                                                                               | Version                                               | License                                             | Author                                                              | Description (from packaging data)                                                                        |
-|:-----------------------------------------------------------------------------------|:------------------------------------------------------|:----------------------------------------------------|:--------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
-| [jmespath](https://github.com/jmespath/jmespath.py)                                | [1.0.1](https://pypi.org/project/jmespath/1.0.1/)     | MIT License                                         | James Saryerwinnie                                                  | JSON Matching Expressions                                                                                |
-| [jsonschema](https://github.com/python-jsonschema/jsonschema/blob/main/README.rst) | [4.17.3](https://pypi.org/project/jsonschema/4.17.3/) | MIT License                                         | Julian Berman                                                       | An implementation of JSON Schema validation for Python                                                   |
-| [langcodes](https://github.com/rspeer/langcodes)                                   | [3.3.0](https://pypi.org/project/langcodes/3.3.0/)    | MIT License                                         | Elia Robyn Speer                                                    | Tools for labeling human languages with IETF language tags                                               |
-| [lazr.uri](https://launchpad.net/lazr.uri)                                         | [1.0.6](https://pypi.org/project/lazr.uri/1.0.6/)     | GNU Library or Lesser General Public License (LGPL) | "LAZR Developers" team                                              | A self-contained, easily reusable library for parsing, manipulating,                                     |
-| [msgspec](https://jcristharif.com/msgspec/)                                        | [0.13.1](https://pypi.org/project/msgspec/0.13.1/)    | BSD License                                         | Jim Crist-Harif                                                     | A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML. |
-| [pydantic](https://github.com/pydantic/pydantic)                                   | [1.10.6](https://pypi.org/project/pydantic/1.10.6/)   | MIT License                                         | Samuel Colvin                                                       | Data validation and settings management using python type hints                                          |
-| [scooby](https://github.com/banesullivan/scooby)                                   | [0.7.1](https://pypi.org/project/scooby/0.7.1/)       | MIT License                                         | Dieter Werthmüller, Bane Sullivan, Alex Kaszynski, and contributors | A Great Dane turned Python environment detective                                                         |
-| [setuptools](https://github.com/pypa/setuptools)                                   | [67.6.0](https://pypi.org/project/setuptools/67.6.0/) | MIT License                                         | Python Packaging Authority                                          | Easily download, build, install, upgrade, and uninstall Python packages                                  |
-| [typer](https://github.com/tiangolo/typer)                                         | [0.7.0](https://pypi.org/project/typer/0.7.0/)        | MIT License                                         | Sebastián Ramírez                                                   | Typer, build great CLIs. Easy to code. Based on Python type hints.                                       |
-<!--[[[end]]] (checksum: 31962454d455898e4cfe5fd18d1f85a0)-->
+| Name                                                          | Version                                               | License                                             | Author                                                              | Description (from packaging data)                                                                        |
+|:--------------------------------------------------------------|:------------------------------------------------------|:----------------------------------------------------|:--------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
+| [jmespath](https://github.com/jmespath/jmespath.py)           | [1.0.1](https://pypi.org/project/jmespath/1.0.1/)     | MIT License                                         | James Saryerwinnie                                                  | JSON Matching Expressions                                                                                |
+| [jsonschema](https://github.com/python-jsonschema/jsonschema) | [4.17.3](https://pypi.org/project/jsonschema/4.17.3/) | MIT License                                         | Julian Berman                                                       | An implementation of JSON Schema validation for Python                                                   |
+| [langcodes](https://github.com/rspeer/langcodes)              | [3.3.0](https://pypi.org/project/langcodes/3.3.0/)    | MIT License                                         | Elia Robyn Speer                                                    | Tools for labeling human languages with IETF language tags                                               |
+| [lazr.uri](https://launchpad.net/lazr.uri)                    | [1.0.6](https://pypi.org/project/lazr.uri/1.0.6/)     | GNU Library or Lesser General Public License (LGPL) | "LAZR Developers" team                                              | A self-contained, easily reusable library for parsing, manipulating,                                     |
+| [msgspec](https://jcristharif.com/msgspec/)                   | [0.14.2](https://pypi.org/project/msgspec/0.14.2/)    | BSD License                                         | Jim Crist-Harif                                                     | A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML. |
+| [pydantic](https://github.com/pydantic/pydantic)              | [1.10.7](https://pypi.org/project/pydantic/1.10.7/)   | MIT License                                         | Samuel Colvin                                                       | Data validation and settings management using python type hints                                          |
+| [scooby](https://github.com/banesullivan/scooby)              | [0.7.2](https://pypi.org/project/scooby/0.7.2/)       | MIT License                                         | Dieter Werthmüller, Bane Sullivan, Alex Kaszynski, and contributors | A Great Dane turned Python environment detective                                                         |
+| [setuptools](https://github.com/pypa/setuptools)              | [67.7.2](https://pypi.org/project/setuptools/67.7.2/) | MIT License                                         | Python Packaging Authority                                          | Easily download, build, install, upgrade, and uninstall Python packages                                  |
+| [typer](https://github.com/tiangolo/typer)                    | [0.9.0](https://pypi.org/project/typer/0.9.0/)        | MIT License                                         | Sebastián Ramírez                                                   | Typer, build great CLIs. Easy to code. Based on Python type hints.                                       |
+<!--[[[end]]] (checksum: 56da3a41b30b3fb2ec8534b13ddf57b4)-->
 
 ### Indirect Dependencies
 
 <!--[[[fill indirect_dependencies_table()]]]-->
-| Name                                               | Version                                               | License     | Author            | Description (from packaging data)               |
-|:---------------------------------------------------|:------------------------------------------------------|:------------|:------------------|:------------------------------------------------|
-| [attrs](https://www.attrs.org/)                    | [22.2.0](https://pypi.org/project/attrs/22.2.0/)      | MIT License | Hynek Schlawack   | Classes Without Boilerplate                     |
-| [click](https://palletsprojects.com/p/click/)      | [8.1.3](https://pypi.org/project/click/8.1.3/)        | BSD License | Armin Ronacher    | Composable command line interface toolkit       |
-| [pyrsistent](https://github.com/tobgu/pyrsistent/) | [0.19.2](https://pypi.org/project/pyrsistent/0.19.2/) | MIT License | Tobias Gustafsson | Persistent/Functional/Immutable data structures |
-<!--[[[end]]] (checksum: 22645116ee18efb7104020003d445c8c)-->
+| Name                                                                    | Version                                                    | License                            | Author                                                                                | Description (from packaging data)                      |
+|:------------------------------------------------------------------------|:-----------------------------------------------------------|:-----------------------------------|:--------------------------------------------------------------------------------------|:-------------------------------------------------------|
+| [attrs](https://www.attrs.org/en/stable/changelog.html)                 | [23.1.0](https://pypi.org/project/attrs/23.1.0/)           | MIT License                        | Hynek Schlawack <hs@ox.cx>                                                            | Classes Without Boilerplate                            |
+| [click](https://palletsprojects.com/p/click/)                           | [8.1.3](https://pypi.org/project/click/8.1.3/)             | BSD License                        | Armin Ronacher                                                                        | Composable command line interface toolkit              |
+| [pyrsistent](https://github.com/tobgu/pyrsistent/)                      | [0.19.2](https://pypi.org/project/pyrsistent/0.19.2/)      | MIT License                        | Tobias Gustafsson                                                                     | Persistent/Functional/Immutable data structures        |
+| [typing_extensions](https://github.com/python/typing_extensions/issues) | [4.4.0](https://pypi.org/project/typing_extensions/4.4.0/) | Python Software Foundation License | "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee" <levkivskyi@gmail.com> | Backported and Experimental Type Hints for Python 3.7+ |
+<!--[[[end]]] (checksum: e580a31c95c9810aced74d78f6cc6ced)-->
 
 ## Dependency Tree(s)
 
@@ -49,16 +50,17 @@ Base graphviz file in dot format: [Trees of the direct dependencies](package-dep
 ````console
 jmespath==1.0.1
 jsonschema==4.17.3
-  - attrs [required: >=17.4.0, installed: 22.2.0]
+  - attrs [required: >=17.4.0, installed: 23.1.0]
   - pyrsistent [required: >=0.14.0,!=0.17.2,!=0.17.1,!=0.17.0, installed: 0.19.2]
 langcodes==3.3.0
 lazr.uri==1.0.6
-  - setuptools [required: Any, installed: 67.6.0]
-msgspec==0.13.1
-pydantic==1.10.6
+  - setuptools [required: Any, installed: 67.7.2]
+msgspec==0.14.2
+pydantic==1.10.7
   - typing-extensions [required: >=4.2.0, installed: 4.4.0]
-scooby==0.7.1
-typer==0.7.0
+scooby==0.7.2
+typer==0.9.0
   - click [required: >=7.1.1,<9.0.0, installed: 8.1.3]
+  - typing-extensions [required: >=3.7.4.3, installed: 4.4.0]
 ````
-<!--[[[end]]] (checksum: c4690527766708b63b55e7353f8c496b)-->
+<!--[[[end]]] (checksum: 1b34141a2e671506a32627e72fa1b707)-->
