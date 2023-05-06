@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# pylint: disable=line-too-long,missing-docstring,reimported,unused-import,unused-variable
 import pytest  # type: ignore
 
 import csaf.cli as cli
