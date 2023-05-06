@@ -203,7 +203,7 @@ class Products(BaseModel):
 
 
 class ReferenceTokenForProductInstance(BaseModel):
-    value: Annotated[
+    __root__: Annotated[
         str,
         Field(
             description=(
