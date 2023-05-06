@@ -1,8 +1,7 @@
 # Change History
 
-## 2023.5.6
-
-* Added contributors section to documentation
+2023.5.6
+:    * Added contributors section to documentation
 * Fixed product_id should be a string (<https://todo.sr.ht/~sthagen/csaf/3>)
 * Fixed the CVSS Keywords in Generated CSAF Documents (<https://todo.sr.ht/~sthagen/csaf/2>)
 * Migrated from orjson to msgspec
