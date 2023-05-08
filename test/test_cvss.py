@@ -13,8 +13,9 @@ JSON = json.dumps(DATA)
 
 
 def test_cvss31_minimal():
+    vector_string = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H'
     expected_value = (
-        '{"version": "3.1", "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H", "attackVector": null,'
+        f'{{"version": "3.1", "vectorString": "{vector_string}", "attackVector": null,'
         ' "attackComplexity": null, "privilegesRequired": null, "userInteraction": null, "scope": null,'
         ' "confidentialityImpact": null, "integrityImpact": null, "availabilityImpact": null, "baseScore": 10.0,'
         ' "baseSeverity": "CRITICAL", "exploitCodeMaturity": null, "remediationLevel": null, "reportConfidence": null,'
@@ -26,6 +27,13 @@ def test_cvss31_minimal():
     )
     c31 = cvss.CVSS31.parse_raw(JSON)
     assert c31.json() == expected_value
+    assert c31.vector_string == vector_string
+
+    json_lines = c31.json(indent=2).split('\n')
+    json_rep_of_vs = [line for line in json_lines if 'vectorString' in line]
+    assert len(json_rep_of_vs) == 1
+    assert vector_string in json_rep_of_vs[0]
+    assert '"vectorString":' in json_rep_of_vs[0]
 
     expected_schema = {
         'title': 'CVSS31',
