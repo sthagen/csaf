@@ -1,5 +1,8 @@
 # Change History
 
+2023.5.9
+:    * Fixed top level aggregator to consume and produce camelCase CVSS keys.
+
 2923.5.8
 :    * Fixed CVSS camelCase keyword propagation as mix-ins of score and vulnerability
   objects (https://todo.sr.ht/~sthagen/csaf/2#event-237257)
