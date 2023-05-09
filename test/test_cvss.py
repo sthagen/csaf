@@ -39,13 +39,7 @@ def test_cvss31_minimal():
         'title': 'CVSS31',
         'type': 'object',
         'properties': {
-            'version': {
-                'description': 'CVSS Version',
-                'default': '3.1',
-                'allOf': [
-                    {'$ref': '#/definitions/Version'}
-                ]
-            },
+            'version': {'description': 'CVSS Version', 'default': '3.1', 'allOf': [{'$ref': '#/definitions/Version'}]},
             'vectorString': {
                 'title': 'Vectorstring',
                 'pattern': (
@@ -54,7 +48,7 @@ def test_cvss31_minimal():
                     '(AV:[NALP]|AC:[LH]|PR:[NLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|[CIA]R:'
                     '[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])$'
                 ),
-                'type': 'string'
+                'type': 'string',
             },
             'attackVector': {'$ref': '#/definitions/AttackVectorType'},
             'attackComplexity': {'$ref': '#/definitions/AttackComplexityType'},
@@ -83,99 +77,89 @@ def test_cvss31_minimal():
             'modifiedIntegrityImpact': {'$ref': '#/definitions/ModifiedCiaType'},
             'modifiedAvailabilityImpact': {'$ref': '#/definitions/ModifiedCiaType'},
             'environmentalScore': {'$ref': '#/definitions/ScoreType'},
-            'environmentalSeverity': {'$ref': '#/definitions/SeverityType'}
+            'environmentalSeverity': {'$ref': '#/definitions/SeverityType'},
         },
         'required': ['vectorString', 'baseScore', 'baseSeverity'],
         'definitions': {
-            'Version': {
-                'title': 'Version',
-                'description': 'CVSS Version',
-                'enum': ['2.0', '3.0', '3.1']
-            },
+            'Version': {'title': 'Version', 'description': 'CVSS Version', 'enum': ['2.0', '3.0', '3.1']},
             'AttackVectorType': {
                 'title': 'AttackVectorType',
                 'description': 'An enumeration.',
-                'enum': ['NETWORK', 'ADJACENT_NETWORK', 'LOCAL', 'PHYSICAL']
+                'enum': ['NETWORK', 'ADJACENT_NETWORK', 'LOCAL', 'PHYSICAL'],
             },
             'AttackComplexityType': {
                 'title': 'AttackComplexityType',
                 'description': 'An enumeration.',
-                'enum': ['HIGH', 'LOW']
+                'enum': ['HIGH', 'LOW'],
             },
             'PrivilegesRequiredType': {
                 'title': 'PrivilegesRequiredType',
                 'description': 'An enumeration.',
-                'enum': ['HIGH', 'LOW', 'NONE']
+                'enum': ['HIGH', 'LOW', 'NONE'],
             },
             'UserInteractionType': {
                 'title': 'UserInteractionType',
                 'description': 'An enumeration.',
-                'enum': ['NONE', 'REQUIRED']
+                'enum': ['NONE', 'REQUIRED'],
             },
-            'ScopeType': {
-                'title': 'ScopeType',
-                'description': 'An enumeration.',
-                'enum': ['UNCHANGED', 'CHANGED']
-            },
-            'CiaType': {
-                'title': 'CiaType',
-                'description': 'An enumeration.',
-                'enum': ['NONE', 'PARTIAL', 'COMPLETE']
-            },
-            'ScoreType': {
-                'title': 'ScoreType',
-                'minimum': 0.0,
-                'maximum': 10.0,
-                'type': 'number'
-            },
+            'ScopeType': {'title': 'ScopeType', 'description': 'An enumeration.', 'enum': ['UNCHANGED', 'CHANGED']},
+            'CiaType': {'title': 'CiaType', 'description': 'An enumeration.', 'enum': ['NONE', 'PARTIAL', 'COMPLETE']},
+            'ScoreType': {'title': 'ScoreType', 'minimum': 0.0, 'maximum': 10.0, 'type': 'number'},
             'SeverityType': {
                 'title': 'SeverityType',
                 'description': 'An enumeration.',
-                'enum': ['NONE', 'LOW', 'MEDIUM', 'HIGH', 'CRITICAL']
+                'enum': ['NONE', 'LOW', 'MEDIUM', 'HIGH', 'CRITICAL'],
             },
             'ExploitCodeMaturityType': {
                 'title': 'ExploitCodeMaturityType',
                 'description': 'An enumeration.',
-                'enum': ['UNPROVEN', 'PROOF_OF_CONCEPT', 'FUNCTIONAL', 'HIGH', 'NOT_DEFINED']
+                'enum': ['UNPROVEN', 'PROOF_OF_CONCEPT', 'FUNCTIONAL', 'HIGH', 'NOT_DEFINED'],
             },
             'RemediationLevelType': {
-                'title': 'RemediationLevelType', 'description': 'An enumeration.',
-                'enum': ['OFFICIAL_FIX', 'TEMPORARY_FIX', 'WORKAROUND', 'UNAVAILABLE',
-                         'NOT_DEFINED']
+                'title': 'RemediationLevelType',
+                'description': 'An enumeration.',
+                'enum': ['OFFICIAL_FIX', 'TEMPORARY_FIX', 'WORKAROUND', 'UNAVAILABLE', 'NOT_DEFINED'],
             },
             'ConfidenceType': {
-                'title': 'ConfidenceType', 'description': 'An enumeration.',
-                'enum': ['UNKNOWN', 'REASONABLE', 'CONFIRMED', 'NOT_DEFINED']
+                'title': 'ConfidenceType',
+                'description': 'An enumeration.',
+                'enum': ['UNKNOWN', 'REASONABLE', 'CONFIRMED', 'NOT_DEFINED'],
             },
             'CiaRequirementType': {
-                'title': 'CiaRequirementType', 'description': 'An enumeration.',
-                'enum': ['LOW', 'MEDIUM', 'HIGH', 'NOT_DEFINED']
+                'title': 'CiaRequirementType',
+                'description': 'An enumeration.',
+                'enum': ['LOW', 'MEDIUM', 'HIGH', 'NOT_DEFINED'],
             },
             'ModifiedAttackVectorType': {
-                'title': 'ModifiedAttackVectorType', 'description': 'An enumeration.',
-                'enum': ['NETWORK', 'ADJACENT_NETWORK', 'LOCAL', 'PHYSICAL', 'NOT_DEFINED']
+                'title': 'ModifiedAttackVectorType',
+                'description': 'An enumeration.',
+                'enum': ['NETWORK', 'ADJACENT_NETWORK', 'LOCAL', 'PHYSICAL', 'NOT_DEFINED'],
             },
             'ModifiedAttackComplexityType': {
-                'title': 'ModifiedAttackComplexityType', 'description': 'An enumeration.',
-                'enum': ['HIGH', 'LOW', 'NOT_DEFINED']
+                'title': 'ModifiedAttackComplexityType',
+                'description': 'An enumeration.',
+                'enum': ['HIGH', 'LOW', 'NOT_DEFINED'],
             },
             'ModifiedPrivilegesRequiredType': {
                 'title': 'ModifiedPrivilegesRequiredType',
                 'description': 'An enumeration.',
-                'enum': ['HIGH', 'LOW', 'NONE', 'NOT_DEFINED']
+                'enum': ['HIGH', 'LOW', 'NONE', 'NOT_DEFINED'],
             },
             'ModifiedUserInteractionType': {
-                'title': 'ModifiedUserInteractionType', 'description': 'An enumeration.',
-                'enum': ['NONE', 'REQUIRED', 'NOT_DEFINED']
+                'title': 'ModifiedUserInteractionType',
+                'description': 'An enumeration.',
+                'enum': ['NONE', 'REQUIRED', 'NOT_DEFINED'],
             },
             'ModifiedScopeType': {
-                'title': 'ModifiedScopeType', 'description': 'An enumeration.',
-                'enum': ['UNCHANGED', 'CHANGED', 'NOT_DEFINED']
+                'title': 'ModifiedScopeType',
+                'description': 'An enumeration.',
+                'enum': ['UNCHANGED', 'CHANGED', 'NOT_DEFINED'],
             },
             'ModifiedCiaType': {
-                'title': 'ModifiedCiaType', 'description': 'An enumeration.',
-                'enum': ['NONE', 'LOW', 'HIGH', 'NOT_DEFINED']
-            }
-        }
+                'title': 'ModifiedCiaType',
+                'description': 'An enumeration.',
+                'enum': ['NONE', 'LOW', 'HIGH', 'NOT_DEFINED'],
+            },
+        },
     }
     assert c31.schema(by_alias=True) == expected_schema
