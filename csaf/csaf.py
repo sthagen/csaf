@@ -71,6 +71,11 @@ class CSAF(BaseModel):
     ]
 
     @no_type_check
+    def json(self, *args, **kwargs):
+        kwargs.setdefault('by_alias', True)
+        return super().json(*args, **kwargs)
+
+    @no_type_check
     @validator('vulnerabilities')
     @classmethod
     def check_len(cls, v):
