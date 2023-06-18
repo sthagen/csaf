@@ -28,8 +28,8 @@ class AuthenticationType(Enum):
 
 class CiaType(Enum):
     none = 'NONE'
-    partial = 'PARTIAL'
-    complete = 'COMPLETE'
+    low = 'LOW'
+    high = 'HIGH'
 
 
 class ExploitabilityType(Enum):

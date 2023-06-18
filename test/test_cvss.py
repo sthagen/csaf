@@ -103,7 +103,7 @@ def test_cvss31_minimal():
                 'enum': ['NONE', 'REQUIRED'],
             },
             'ScopeType': {'title': 'ScopeType', 'description': 'An enumeration.', 'enum': ['UNCHANGED', 'CHANGED']},
-            'CiaType': {'title': 'CiaType', 'description': 'An enumeration.', 'enum': ['NONE', 'PARTIAL', 'COMPLETE']},
+            'CiaType': {'title': 'CiaType', 'description': 'An enumeration.', 'enum': ['NONE', 'LOW', 'HIGH']},
             'ScoreType': {'title': 'ScoreType', 'minimum': 0.0, 'maximum': 10.0, 'type': 'number'},
             'SeverityType': {
                 'title': 'SeverityType',
