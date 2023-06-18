@@ -1,7 +1,8 @@
 # Change History
 
 2023.6.18
-:    * Moved SBOM noise into folder and added SPDX SBOM (derived) in multiple file formats
+:    * Fixed validation failures for CVSS of upstream BSI example (<https://todo.sr.ht/~sthagen/csaf/4>)
+* Moved SBOM noise into folder and added SPDX SBOM (derived) in multiple file formats
 
 2023.5.9
 :    * Fixed top level aggregator to consume and produce camelCase CVSS keys.
