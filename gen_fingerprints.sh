@@ -5,8 +5,12 @@
 path="${1}"
 [ -f "${path}" ] || exit 1
 printf "%s artifact:%s:\n\n" "-" "${path}"
-printf "  + %s:" "blake3"
+printf "  + %s:" "blake2"
+b2sum "${path}" | cut -f 1 -d ' ' | tr -d "\n"
+printf "\n  + %s:" "blake3"
 b3sum "${path}" | cut -f 1 -d ' ' | tr -d "\n"
+printf "\n  + %s:" "bytes"
+wc -c < "${path}" | tr -d "\n" | tr -d " "
 printf "\n  + %s:" "crc32"
 crc32 "${path}" | tr -d "\n"
 printf "\n  + %s:" "entropy"
@@ -25,13 +29,12 @@ printf "\n  + %s:(" "mime-type"
 file --mime-type "${path}" | cut -f 2- -d ':' | cut -c 2- | tr -d "\n"
 printf ")\n"
 for h in sha sha256 sha384 sha512
-do 
+do
     printf "  + %s:" "${h}"
     ${h}sum "${path}" | cut -f 1 -d ' '
 done
 printf "  + %s:" "ssdeep"
-ssdeep "${path}" | grep -v ssdeep | cut -f 1 -d ',' | tr -d "\n"
+ssdeep "${path}" 2>&1 | grep -v -e ssdeep -e "large enough" | cut -f 1 -d ',' | tr -d "\n"
 printf "\n  + %s:" "tlsh"
 tlsh -f "${path}" | cut -f 1 | tr -d "\n"
 printf "\n"
-
