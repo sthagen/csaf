@@ -17,6 +17,7 @@ Third party dependencies are documented in the folder [third-party](third-party/
 [![wheel](https://img.shields.io/pypi/wheel/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
+[![maintenance-status](https://img.shields.io/github/commit-activity/y/sthagen/csaf.svg?style=flat)](https://git.sr.ht/~sthagen/csaf/log)
 
 ## Bug Tracker
 
