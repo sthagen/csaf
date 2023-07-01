@@ -1,27 +1,28 @@
-"""Calculate (Finnish: laskea) some parts."""
+"""Common Security Advisory Framework (CSAF) Verification and Validation."""
 import logging
 import os
 import pathlib
 from typing import no_type_check
 
-APP_ALIAS = 'csaf'
 APP_BLURB = (
     'Common Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API).'
 )
-APP_ENV = 'CSAF'
-APP_NAME = 'Common Security Advisory Framework (CSAF) Verification and Validation.'
+
+APP_ALIAS = str(pathlib.Path(__file__).parent.name)
+APP_ENV = APP_ALIAS.upper()
+APP_NAME = locals()['__doc__']
+DEBUG = bool(os.getenv(f'{APP_ENV}_DEBUG', ''))
+VERBOSE = bool(os.getenv(f'{APP_ENV}_VERBOSE', ''))
+STRICT = bool(os.getenv(f'{APP_ENV}_STRICT', ''))
 ENCODING = 'utf-8'
 ENCODING_ERRORS_POLICY = 'ignore'
-FAKE_SECRET = '*' * 13
-
 DEFAULT_CONFIG_NAME = f'.{APP_ALIAS}.json'
 
+FAKE_SECRET = '*' * 13
+
 BAIL_OUT = bool(os.getenv(f'{APP_ENV}_BAIL_OUT', ''))
-DEBUG = bool(os.getenv(f'{APP_ENV}_DEBUG', ''))
 DRY_RUN = bool(os.getenv(f'{APP_ENV}_DRY_RUN', ''))
 QUIET = bool(os.getenv(f'{APP_ENV}_QUIET', ''))
-STRICT = bool(os.getenv(f'{APP_ENV}_STRICT', ''))
-VERBOSE = bool(os.getenv(f'{APP_ENV}_VERBOSE', ''))
 
 log = logging.getLogger()  # Temporary refactoring: module level logger
 LOG_FOLDER = pathlib.Path('logs')
