@@ -5,10 +5,10 @@ version: 2022.3.12
 spec_version: 1.0
 home_url: https://github.com/sthagen/csaf
 news_url: https://libraries.io/pypi/csaf/versions.atom
-date: 2022-03-13
+date: 2023-06-18
 about_resource: ./
-libraries_io_url: https://libraries.io/pypi/csaf?number=2022.3.12
+libraries_io_url: https://libraries.io/pypi/csaf?number=2023.6.18
 vcs_tool: git
-vcs_repository: https://github.com/sthagen/csaf
+vcs_repository: https://git.sr.ht/~sthagen/csaf
 vcs_branch: default
 
