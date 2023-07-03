@@ -1,5 +1,7 @@
 site_name: CSAF
-site_description: Yes, another such thing.
+site_description: "Common Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API)."
+docs_dir: ../docs
+site_dir: ../site
 
 theme:
   name: 'material'
