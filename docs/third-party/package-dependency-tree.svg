@@ -69,7 +69,7 @@
 <title>setuptools</title>
 <ellipse fill="none" stroke="black" cx="471.32" cy="-25.81" rx="50.03" ry="25.81"/>
 <text text-anchor="middle" x="471.32" y="-26.76" font-family="Times,serif" font-size="14.00">setuptools</text>
-<text text-anchor="middle" x="471.32" y="-12.51" font-family="Times,serif" font-size="14.00">67.8.0</text>
+<text text-anchor="middle" x="471.32" y="-12.51" font-family="Times,serif" font-size="14.00">68.0.0</text>
 </g>
 <!-- lazr.uri&#45;&gt;setuptools -->
 <g id="edge3" class="edge">
@@ -90,7 +90,7 @@
 <title>pydantic</title>
 <ellipse fill="none" stroke="black" cx="679.32" cy="-127.68" rx="44.19" ry="25.81"/>
 <text text-anchor="middle" x="679.32" y="-128.63" font-family="Times,serif" font-size="14.00">pydantic</text>
-<text text-anchor="middle" x="679.32" y="-114.38" font-family="Times,serif" font-size="14.00">1.10.9</text>
+<text text-anchor="middle" x="679.32" y="-114.38" font-family="Times,serif" font-size="14.00">1.10.10</text>
 </g>
 <!-- typing&#45;extensions -->
 <g id="node10" class="node">

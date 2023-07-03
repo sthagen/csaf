@@ -44,7 +44,7 @@
             {
                 "key": "setuptools",
                 "package_name": "setuptools",
-                "installed_version": "67.8.0",
+                "installed_version": "68.0.0",
                 "required_version": "Any",
                 "dependencies": []
             }
@@ -60,8 +60,8 @@
     {
         "key": "pydantic",
         "package_name": "pydantic",
-        "installed_version": "1.10.9",
-        "required_version": "1.10.9",
+        "installed_version": "1.10.10",
+        "required_version": "1.10.10",
         "dependencies": [
             {
                 "key": "typing-extensions",
