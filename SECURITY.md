@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Versions of laskea currently being supported with security updates.
+Versions of csaf currently being supported with security updates.
 
 | Version(s)  | Supported |
 |:----------- |:--------- |
