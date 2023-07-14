@@ -68,7 +68,8 @@ baseline:
 
 .PHONY: clocal
 clocal:
-	rm -f .csaf_cache.sqlite
+	@rm -rf .benchmarks .hypothesis .*_cache
+	@rm -f .csaf_cache.sqlite
 
 .PHONY: clean
 clean:  clocal
