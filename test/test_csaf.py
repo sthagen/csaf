@@ -215,7 +215,7 @@ JSON = json.dumps(DATA)
 
 
 def test_csaf_minimal():
-    doc = api.CSAF.parse_raw(JSON)
+    doc = api.CSAF.model_validate_json(JSON)
     json_lines = doc.json(indent=2).split('\n')
     json_rep_of_vs = [line for line in json_lines if 'vectorString' in line]
     assert len(json_rep_of_vs) == 1

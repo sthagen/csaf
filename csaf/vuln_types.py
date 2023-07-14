@@ -5,7 +5,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Annotated
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, RootModel
 
 
 class AccessVectorType(Enum):
@@ -162,8 +162,8 @@ class ConfidenceType(Enum):
     not_defined = 'NOT_DEFINED'
 
 
-class ScoreType(BaseModel):
-    __root__: Annotated[float, Field(ge=0.0, le=10.0)]
+class ScoreType(RootModel[Annotated[float, Field(ge=0.0, le=10.0)]]):
+    pass
 
 
 class SeverityType(Enum):

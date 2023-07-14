@@ -5,7 +5,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Annotated, Optional, no_type_check
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, RootModel
 
 from csaf.vuln_types import (
     AccessComplexityType,
@@ -34,8 +34,8 @@ from csaf.vuln_types import (
 )
 
 
-class ScoreType(BaseModel):
-    __root__: Annotated[float, Field(ge=0.0, le=10.0)]
+class ScoreType(RootModel[Annotated[float, Field(ge=0.0, le=10.0)]]):
+    pass
 
 
 class SeverityType(Enum):
@@ -96,7 +96,7 @@ class CVSS2(BaseModel):
     @no_type_check
     def json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
-        return super().json(*args, **kwargs)
+        return super().model_dump_json(*args, **kwargs)
 
 
 class CVSS30(BaseModel):
@@ -156,7 +156,7 @@ class CVSS30(BaseModel):
     @no_type_check
     def json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
-        return super().json(*args, **kwargs)
+        return super().model_dump_json(*args, **kwargs)
 
 
 class CVSS31(BaseModel):
@@ -216,4 +216,4 @@ class CVSS31(BaseModel):
     @no_type_check
     def json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
-        return super().json(*args, **kwargs)
+        return super().model_dump_json(*args, **kwargs)

@@ -6,7 +6,7 @@ from collections.abc import Sequence
 from enum import Enum
 from typing import Annotated, List, Optional, no_type_check
 
-from pydantic import field_validator, BaseModel, Field
+from pydantic import BaseModel, Field, RootModel, field_validator, model_validator
 
 from csaf.definitions import AnyUrl, Products, ReferenceTokenForProductGroupInstance, ReferenceTokenForProductInstance
 
@@ -67,10 +67,9 @@ class CryptographicHashes(BaseModel):
         ),
     ]
 
+    @classmethod
     @no_type_check
     @field_validator('file_hashes', 'filename')
-    @classmethod
-    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')
@@ -96,29 +95,37 @@ class GenericUri(BaseModel):
     uri: Annotated[AnyUrl, Field(description='Contains the identifier itself.', title='URI')]
 
 
-class SerialNumber(BaseModel):
-    __root__: Annotated[
-        str,
-        Field(
-            description='Contains a part, or a full serial number of the component to identify.',
-            min_length=1,
-            title='Serial number',
-        ),
-    ]
-
-
-class StockKeepingUnit(BaseModel):
-    __root__: Annotated[
-        str,
-        Field(
-            description=(
-                'Contains a part, or a full stock keeping unit (SKU) which is used in the ordering process'
-                ' to identify the component.'
+class SerialNumber(
+    RootModel[
+        Annotated[
+            str,
+            Field(
+                description='Contains a part, or a full serial number of the component to identify.',
+                min_length=1,
+                title='Serial number',
             ),
-            min_length=1,
-            title='Stock keeping unit',
-        ),
+        ]
     ]
+):
+    pass
+
+
+class StockKeepingUnit(
+    RootModel[
+        Annotated[
+            str,
+            Field(
+                description=(
+                    'Contains a part, or a full stock keeping unit (SKU) which is used in the ordering process'
+                    ' to identify the component.'
+                ),
+                min_length=1,
+                title='Stock keeping unit',
+            ),
+        ]
+    ]
+):
+    pass
 
 
 class HelperToIdentifyTheProduct(BaseModel):
@@ -200,19 +207,17 @@ class HelperToIdentifyTheProduct(BaseModel):
         ),
     ] = None
 
+    @classmethod
     @no_type_check
     @field_validator('hashes', 'sbom_urls', 'serial_numbers', 'skus', 'x_generic_uris')
-    @classmethod
-    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('optional element present but empty')
         return v
 
+    @classmethod
     @no_type_check
     @field_validator('purl')
-    @classmethod
-    @classmethod
     def check_purl(cls, v):
         if not v or len(v) < 7:
             raise ValueError('optional purl element present but too short')
@@ -279,10 +284,9 @@ class ProductGroup(BaseModel):
         ),
     ] = None
 
+    @classmethod
     @no_type_check
     @field_validator('product_ids')
-    @classmethod
-    @classmethod
     def check_len(cls, v):
         if len(v) < 2:
             raise ValueError('mandatory element present but too few items')
@@ -438,10 +442,9 @@ class ProductTree(BaseModel):
         ),
     ]
 
+    @classmethod
     @no_type_check
     @field_validator('full_product_names', 'product_groups', 'relationships')
-    @classmethod
-    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('optional element present but empty')
@@ -500,30 +503,29 @@ class Branch(BaseModel):
     product: Optional[FullProductName] = None
 
 
-class Branches(BaseModel):
-    """
-    Contains branch elements as children of the current element.
-    """
-
-    __root__: Annotated[
-        List[Branch],
-        Field(
-            description='Contains branch elements as children of the current element.',
-            min_length=1,
-            title='List of branches',
-        ),
+class Branches(
+    RootModel[
+        Annotated[
+            List[Branch],
+            Field(
+                description='Contains branch elements as children of the current element.',
+                min_length=1,
+                title='List of branches',
+            ),
+        ]
     ]
+):
+    """Contains branch elements as children of the current element."""
 
+    @classmethod
     @no_type_check
-    @field_validator('__root__')
-    @classmethod
-    @classmethod
+    @model_validator(mode='before')
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')
         return v
 
 
-Branch.update_forward_refs()
-FullProductName.update_forward_refs()
-ProductTree.update_forward_refs()
+Branch.model_rebuild()
+FullProductName.model_rebuild()
+ProductTree.model_rebuild()

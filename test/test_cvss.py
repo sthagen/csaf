@@ -25,7 +25,7 @@ def test_cvss31_minimal():
         ' "modifiedScope": null, "modifiedConfidentialityImpact": null, "modifiedIntegrityImpact": null,'
         ' "modifiedAvailabilityImpact": null, "environmentalScore": null, "environmentalSeverity": null}'
     )
-    c31 = cvss.CVSS31.parse_raw(JSON)
+    c31 = cvss.CVSS31.model_validate_json(JSON)
     assert c31.json() == expected_value
     assert c31.vector_string == vector_string
 
@@ -162,4 +162,4 @@ def test_cvss31_minimal():
             },
         },
     }
-    assert c31.schema(by_alias=True) == expected_schema
+    assert c31.model_json_schema(by_alias=True) == expected_schema

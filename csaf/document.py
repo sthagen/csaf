@@ -5,7 +5,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Annotated, List, Optional, no_type_check
 
-from pydantic import field_validator, AnyUrl, BaseModel, Field
+from pydantic import AnyUrl, BaseModel, Field, RootModel, field_validator
 
 from csaf.definitions import Acknowledgments, Lang, Notes, References, Version
 
@@ -99,10 +99,9 @@ class Tracking(BaseModel):
     ]
     version: Version
 
+    @classmethod
     @no_type_check
     @field_validator('revision_history')
-    @classmethod
-    @classmethod
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')
@@ -175,7 +174,7 @@ class TrafficLightProtocol(BaseModel):
             ],
             title='URL of TLP version',
         ),
-    ] = AnyUrl(url='https://www.first.org/tlp/', host='www.first.org', scheme='https')
+    ] = AnyUrl(url='https://www.first.org/tlp/')
 
 
 class Distribution(BaseModel):
@@ -272,17 +271,21 @@ class Publisher(BaseModel):
     ]
 
 
-class Alias(BaseModel):
-    __root__: Annotated[
-        str,
-        Field(
-            description='Specifies a non-empty string that represents a distinct optional alternative ID used to'
-            ' refer to the document.',
-            examples=['CVE-2019-12345'],
-            min_length=1,
-            title='Alternate name',
-        ),
+class Alias(
+    RootModel[
+        Annotated[
+            str,
+            Field(
+                description='Specifies a non-empty string that represents a distinct optional alternative ID used to'
+                ' refer to the document.',
+                examples=['CVE-2019-12345'],
+                min_length=1,
+                title='Alternate name',
+            ),
+        ]
     ]
+):
+    pass
 
 
 class Engine(BaseModel):
@@ -468,4 +471,4 @@ class Document(BaseModel):
     ]
 
 
-Tracking.update_forward_refs()
+Tracking.model_rebuild()
