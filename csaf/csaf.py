@@ -17,7 +17,7 @@ import jmespath
 import msgspec
 from langcodes import tag_is_valid
 from lazr.uri import URI, InvalidURIError  # type: ignore
-from pydantic import BaseModel, Field, validator
+from pydantic import field_validator, BaseModel, Field
 
 import csaf
 from csaf import log
@@ -65,7 +65,7 @@ class CSAF(BaseModel):
         Optional[List[Vulnerability]],
         Field(
             description='Represents a list of all relevant vulnerability information items.',
-            min_items=1,
+            min_length=1,
             title='Vulnerabilities',
         ),
     ]
@@ -76,7 +76,8 @@ class CSAF(BaseModel):
         return super().json(*args, **kwargs)
 
     @no_type_check
-    @validator('vulnerabilities')
+    @field_validator('vulnerabilities')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:

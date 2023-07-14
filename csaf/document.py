@@ -5,7 +5,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Annotated, List, Optional, no_type_check
 
-from pydantic import AnyUrl, BaseModel, Field, validator
+from pydantic import field_validator, AnyUrl, BaseModel, Field
 
 from csaf.definitions import Acknowledgments, Lang, Notes, References, Version
 
@@ -40,7 +40,7 @@ class Tracking(BaseModel):
         Optional[List[Alias]],
         Field(
             description='Contains a list of alternate names for the same document.',
-            min_items=1,
+            min_length=1,
             title='Aliases',
         ),
     ]
@@ -86,7 +86,7 @@ class Tracking(BaseModel):
         List[Revision],
         Field(
             description='Holds one revision item for each version of the CSAF document, including the initial one.',
-            min_items=1,
+            min_length=1,
             title='Revision history',
         ),
     ]
@@ -100,7 +100,8 @@ class Tracking(BaseModel):
     version: Version
 
     @no_type_check
-    @validator('revision_history')
+    @field_validator('revision_history')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:

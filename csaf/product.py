@@ -6,7 +6,7 @@ from collections.abc import Sequence
 from enum import Enum
 from typing import Annotated, List, Optional, no_type_check
 
-from pydantic import BaseModel, Field, validator
+from pydantic import field_validator, BaseModel, Field
 
 from csaf.definitions import AnyUrl, Products, ReferenceTokenForProductGroupInstance, ReferenceTokenForProductInstance
 
@@ -38,7 +38,7 @@ class FileHash(BaseModel):
                 '9ea4c8200113d49d26505da0e02e2f49055dc078d1ad7a419b32e291c7afebbb84badfbd46dec42883bea0b2a1fa697c',
             ],
             min_length=32,
-            regex='^[0-9a-fA-F]{32,}$',
+            pattern='^[0-9a-fA-F]{32,}$',
             title='Value of the cryptographic hash',
         ),
     ]
@@ -68,7 +68,8 @@ class CryptographicHashes(BaseModel):
     ]
 
     @no_type_check
-    @validator('file_hashes', 'filename')
+    @field_validator('file_hashes', 'filename')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -133,7 +134,7 @@ class HelperToIdentifyTheProduct(BaseModel):
                 ' to this specification.'
             ),
             min_length=5,
-            regex=(
+            pattern=(
                 '^(cpe:2\\.3:[aho\\*\\-](:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|'
                 '(\\\\[\\\\\\*\\?!"#\\$%&\'\\(\\)\\+,/:;<=>@\\[\\]\\^`\\{\\|\\}~]))+(\\?*|\\*?))|[\\*\\-])){5}'
                 '(:(([a-zA-Z]{2,3}(-([a-zA-Z]{2}|[0-9]{3}))?)|[\\*\\-]))(:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|'
@@ -200,7 +201,8 @@ class HelperToIdentifyTheProduct(BaseModel):
     ] = None
 
     @no_type_check
-    @validator('hashes', 'sbom_urls', 'serial_numbers', 'skus', 'x_generic_uris')
+    @field_validator('hashes', 'sbom_urls', 'serial_numbers', 'skus', 'x_generic_uris')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -208,7 +210,8 @@ class HelperToIdentifyTheProduct(BaseModel):
         return v
 
     @no_type_check
-    @validator('purl')
+    @field_validator('purl')
+    @classmethod
     @classmethod
     def check_purl(cls, v):
         if not v or len(v) < 7:
@@ -277,7 +280,8 @@ class ProductGroup(BaseModel):
     ] = None
 
     @no_type_check
-    @validator('product_ids')
+    @field_validator('product_ids')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if len(v) < 2:
@@ -408,12 +412,12 @@ class ProductTree(BaseModel):
     Is a container for all fully qualified product names that can be referenced elsewhere in the document.
     """
 
-    branches: Optional[Branches]
+    branches: Optional[Branches] = None
     full_product_names: Annotated[
         Optional[List[FullProductName]],
         Field(
             description='Contains a list of full product names.',
-            min_items=1,
+            min_length=1,
             title='List of full product names',
         ),
     ]
@@ -421,7 +425,7 @@ class ProductTree(BaseModel):
         Optional[List[ProductGroup]],
         Field(
             description='Contains a list of product groups.',
-            min_items=1,
+            min_length=1,
             title='List of product groups',
         ),
     ]
@@ -429,13 +433,14 @@ class ProductTree(BaseModel):
         Optional[List[Relationship]],
         Field(
             description='Contains a list of relationships.',
-            min_items=1,
+            min_length=1,
             title='List of relationships',
         ),
     ]
 
     @no_type_check
-    @validator('full_product_names', 'product_groups', 'relationships')
+    @field_validator('full_product_names', 'product_groups', 'relationships')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -466,7 +471,7 @@ class Branch(BaseModel):
     Is a part of the hierarchical structure of the product tree.
     """
 
-    branches: Optional[Branches]
+    branches: Optional[Branches] = None
     category: Annotated[
         BranchCategory,
         Field(
@@ -492,7 +497,7 @@ class Branch(BaseModel):
             title='Name of the branch',
         ),
     ]
-    product: Optional[FullProductName]
+    product: Optional[FullProductName] = None
 
 
 class Branches(BaseModel):
@@ -504,13 +509,14 @@ class Branches(BaseModel):
         List[Branch],
         Field(
             description='Contains branch elements as children of the current element.',
-            min_items=1,
+            min_length=1,
             title='List of branches',
         ),
     ]
 
     @no_type_check
-    @validator('__root__')
+    @field_validator('__root__')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:

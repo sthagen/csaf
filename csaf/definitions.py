@@ -5,7 +5,7 @@ from collections.abc import Sequence
 from enum import Enum
 from typing import Annotated, List, Optional, no_type_check
 
-from pydantic import AnyUrl, BaseModel, Field, validator
+from pydantic import field_validator, AnyUrl, BaseModel, Field
 
 
 class Id(BaseModel):
@@ -55,7 +55,7 @@ class Acknowledgment(BaseModel):
         Optional[List[Name]],
         Field(
             description='Contains the names of entities being recognized.',
-            min_items=1,
+            min_length=1,
             title='List of acknowledged names',
         ),
     ]
@@ -82,13 +82,14 @@ class Acknowledgment(BaseModel):
         Optional[List[AnyUrl]],
         Field(
             description='Specifies a list of URLs or location of the reference to be acknowledged.',
-            min_items=1,
+            min_length=1,
             title='List of URLs',
         ),
     ]
 
     @no_type_check
-    @validator('names', 'organization', 'summary', 'urls')
+    @field_validator('names', 'organization', 'summary', 'urls')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -105,13 +106,14 @@ class Acknowledgments(BaseModel):
         List[Acknowledgment],
         Field(
             description='Contains a list of acknowledgment elements.',
-            min_items=1,
+            min_length=1,
             title='List of acknowledgments',
         ),
     ]
 
     @no_type_check
-    @validator('__root__')
+    @field_validator('__root__')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -159,13 +161,14 @@ class ProductGroupIds(BaseModel):
         List[ProductGroupId],
         Field(
             description='Specifies a list of product_group_ids to give context to the parent item.',
-            min_items=1,
+            min_length=1,
             title='List of product_group_ids',
         ),
     ]
 
     @no_type_check
-    @validator('__root__')
+    @field_validator('__root__')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -196,7 +199,7 @@ class Products(BaseModel):
         List[ProductId],
         Field(
             description='Specifies a list of product_ids to give context to the parent item.',
-            min_items=1,
+            min_length=1,
             title='List of product_ids',
         ),
     ]
@@ -234,7 +237,8 @@ class ListOfProductIds(BaseModel):
     ]
 
     @no_type_check
-    @validator('product_ids')
+    @field_validator('product_ids')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -249,7 +253,7 @@ class Lang(BaseModel):
             description='Identifies a language, corresponding to IETF BCP 47 / RFC 5646. See IETF language'
             ' registry: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry',
             examples=['de', 'en', 'fr', 'frc', 'jp'],
-            regex='^(([A-Za-z]{2,3}(-[A-Za-z]{3}(-[A-Za-z]{3}){0,2})?|[A-Za-z]{4,8})(-[A-Za-z]{4})?(-([A-Za-z]{2}|'
+            pattern='^(([A-Za-z]{2,3}(-[A-Za-z]{3}(-[A-Za-z]{3}){0,2})?|[A-Za-z]{4,8})(-[A-Za-z]{4})?(-([A-Za-z]{2}|'
             '[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-[A-WY-Za-wy-z0-9](-[A-Za-z0-9]{2,8})+)*'
             '(-[Xx](-[A-Za-z0-9]{1,8})+)?|[Xx](-[A-Za-z0-9]{1,8})+|[Ii]-[Dd][Ee][Ff][Aa][Uu][Ll][Tt]|'
             '[Ii]-[Mm][Ii][Nn][Gg][Oo])$',
@@ -328,13 +332,14 @@ class Notes(BaseModel):
         List[Note],
         Field(
             description='Contains notes which are specific to the current context.',
-            min_items=1,
+            min_length=1,
             title='List of notes',
         ),
     ]
 
     @no_type_check
-    @validator('__root__')
+    @field_validator('__root__')
+    @classmethod
     @classmethod
     def check_len(cls, v):
         if not v:
@@ -389,7 +394,7 @@ class References(BaseModel):
         List[Reference],
         Field(
             description='Holds a list of references.',
-            min_items=1,
+            min_length=1,
             title='List of references',
         ),
     ]
@@ -404,7 +409,7 @@ class Version(BaseModel):
                 ' Format must be either integer or semantic versioning.'
             ),
             examples=['1', '4', '0.9.0', '1.4.3', '2.40.0+21AF26D3'],
-            regex=(
+            pattern=(
                 '^(0|[1-9][0-9]*)$|^((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)'
                 '(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?'
                 '(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$'
