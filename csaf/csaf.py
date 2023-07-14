@@ -73,7 +73,7 @@ class CSAF(BaseModel):
     @no_type_check
     def json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
-        return super().json(*args, **kwargs)
+        return super().model_dump_json(*args, **kwargs)
 
     @classmethod
     @no_type_check
