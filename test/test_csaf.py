@@ -155,7 +155,8 @@ DATA = {
                     'category': 'description',
                     'text': (
                         'CSAF Tools CVRF-CSAF-Converter 1.0.0-rc1 resolves XML External Entities (XXE).'
-                        ' This leads to the inclusion of arbitrary (local) file content into the generated output document.'
+                        ' This leads to the inclusion of arbitrary (local) file content into'
+                        ' the generated output document.'
                         ' An attacker can exploit this to disclose information from the system running the converter.'
                     ),
                     'title': 'Vulnerability description',
