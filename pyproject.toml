@@ -28,7 +28,7 @@ keywords = [
 ]
 dependencies = [
     "jmespath >= 1.0.1",
-    "jsonschema >= 4.18.2",
+    "jsonschema >= 4.18.3",
     "langcodes >= 3.3.0",
     "lazr.uri >= 1.0.1",
     "msgspec >= 0.17.0",
