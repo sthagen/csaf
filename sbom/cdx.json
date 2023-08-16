@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
-  "serialNumber": "urn:uuid:a595b7b1-0392-4700-87bd-7de769c07dbe",
+  "serialNumber": "urn:uuid:334658bb-9601-45e3-800f-7d67b6198ede",
   "version": 1,
   "metadata": {
-    "timestamp": "2023-08-16T06:11:29.363207+00:00",
+    "timestamp": "2023-08-16T15:20:04.589118+00:00",
     "tools": [
       {
         "vendor": "CycloneDX",
@@ -56,63 +56,63 @@
   "components": [
     {
       "type": "library",
-      "bom-ref": "0cf21ee2-3b5c-4d0f-a89e-9f492008f982",
+      "bom-ref": "6f733918-d87f-40a5-8e4a-b49edd0d5853",
       "name": "jmespath",
       "version": "1.0.1",
       "purl": "pkg:pypi/jmespath@1.0.1"
     },
     {
       "type": "library",
-      "bom-ref": "11ca93e3-88be-4f4b-8c3d-4a4f1530ecf6",
+      "bom-ref": "0a275cdc-3aa3-4e2c-8ebc-55ba1880243d",
       "name": "jsonschema",
       "version": "4.19.0",
       "purl": "pkg:pypi/jsonschema@4.19.0"
     },
     {
       "type": "library",
-      "bom-ref": "6c4af2da-7372-4048-bbd2-e25853e16c35",
+      "bom-ref": "e40a0183-ec5c-40a2-ac28-0b6d6457312c",
       "name": "langcodes",
       "version": "3.3.0",
       "purl": "pkg:pypi/langcodes@3.3.0"
     },
     {
       "type": "library",
-      "bom-ref": "6f53c8ef-d9ae-41ff-826c-86607dd523c5",
+      "bom-ref": "858a7e30-77f3-40b9-a240-2a18b347259e",
       "name": "lazr.uri",
       "version": "1.0.6",
       "purl": "pkg:pypi/lazr.uri@1.0.6"
     },
     {
       "type": "library",
-      "bom-ref": "c118c1fc-e590-49fc-86d0-61a0f598aa24",
+      "bom-ref": "504054cc-e8b9-4920-857a-fd9b74ad42f5",
       "name": "msgspec",
-      "version": "0.18.0",
-      "purl": "pkg:pypi/msgspec@0.18.0"
+      "version": "0.18.1",
+      "purl": "pkg:pypi/msgspec@0.18.1"
     },
     {
       "type": "library",
-      "bom-ref": "9c27aa71-e445-4e50-9283-4800098e8b5d",
+      "bom-ref": "101f57b1-36a7-4b5e-9edb-2e1d928db22d",
       "name": "pydantic",
       "version": "2.1.1",
       "purl": "pkg:pypi/pydantic@2.1.1"
     },
     {
       "type": "library",
-      "bom-ref": "b7e2c730-bbc4-4f17-8bbd-e1978c2dc2e4",
+      "bom-ref": "798ccb05-e610-4808-8487-95c7edc29d68",
       "name": "scooby",
       "version": "0.7.2",
       "purl": "pkg:pypi/scooby@0.7.2"
     },
     {
       "type": "library",
-      "bom-ref": "ecfeac01-262a-42bb-9ed2-5443a814ea46",
+      "bom-ref": "4c1f1dbf-dbfe-40a4-8691-9ecc60eea0a4",
       "name": "setuptools",
-      "version": "68.0.0",
-      "purl": "pkg:pypi/setuptools@68.0.0"
+      "version": "68.1.0",
+      "purl": "pkg:pypi/setuptools@68.1.0"
     },
     {
       "type": "library",
-      "bom-ref": "d1aa27a0-4a96-4d27-a5ab-6b7a1720fc19",
+      "bom-ref": "25aeeeec-fe5e-4387-b05d-9d0eab90d894",
       "name": "typer",
       "version": "0.9.0",
       "purl": "pkg:pypi/typer@0.9.0"
@@ -120,39 +120,39 @@
   ],
   "dependencies": [
     {
-      "ref": "0cf21ee2-3b5c-4d0f-a89e-9f492008f982",
+      "ref": "6f733918-d87f-40a5-8e4a-b49edd0d5853",
       "dependsOn": []
     },
     {
-      "ref": "11ca93e3-88be-4f4b-8c3d-4a4f1530ecf6",
+      "ref": "0a275cdc-3aa3-4e2c-8ebc-55ba1880243d",
       "dependsOn": []
     },
     {
-      "ref": "6c4af2da-7372-4048-bbd2-e25853e16c35",
+      "ref": "e40a0183-ec5c-40a2-ac28-0b6d6457312c",
       "dependsOn": []
     },
     {
-      "ref": "6f53c8ef-d9ae-41ff-826c-86607dd523c5",
+      "ref": "858a7e30-77f3-40b9-a240-2a18b347259e",
       "dependsOn": []
     },
     {
-      "ref": "c118c1fc-e590-49fc-86d0-61a0f598aa24",
+      "ref": "504054cc-e8b9-4920-857a-fd9b74ad42f5",
       "dependsOn": []
     },
     {
-      "ref": "9c27aa71-e445-4e50-9283-4800098e8b5d",
+      "ref": "101f57b1-36a7-4b5e-9edb-2e1d928db22d",
       "dependsOn": []
     },
     {
-      "ref": "b7e2c730-bbc4-4f17-8bbd-e1978c2dc2e4",
+      "ref": "798ccb05-e610-4808-8487-95c7edc29d68",
       "dependsOn": []
     },
     {
-      "ref": "ecfeac01-262a-42bb-9ed2-5443a814ea46",
+      "ref": "4c1f1dbf-dbfe-40a4-8691-9ecc60eea0a4",
       "dependsOn": []
     },
     {
-      "ref": "d1aa27a0-4a96-4d27-a5ab-6b7a1720fc19",
+      "ref": "25aeeeec-fe5e-4387-b05d-9d0eab90d894",
       "dependsOn": []
     }
   ]
