@@ -139,7 +139,7 @@
 <title>pydantic</title>
 <ellipse fill="none" stroke="black" cx="738.32" cy="-331.42" rx="44.19" ry="25.81"/>
 <text text-anchor="middle" x="738.32" y="-332.37" font-family="Times,serif" font-size="14.00">pydantic</text>
-<text text-anchor="middle" x="738.32" y="-318.12" font-family="Times,serif" font-size="14.00">2.1.1</text>
+<text text-anchor="middle" x="738.32" y="-318.12" font-family="Times,serif" font-size="14.00">2.2.0</text>
 </g>
 <!-- annotated&#45;types -->
 <g id="node12" class="node">
@@ -160,14 +160,14 @@
 <title>pydantic&#45;core</title>
 <ellipse fill="none" stroke="black" cx="738.32" cy="-229.55" rx="63.82" ry="25.81"/>
 <text text-anchor="middle" x="738.32" y="-230.5" font-family="Times,serif" font-size="14.00">pydantic&#45;core</text>
-<text text-anchor="middle" x="738.32" y="-216.25" font-family="Times,serif" font-size="14.00">2.4.0</text>
+<text text-anchor="middle" x="738.32" y="-216.25" font-family="Times,serif" font-size="14.00">2.6.0</text>
 </g>
 <!-- pydantic&#45;&gt;pydantic&#45;core -->
 <g id="edge10" class="edge">
 <title>pydantic&#45;&gt;pydantic&#45;core</title>
 <path fill="none" stroke="black" d="M738.32,-305.21C738.32,-293.51 738.32,-279.37 738.32,-266.56"/>
 <polygon fill="black" stroke="black" points="741.82,-266.74 738.32,-256.74 734.82,-266.74 741.82,-266.74"/>
-<text text-anchor="middle" x="760.44" y="-274.31" font-family="Times,serif" font-size="14.00">==2.4.0</text>
+<text text-anchor="middle" x="760.44" y="-274.31" font-family="Times,serif" font-size="14.00">==2.6.0</text>
 </g>
 <!-- typing&#45;extensions -->
 <g id="node14" class="node">
