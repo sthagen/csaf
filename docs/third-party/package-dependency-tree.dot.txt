@@ -24,7 +24,7 @@ digraph {
 	pydantic [label="pydantic\n2.2.1"]
 	referencing -> "rpds-py" [label=">=0.7.0"]
 	referencing -> attrs [label=">=22.2.0"]
-	referencing [label="referencing\n0.29.1"]
+	referencing [label="referencing\n0.30.2"]
 	scooby [label="scooby\n0.7.2"]
 	setuptools [label="setuptools\n68.1.2"]
 	typer -> "typing-extensions" [label=">=3.7.4.3"]
