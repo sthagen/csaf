@@ -1,6 +1,6 @@
+"""CSAF Document meta information model."""
 from __future__ import annotations
 
-"""CSAF Document meta information model."""
 from datetime import datetime
 from enum import Enum
 from typing import Annotated, List, Optional, no_type_check
@@ -43,7 +43,7 @@ class Tracking(BaseModel):
             min_length=1,
             title='Aliases',
         ),
-    ]
+    ] = None
     current_release_date: Annotated[
         datetime,
         Field(
@@ -59,7 +59,7 @@ class Tracking(BaseModel):
             ' including the date it was generated and the entity that generated it.',
             title='Document generator',
         ),
-    ]
+    ] = None
     id: Annotated[
         str,
         Field(
@@ -122,7 +122,7 @@ class AggregateSeverity(BaseModel):
             description='Points to the namespace so referenced.',
             title='Namespace of aggregate severity',
         ),
-    ]
+    ] = None
     text: Annotated[
         str,
         Field(
@@ -194,14 +194,14 @@ class Distribution(BaseModel):
             min_length=1,
             title='Textual description',
         ),
-    ]
+    ] = None
     tlp: Annotated[
         Optional[TrafficLightProtocol],
         Field(
             description='Provides details about the TLP classification of the document.',
             title='Traffic Light Protocol (TLP)',
         ),
-    ]
+    ] = None
 
 
 class PublisherCategory(Enum):
@@ -241,7 +241,7 @@ class Publisher(BaseModel):
             min_length=1,
             title='Contact details',
         ),
-    ]
+    ] = None
     issuing_authority: Annotated[
         Optional[str],
         Field(
@@ -250,7 +250,7 @@ class Publisher(BaseModel):
             min_length=1,
             title='Issuing authority',
         ),
-    ]
+    ] = None
     name: Annotated[
         str,
         Field(
@@ -310,7 +310,7 @@ class Engine(BaseModel):
             min_length=1,
             title='Engine version',
         ),
-    ]
+    ] = None
 
 
 class Generator(BaseModel):
@@ -328,7 +328,7 @@ class Generator(BaseModel):
             ' Current Release Date.',
             title='Date of document generation',
         ),
-    ]
+    ] = None
     engine: Annotated[
         Engine,
         Field(
@@ -371,7 +371,7 @@ class Document(BaseModel):
             description='Contains a list of acknowledgment elements associated with the whole document.',
             title='Document acknowledgments',
         ),
-    ]
+    ] = None
     aggregate_severity: Annotated[
         Optional[AggregateSeverity],
         Field(
@@ -382,7 +382,7 @@ class Document(BaseModel):
             " to the document producer's policies and procedures.",
             title='Aggregate severity',
         ),
-    ]
+    ] = None
     category: Annotated[
         str,
         Field(
@@ -411,21 +411,21 @@ class Document(BaseModel):
             description='Describe any constraints on how this document might be shared.',
             title='Rules for sharing document',
         ),
-    ]
+    ] = None
     lang: Annotated[
         Optional[Lang],
         Field(
             description='Identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646.',
             title='Document language',
         ),
-    ]
+    ] = None
     notes: Annotated[
         Optional[Notes],
         Field(
             description='Holds notes associated with the whole document.',
             title='Document notes',
         ),
-    ]
+    ] = None
     publisher: Annotated[
         Publisher,
         Field(
@@ -439,7 +439,7 @@ class Document(BaseModel):
             description='Holds a list of references associated with the whole document.',
             title='Document references',
         ),
-    ]
+    ] = None
     source_lang: Annotated[
         Optional[Lang],
         Field(
@@ -447,7 +447,7 @@ class Document(BaseModel):
             ' from which language this document was translated.',
             title='Source language',
         ),
-    ]
+    ] = None
     title: Annotated[
         str,
         Field(

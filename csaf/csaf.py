@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# pylint: disable=c-extension-no-member,expression-not-assigned,line-too-long,logging-fstring-interpolation
 """CSAF Document model.
 
 Minimal length of CSAF (spam) JSON is 116 bytes:
@@ -60,7 +58,7 @@ class CSAF(BaseModel):
             ' in the document.',
             title='Product tree',
         ),
-    ]
+    ] = None
     vulnerabilities: Annotated[
         Optional[List[Vulnerability]],
         Field(
@@ -68,10 +66,10 @@ class CSAF(BaseModel):
             min_length=1,
             title='Vulnerabilities',
         ),
-    ]
+    ] = None
 
     @no_type_check
-    def json(self, *args, **kwargs):
+    def model_dump_json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
         return super().model_dump_json(*args, **kwargs)
 

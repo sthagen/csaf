@@ -62,7 +62,7 @@ class Acknowledgment(BaseModel):
             min_length=1,
             title='List of acknowledged names',
         ),
-    ]
+    ] = None
     organization: Annotated[
         Optional[str],
         Field(
@@ -71,7 +71,7 @@ class Acknowledgment(BaseModel):
             min_length=1,
             title='Contributing organization',
         ),
-    ]
+    ] = None
     summary: Annotated[
         Optional[str],
         Field(
@@ -81,7 +81,7 @@ class Acknowledgment(BaseModel):
             min_length=1,
             title='Summary of the acknowledgment',
         ),
-    ]
+    ] = None
     urls: Annotated[
         Optional[List[AnyUrl]],
         Field(
@@ -89,7 +89,7 @@ class Acknowledgment(BaseModel):
             min_length=1,
             title='List of URLs',
         ),
-    ]
+    ] = None
 
     @classmethod
     @no_type_check
@@ -312,7 +312,7 @@ class Note(BaseModel):
             min_length=1,
             title='Audience of note',
         ),
-    ]
+    ] = None
     category: Annotated[
         NoteCategory,
         Field(description='Choice of what kind of note this is.', title='Note category'),
@@ -338,7 +338,7 @@ class Note(BaseModel):
             min_length=1,
             title='Title of note',
         ),
-    ]
+    ] = None
 
 
 class Notes(

@@ -1,5 +1,4 @@
 import json
-import pytest  # type: ignore
 
 import csaf.cvss as cvss
 
@@ -26,10 +25,10 @@ def test_cvss31_minimal():
         '"modifiedAvailabilityImpact":null,"environmentalScore":null,"environmentalSeverity":null}'
     )
     c31 = cvss.CVSS31.model_validate_json(JSON)
-    assert c31.json() == expected_value
+    assert c31.model_dump_json() == expected_value
     assert c31.vector_string == vector_string
 
-    json_lines = c31.json(indent=2).split('\n')
+    json_lines = c31.model_dump_json(indent=2).split('\n')
     json_rep_of_vs = [line for line in json_lines if 'vectorString' in line]
     assert len(json_rep_of_vs) == 1
     assert vector_string in json_rep_of_vs[0]

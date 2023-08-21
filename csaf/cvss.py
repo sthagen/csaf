@@ -1,5 +1,4 @@
 """CSAF CVSS 2/3.0/3.1 proxy implementation."""
-
 from __future__ import annotations
 
 from enum import Enum
@@ -94,7 +93,7 @@ class CVSS2(BaseModel):
     environmental_score: Annotated[Optional[ScoreType], Field(alias='environmentalScore')] = None
 
     @no_type_check
-    def json(self, *args, **kwargs):
+    def model_dump_json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
         return super().model_dump_json(*args, **kwargs)
 
@@ -154,7 +153,7 @@ class CVSS30(BaseModel):
     environmental_severity: Annotated[Optional[SeverityType], Field(alias='environmentalSeverity')] = None
 
     @no_type_check
-    def json(self, *args, **kwargs):
+    def model_dump_json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
         return super().model_dump_json(*args, **kwargs)
 
@@ -214,6 +213,6 @@ class CVSS31(BaseModel):
     environmental_severity: Annotated[Optional[SeverityType], Field(alias='environmentalSeverity')] = None
 
     @no_type_check
-    def json(self, *args, **kwargs):
+    def model_dump_json(self, *args, **kwargs):
         kwargs.setdefault('by_alias', True)
         return super().model_dump_json(*args, **kwargs)

@@ -1,11 +1,10 @@
 """CVSS 2/3.0/3.1 general definitions."""
-
 from __future__ import annotations
 
 from enum import Enum
 from typing import Annotated
 
-from pydantic import BaseModel, Field, RootModel
+from pydantic import Field, RootModel
 
 
 class AccessVectorType(Enum):
