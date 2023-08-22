@@ -1,6 +1,23 @@
 import json
 
+from test import conftest
+
 import csaf.cvss as cvss
+
+import pytest
+from pydantic import ValidationError
+
+from csaf.cvss import (
+    CVSS2,
+    CVSS30,
+    CVSS31,
+    SeverityType as CvssSeverityType,
+    Version as CvssVersion,
+)
+
+
+CVSS31_BASE_SEVERITY_LOG4J = 'CRITICAL'  # str(CvssSeverityType.critical)
+CVSS30_BASE_SEVERITY_LOG4J = 'CRITICAL'  # str(CvssSeverityType.critical)
 
 DATA = {
     'baseScore': 10.0,
@@ -9,6 +26,122 @@ DATA = {
     'version': '3.1',
 }
 JSON = json.dumps(DATA)
+
+
+def test_cvss2_empty():
+    message = '2 validation errors for CVSS2'
+    with pytest.raises(ValidationError, match=message) as err:
+        _ = CVSS2.model_validate_json('{}')  # type: ignore
+    assert '\nvectorString\n  Field required' in str(err.value)
+    assert '\nbaseScore\n  Field required' in str(err.value)
+
+
+def test_cvss2_wrong_version():
+    data = {
+        'version': '42',
+        'vectorString': conftest.CVSS2_VECTOR_STRING_LOG4J,
+        'baseScore': conftest.CVSS2_BASE_SCORE_LOG4J,
+    }
+    as_json = json.dumps(data)
+    message = '1 validation error for CVSS2'
+    with pytest.raises(ValidationError, match=message) as err:
+        _ = CVSS2.model_validate_json(as_json)
+    assert "\nversion\n  Input should be '2.0','3.0' or '3.1'" in str(err.value)
+
+
+def test_cvss20_log4j_cve_2021_44228():
+    data = {
+        'version': '2.0',  # str(CvssVersion.two),
+        'vectorString': conftest.CVSS2_VECTOR_STRING_LOG4J,
+        'baseScore': conftest.CVSS2_BASE_SCORE_LOG4J,
+    }
+    as_json = json.dumps(data)
+    cvss_cve_2021_44228 = CVSS2.model_validate_json(as_json)
+    assert isinstance(cvss_cve_2021_44228, CVSS2)
+    assert cvss_cve_2021_44228.version == CvssVersion.two
+    assert cvss_cve_2021_44228.vector_string == conftest.CVSS2_VECTOR_STRING_LOG4J
+    assert cvss_cve_2021_44228.base_score.root == float(conftest.CVSS2_BASE_SCORE_LOG4J)
+    assert cvss_cve_2021_44228.confidentiality_requirement is None
+
+
+def test_cvss30_empty():
+    message = '3 validation errors for CVSS30'
+    with pytest.raises(ValidationError, match=message) as err:
+        _ = CVSS30()  # type: ignore
+    assert '\nvectorString\n  Field required' in str(err.value)
+    assert '\nbaseScore\n  Field required' in str(err.value)
+    assert '\nbaseSeverity\n  Field required' in str(err.value)
+
+
+def test_cvss30_wrong_version():
+    data = {
+        'version': '42',
+        'vectorString': conftest.CVSS30_VECTOR_STRING_LOG4J,
+        'baseScore': conftest.CVSS30_BASE_SCORE_LOG4J,
+        'baseSeverity': CVSS30_BASE_SEVERITY_LOG4J,
+    }
+    as_json = json.dumps(data)
+    message = '1 validation error for CVSS30'
+    with pytest.raises(ValidationError, match=message) as err:
+        _ = CVSS30.model_validate_json(as_json)
+    assert "\nversion\n  Input should be '2.0','3.0' or '3.1'" in str(err.value)
+
+
+def test_cvss30_log4j_cve_2021_44228():
+    data = {
+        'version': '3.0',  # str(CvssVersion.three_zero),
+        'vectorString': conftest.CVSS30_VECTOR_STRING_LOG4J,
+        'baseScore': conftest.CVSS30_BASE_SCORE_LOG4J,
+        'baseSeverity': CVSS30_BASE_SEVERITY_LOG4J,
+    }
+    as_json = json.dumps(data)
+    cvss_cve_2021_44228 = CVSS30.model_validate_json(as_json)
+    assert isinstance(cvss_cve_2021_44228, CVSS30)
+    assert cvss_cve_2021_44228.version == CvssVersion.three_zero
+    assert cvss_cve_2021_44228.vector_string == conftest.CVSS30_VECTOR_STRING_LOG4J
+    assert cvss_cve_2021_44228.base_score.root == float(conftest.CVSS30_BASE_SCORE_LOG4J)
+    assert cvss_cve_2021_44228.base_severity.critical == CvssSeverityType.critical
+    assert cvss_cve_2021_44228.confidentiality_requirement is None
+
+
+def test_cvss31_empty():
+    message = '3 validation errors for CVSS31'
+    with pytest.raises(ValidationError, match=message) as err:
+        _ = CVSS31()  # type: ignore
+    assert '\nvectorString\n  Field required' in str(err.value)
+    assert '\nbaseScore\n  Field required' in str(err.value)
+    assert '\nbaseSeverity\n  Field required' in str(err.value)
+
+
+def test_cvss31_wrong_version():
+    data = {
+        'version': '42',
+        'vectorString': conftest.CVSS31_VECTOR_STRING_LOG4J,
+        'baseScore': conftest.CVSS31_BASE_SCORE_LOG4J,
+        'baseSeverity': CVSS31_BASE_SEVERITY_LOG4J,
+    }
+    as_json = json.dumps(data)
+    message = '1 validation error for CVSS31'
+    with pytest.raises(ValidationError, match=message) as err:
+        _ = CVSS31.model_validate_json(as_json)
+    assert "\nversion\n  Input should be '2.0','3.0' or '3.1'" in str(err.value)
+
+
+def test_cvss31_log4j_cve_2021_44228():
+    data = {
+        'version': '3.1',  # str(CvssVersion.three_wun),
+        'vectorString': conftest.CVSS31_VECTOR_STRING_LOG4J,
+        'baseScore': conftest.CVSS31_BASE_SCORE_LOG4J,
+        'baseSeverity': CVSS31_BASE_SEVERITY_LOG4J,
+    }
+    as_json = json.dumps(data)
+    cvss_cve_2021_44228 = CVSS31.model_validate_json(as_json)
+    assert isinstance(cvss_cve_2021_44228, CVSS31)
+    assert cvss_cve_2021_44228.version == CvssVersion.three_wun
+    assert cvss_cve_2021_44228.vector_string == conftest.CVSS31_VECTOR_STRING_LOG4J
+    assert cvss_cve_2021_44228.base_score.root == float(conftest.CVSS31_BASE_SCORE_LOG4J)
+    assert cvss_cve_2021_44228.base_severity.critical == CvssSeverityType.critical
+    assert cvss_cve_2021_44228.confidentiality_requirement is None
 
 
 def test_cvss31_minimal():
