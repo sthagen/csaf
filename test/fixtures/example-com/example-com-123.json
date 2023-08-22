@@ -1,0 +1,63 @@
+{
+  "document": {
+    "category": "other",
+    "csaf_version": "2.0",
+    "publisher": {
+      "category": "coordinator",
+      "name": "example.com",
+      "namespace": "https://example.com"
+    },
+    "title": "Failed Attempts",
+    "tracking": {
+      "current_release_date": "2021-12-12T11:00:00.000Z",
+      "id": "example-com-123",
+      "initial_release_date": "2021-12-12T11:00:00.000Z",
+      "revision_history": [
+        {
+          "date": "2021-12-12T11:00:00.000Z",
+          "number": "2021.12.12",
+          "summary": "Initial draft."
+        }
+      ],
+      "status": "draft",
+      "version": "2021.12.12",
+      "generator": {
+        "date": "2021-12-12T13:14:53.669Z",
+        "engine": {
+          "version": "2021.12.10",
+          "name": "Turvallisuusneuvonta"
+        }
+      }
+    },
+    "acknowledgments": [
+      {
+        "names": [
+          "Anton"
+        ],
+        "organization": "Anonymous",
+        "summary": "Tried to hack it",
+        "urls": [
+          "https://example.com/some_url"
+        ]
+      }
+    ],
+    "aggregate_severity": {
+      "text": "moderate"
+    },
+    "distribution": {
+      "tlp": {
+        "label": "WHITE"
+      }
+    },
+    "lang": "en-US",
+    "notes": [
+      {
+        "category": "summary",
+        "text": "Nothing happened.",
+        "audience": "all",
+        "title": "The Note"
+      }
+    ],
+    "source_lang": "de-DE"
+  }
+}
