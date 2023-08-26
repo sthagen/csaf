@@ -13,7 +13,7 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 Third party dependencies are documented in the folder [third-party](third-party/README.md).
 
 [![version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![downloads](https://img.shields.io/pypi/dm/csaf)](https://pepy.tech/project/csaf)
+[![downloads](https://static.pepy.tech/badge/csaf/month)](https://pepy.tech/project/csaf)
 [![wheel](https://img.shields.io/pypi/wheel/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
