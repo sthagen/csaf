@@ -51,13 +51,13 @@
     "Author": "UNKNOWN",
     "Description": "A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML.",
     "License": "BSD License",
-    "LicenseFile": "/Users/ruth/.pyenv/versions/3.10.12/envs/csaf-3-10-12/lib/python3.10/site-packages/msgspec-0.18.1.dist-info/LICENSE",
+    "LicenseFile": "/Users/ruth/.pyenv/versions/3.10.12/envs/csaf-3-10-12/lib/python3.10/site-packages/msgspec-0.18.2.dist-info/LICENSE",
     "LicenseText": "Copyright (c) 2021, Jim Crist-Harif\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its contributors\n  may be used to endorse or promote products derived from this software\n  without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n",
     "Name": "msgspec",
     "NoticeFile": "UNKNOWN",
     "NoticeText": "UNKNOWN",
     "URL": "https://jcristharif.com/msgspec/",
-    "Version": "0.18.1"
+    "Version": "0.18.2"
   },
   {
     "Author": "Samuel Colvin <s@muelcolvin.com>, Eric Jolibois <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>, Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, Terrence Dorsey <terry@pydantic.dev>, David Montague <david@pydantic.dev>",
