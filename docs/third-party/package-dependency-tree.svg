@@ -118,7 +118,7 @@
 <title>setuptools</title>
 <ellipse fill="none" stroke="black" cx="444.32" cy="-229.55" rx="50.03" ry="25.81"/>
 <text text-anchor="middle" x="444.32" y="-230.5" font-family="Times,serif" font-size="14.00">setuptools</text>
-<text text-anchor="middle" x="444.32" y="-216.25" font-family="Times,serif" font-size="14.00">68.1.2</text>
+<text text-anchor="middle" x="444.32" y="-216.25" font-family="Times,serif" font-size="14.00">68.2.0</text>
 </g>
 <!-- lazr.uri&#45;&gt;setuptools -->
 <g id="edge8" class="edge">
