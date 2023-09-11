@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([8eaff3bf ...](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json.sha256 "sha256:8eaff3bf39d6a24ed7516e7ef61bd7797b6bfd056d239e0a8a12784662de1ce4")).
-<!--[[[end]]] (checksum: 0ce61d6c0d2ab4a51c4123296897fb80)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([b70bedbf ...](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json.sha256 "sha256:b70bedbf86ad16341b1c76db7b2aa73941a1fe821704386204994985334ce9bd")).
+<!--[[[end]]] (checksum: 7dc51ffcd652dc82187158bb1d0ad93c)-->
 ## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -20,9 +20,9 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 | [pydantic](https://github.com/pydantic/pydantic)                | [2.3.0](https://pypi.org/project/pydantic/2.3.0/)      | MIT License                                         | Samuel Colvin <s@muelcolvin.com>, Eric Jolibois <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>, Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, Terrence Dorsey <terry@pydantic.dev>, David Montague <david@pydantic.dev> | Data validation using Python type hints                                                                  |
 | [referencing](https://github.com/python-jsonschema/referencing) | [0.30.2](https://pypi.org/project/referencing/0.30.2/) | MIT License                                         | Julian Berman                                                                                                                                                                                                                                                 | JSON Referencing + Python                                                                                |
 | [scooby](https://github.com/banesullivan/scooby)                | [0.7.2](https://pypi.org/project/scooby/0.7.2/)        | MIT License                                         | Dieter Werthmüller, Bane Sullivan, Alex Kaszynski, and contributors                                                                                                                                                                                           | A Great Dane turned Python environment detective                                                         |
-| [setuptools](https://github.com/pypa/setuptools)                | [68.2.0](https://pypi.org/project/setuptools/68.2.0/)  | MIT License                                         | Python Packaging Authority                                                                                                                                                                                                                                    | Easily download, build, install, upgrade, and uninstall Python packages                                  |
+| [setuptools](https://github.com/pypa/setuptools)                | [68.2.1](https://pypi.org/project/setuptools/68.2.1/)  | MIT License                                         | Python Packaging Authority                                                                                                                                                                                                                                    | Easily download, build, install, upgrade, and uninstall Python packages                                  |
 | [typer](https://github.com/tiangolo/typer)                      | [0.9.0](https://pypi.org/project/typer/0.9.0/)         | MIT License                                         | Sebastián Ramírez                                                                                                                                                                                                                                             | Typer, build great CLIs. Easy to code. Based on Python type hints.                                       |
-<!--[[[end]]] (checksum: ece9a41f900ed0b89d5f91edaaaadb19)-->
+<!--[[[end]]] (checksum: f719c1c77c3114dc2598363f99601667)-->
 
 ### Indirect Dependencies
 
@@ -61,7 +61,7 @@ jsonschema==4.19.0
 └── rpds-py [required: >=0.7.1, installed: 0.8.11]
 langcodes==3.3.0
 lazr.uri==1.0.6
-└── setuptools [required: Any, installed: 68.2.0]
+└── setuptools [required: Any, installed: 68.2.1]
 msgspec==0.18.2
 pydantic==2.3.0
 ├── annotated-types [required: >=0.4.0, installed: 0.5.0]
@@ -73,4 +73,4 @@ typer==0.9.0
 ├── click [required: >=7.1.1,<9.0.0, installed: 8.1.5]
 └── typing-extensions [required: >=3.7.4.3, installed: 4.7.1]
 ````
-<!--[[[end]]] (checksum: 78e1f1ddb5cedb39398cb2b287d21974)-->
+<!--[[[end]]] (checksum: d50e0ab8996b3069e9e5c2a23bb572d4)-->

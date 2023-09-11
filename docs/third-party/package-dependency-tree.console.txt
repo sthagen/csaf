@@ -11,7 +11,7 @@ jsonschema==4.19.0
 └── rpds-py [required: >=0.7.1, installed: 0.8.11]
 langcodes==3.3.0
 lazr.uri==1.0.6
-└── setuptools [required: Any, installed: 68.2.0]
+└── setuptools [required: Any, installed: 68.2.1]
 msgspec==0.18.2
 pydantic==2.3.0
 ├── annotated-types [required: >=0.4.0, installed: 0.5.0]

@@ -26,7 +26,7 @@ digraph {
 	referencing -> attrs [label=">=22.2.0"]
 	referencing [label="referencing\n0.30.2"]
 	scooby [label="scooby\n0.7.2"]
-	setuptools [label="setuptools\n68.2.0"]
+	setuptools [label="setuptools\n68.2.1"]
 	typer -> "typing-extensions" [label=">=3.7.4.3"]
 	typer -> click [label=">=7.1.1,<9.0.0"]
 	typer [label="typer\n0.9.0"]
