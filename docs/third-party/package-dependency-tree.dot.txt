@@ -15,7 +15,7 @@ digraph {
 	jsonschema -> "rpds-py" [label=">=0.7.1"]
 	jsonschema -> attrs [label=">=22.2.0"]
 	jsonschema -> referencing [label=">=0.28.4"]
-	jsonschema [label="jsonschema\n4.19.0"]
+	jsonschema [label="jsonschema\n4.19.1"]
 	langcodes [label="langcodes\n3.3.0"]
 	msgspec [label="msgspec\n0.18.2"]
 	pydantic -> "annotated-types" [label=">=0.4.0"]
