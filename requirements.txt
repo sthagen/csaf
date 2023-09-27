@@ -3,7 +3,7 @@ jsonschema==4.19.1
 langcodes==3.3.0
 lazr.uri==1.0.6
 msgspec==0.18.2
-pydantic==2.4.0
+pydantic==2.4.1
 referencing==0.30.2
 scooby==0.7.3
 setuptools==68.2.2
