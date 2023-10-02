@@ -25,7 +25,7 @@ digraph {
 	referencing -> "rpds-py" [label=">=0.7.0"]
 	referencing -> attrs [label=">=22.2.0"]
 	referencing [label="referencing\n0.30.2"]
-	scooby [label="scooby\n0.7.3"]
+	scooby [label="scooby\n0.7.4"]
 	setuptools [label="setuptools\n68.2.2"]
 	typer -> "typing-extensions" [label=">=3.7.4.3"]
 	typer -> click [label=">=7.1.1,<9.0.0"]

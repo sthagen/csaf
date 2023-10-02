@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([e27d557c ...](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json.sha256 "sha256:e27d557ccf35ba0472d9f9330503d31bf2aebb5bdf392c011a8d27b3ce579f1e")).
-<!--[[[end]]] (checksum: 59fe8fc40324006e5986c3f450be2fe0)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([80f23503 ...](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json.sha256 "sha256:80f235036277af7b290a42f9eb31bb68807a6e1726ab911dfbe20b46d7614430")).
+<!--[[[end]]] (checksum: f5b57c841f094c4aece0d0eaf2efa8c7)-->
 ## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -19,10 +19,10 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 | [msgspec](https://jcristharif.com/msgspec/)                     | [0.18.2](https://pypi.org/project/msgspec/0.18.2/)     | BSD License                                         | Jim Crist-Harif                                                                                                                                                                                                                                               | A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML. |
 | [pydantic](https://github.com/pydantic/pydantic)                | [2.4.2](https://pypi.org/project/pydantic/2.4.2/)      | MIT License                                         | Samuel Colvin <s@muelcolvin.com>, Eric Jolibois <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>, Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, Terrence Dorsey <terry@pydantic.dev>, David Montague <david@pydantic.dev> | Data validation using Python type hints                                                                  |
 | [referencing](https://github.com/python-jsonschema/referencing) | [0.30.2](https://pypi.org/project/referencing/0.30.2/) | MIT License                                         | Julian Berman                                                                                                                                                                                                                                                 | JSON Referencing + Python                                                                                |
-| [scooby](https://github.com/banesullivan/scooby)                | [0.7.3](https://pypi.org/project/scooby/0.7.3/)        | MIT License                                         | Dieter Werthmüller, Bane Sullivan, Alex Kaszynski, and contributors                                                                                                                                                                                           | A Great Dane turned Python environment detective                                                         |
+| [scooby](https://github.com/banesullivan/scooby)                | [0.7.4](https://pypi.org/project/scooby/0.7.4/)        | MIT License                                         | Dieter Werthmüller, Bane Sullivan, Alex Kaszynski, and contributors                                                                                                                                                                                           | A Great Dane turned Python environment detective                                                         |
 | [setuptools](https://github.com/pypa/setuptools)                | [68.2.2](https://pypi.org/project/setuptools/68.2.2/)  | MIT License                                         | Python Packaging Authority                                                                                                                                                                                                                                    | Easily download, build, install, upgrade, and uninstall Python packages                                  |
 | [typer](https://github.com/tiangolo/typer)                      | [0.9.0](https://pypi.org/project/typer/0.9.0/)         | MIT License                                         | Sebastián Ramírez                                                                                                                                                                                                                                             | Typer, build great CLIs. Easy to code. Based on Python type hints.                                       |
-<!--[[[end]]] (checksum: e641e0ebba3fb6f162cbc9f1268312dc)-->
+<!--[[[end]]] (checksum: 5435a169cba142c370f275c2fceaef0c)-->
 
 ### Indirect Dependencies
 
@@ -68,9 +68,9 @@ pydantic==2.4.2
 ├── pydantic-core [required: ==2.10.1, installed: 2.10.1]
 │   └── typing-extensions [required: >=4.6.0,!=4.7.0, installed: 4.7.1]
 └── typing-extensions [required: >=4.6.1, installed: 4.7.1]
-scooby==0.7.3
+scooby==0.7.4
 typer==0.9.0
 ├── click [required: >=7.1.1,<9.0.0, installed: 8.1.5]
 └── typing-extensions [required: >=3.7.4.3, installed: 4.7.1]
 ````
-<!--[[[end]]] (checksum: b9b21b64889c40652c451fe1adf4ec8a)-->
+<!--[[[end]]] (checksum: 786eebf681ff072bfda9ff579c15b610)-->

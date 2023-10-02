@@ -18,7 +18,7 @@ pydantic==2.4.2
 ├── pydantic-core [required: ==2.10.1, installed: 2.10.1]
 │   └── typing-extensions [required: >=4.6.0,!=4.7.0, installed: 4.7.1]
 └── typing-extensions [required: >=4.6.1, installed: 4.7.1]
-scooby==0.7.3
+scooby==0.7.4
 typer==0.9.0
 ├── click [required: >=7.1.1,<9.0.0, installed: 8.1.5]
 └── typing-extensions [required: >=3.7.4.3, installed: 4.7.1]
