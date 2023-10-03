@@ -17,7 +17,7 @@ digraph {
 	jsonschema -> referencing [label=">=0.28.4"]
 	jsonschema [label="jsonschema\n4.19.1"]
 	langcodes [label="langcodes\n3.3.0"]
-	msgspec [label="msgspec\n0.18.2"]
+	msgspec [label="msgspec\n0.18.3"]
 	pydantic -> "annotated-types" [label=">=0.4.0"]
 	pydantic -> "pydantic-core" [label="==2.10.1"]
 	pydantic -> "typing-extensions" [label=">=4.6.1"]
