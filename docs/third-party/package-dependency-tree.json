@@ -105,8 +105,8 @@
     {
         "key": "msgspec",
         "package_name": "msgspec",
-        "installed_version": "0.18.3",
-        "required_version": "0.18.3",
+        "installed_version": "0.18.4",
+        "required_version": "0.18.4",
         "dependencies": []
     },
     {
