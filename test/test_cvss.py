@@ -46,7 +46,9 @@ def test_cvss2_wrong_version():
     message = '1 validation error for CVSS2'
     with pytest.raises(ValidationError, match=message) as err:
         _ = CVSS2.model_validate_json(as_json)
-    assert "\nversion\n  Input should be '2.0','3.0' or '3.1'" in str(err.value)
+    err_str = str(err.value)
+    assert 'version' in err_str
+    assert "Input should be '2.0', '3.0' or '3.1'" in err_str
 
 
 def test_cvss20_log4j_cve_2021_44228():
@@ -84,7 +86,7 @@ def test_cvss30_wrong_version():
     message = '1 validation error for CVSS30'
     with pytest.raises(ValidationError, match=message) as err:
         _ = CVSS30.model_validate_json(as_json)
-    assert "\nversion\n  Input should be '2.0','3.0' or '3.1'" in str(err.value)
+    assert "\nversion\n  Input should be '2.0', '3.0' or '3.1'" in str(err.value)
 
 
 def test_cvss30_log4j_cve_2021_44228():
@@ -124,7 +126,7 @@ def test_cvss31_wrong_version():
     message = '1 validation error for CVSS31'
     with pytest.raises(ValidationError, match=message) as err:
         _ = CVSS31.model_validate_json(as_json)
-    assert "\nversion\n  Input should be '2.0','3.0' or '3.1'" in str(err.value)
+    assert "\nversion\n  Input should be '2.0', '3.0' or '3.1'" in str(err.value)
 
 
 def test_cvss31_log4j_cve_2021_44228():
