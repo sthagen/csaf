@@ -24,7 +24,7 @@ def report() -> str:
                 'jmespath',
                 'langcodes',
                 'lazr.uri',
-                'orjson',
+                'msgspec',
                 'pydantic',
                 'scooby',
                 'setuptools',
