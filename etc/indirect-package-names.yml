@@ -1,7 +1,12 @@
 ---
 packages:
+- annotated-types
 - attrs
 - click
+- jsonschema-specifications
+- pydantic-core
 - pyrsistent
+- referencing
+- rpds-py
 - setuptools
 - typing-extensions
