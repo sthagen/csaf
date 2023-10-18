@@ -1,3 +1,3 @@
 # API
 
-Not implemented yet.
+Not documented yet.

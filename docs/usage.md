@@ -5,20 +5,24 @@
 No args execution yields usage information:
 
 ```console
-$ csaf
-Usage: csaf [OPTIONS] COMMAND [ARGS]...
+% csaf
 
-  Common Security Advisory Framework (CSAF) Verification and Validation.
+ Usage: csaf [OPTIONS] COMMAND [ARGS]...
 
-Options:
-  -V, --version  Display the csaf version and exit
-  -h, --help     Show this message and exit.
+ Common Security Advisory Framework (CSAF) Verification and Validation.
 
-Commands:
-  report    Output the report of the environment for support.
-  template  Write a template of a well-formed JSON configuration to...
-  validate  Common Security Advisory Framework (CSAF) Verification and...
-  version   Display the csaf version and exit.
+╭─ Options ──────────────────────────────────────────────────────────────────╮
+│ --version  -V        Display the csaf version and exit                     │
+│ --help     -h        Show this message and exit.                           │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ─────────────────────────────────────────────────────────────────╮
+│ report    Output the report of the environment for support.                │
+│ template  Write a template of a well-formed JSON configuration to standard │
+│           out and exit                                                     │
+│ validate  Common Security Advisory Framework (CSAF) Verification and       │
+│           Validation.                                                      │
+│ version   Display the csaf version and exit.                               │
+╰────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Validate
@@ -26,14 +30,14 @@ Commands:
 Initial test (an empty file is not valid):
 
 ```console
-$ csaf validate empty.json
+% csaf validate empty.json
 2022-03-13T20:40:29.067 ERROR [CSAF]: advisory is too short to be valid
 ```
 
 Hypothetical valid file:
 
 ```
-$ csaf validate minimal_whatever.json
+% csaf validate minimal_whatever.json
 2022-03-13T20:46:30.618 INFO [CSAF]: set of document properties only contains known properties
 2022-03-13T20:46:30.618 INFO [CSAF]: set of document properties is a proper subset of the known properties
 ```
@@ -72,43 +76,44 @@ with `minimal_whatever.json`:
 ### Help
 
 ```console
-$ csaf validate --help
-Usage: csaf validate [OPTIONS] SOURCE...
+% csaf validate --help
 
-  Common Security Advisory Framework (CSAF) Verification and Validation.
+ Usage: csaf validate [OPTIONS] SOURCE...
 
-  You can set some options per environment variables:
+ Common Security Advisory Framework (CSAF) Verification and Validation.
+ You can set some options per environment variables:
+ * CSAF_USER='remote-user'
+ * CSAF_TOKEN='remote-secret'
+ * CSAF_BASE_URL='https://csaf.example.com/file/names/below/here/'
+ * CSAF_BAIL_OUT='AnythingTruthy'
+ * CSAF_DEBUG='AnythingTruthy'
+ * CSAF_VERBOSE='AnythingTruthy'
+ * CSAF_STRICT='AnythingTruthy'
 
-  * CSAF_USER='remote-user'
-  * CSAF_TOKEN='remote-secret'
-  * CSAF_BASE_URL='https://csaf.example.com/file/names/below/here/'
-  * CSAF_BAIL_OUT='AnythingTruthy'
-  * CSAF_DEBUG='AnythingTruthy'
-  * CSAF_VERBOSE='AnythingTruthy'
-  * CSAF_STRICT='AnythingTruthy'
+ The quiet option (if given) disables any conflicting verbosity setting.
 
-  The quiet option (if given) disables any conflicting verbosity setting.
-
-Arguments:
-  SOURCE...  [required]
-
-Options:
-  -i, --input <sourcepath>   Path to CSAF input file
-  -c, --config <configpath>  Path to config file (default is $HOME/.csaf.json)
-  -b, --bail-out             Bail out (exit) on first failure (default is
-                             False)
-  -n, --dry-run              Dry run (default is False)
-  -v, --verbose              Verbose output (default is False)
-  -q, --quiet                Minimal output (default is False)
-  -s, --strict               Ouput noisy warnings on console (default is
-                             False)
-  -h, --help                 Show this message and exit.
+╭─ Arguments ────────────────────────────────────────────────────────────────╮
+│ *    source      SOURCE...  [default: None] [required]                     │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────────────╮
+│ --input     -i      <sourcepath>  Path to CSAF input file                  │
+│ --config    -c      <configpath>  Path to config file (default is          │
+│                                   $HOME/.csaf.json)                        │
+│ --bail-out  -b                    Bail out (exit) on first failure         │
+│                                   (default is False)                       │
+│ --dry-run   -n                    Dry run (default is False)               │
+│ --verbose   -v                    Verbose output (default is False)        │
+│ --quiet     -q                    Minimal output (default is False)        │
+│ --strict    -s                    Ouput noisy warnings on console (default │
+│                                   is False)                                │
+│ --help      -h                    Show this message and exit.              │
+╰────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Template
 
 ```console
-$ csaf template
+% csaf template
 {
   "remote": {
     "user": "",
@@ -127,79 +132,85 @@ $ csaf template
 ### Help
 
 ```console
-# csaf template --help
-Usage: csaf template [OPTIONS]
+% csaf template --help
 
-  Write a template of a well-formed JSON configuration to standard out and
-  exit
+ Usage: csaf template [OPTIONS]
 
-  The strategy for looking up configurations is to start at the current
-  working directory trying to read a file with the name `.csaf.json` else try
-  to read same named file in the user folder (home).
+ Write a template of a well-formed JSON configuration to standard out and
+ exit
+ The strategy for looking up configurations is to start at the current
+ working directory trying to read a file with the name `.csaf.json` else try
+ to read same named file in the user folder (home).
+ In case an explicit path is given to the config option of commands that
+ offer it, only that path is considered.
 
-  In case an explicit path is given to the config option of commands that
-  offer it, only that path is considered.
-
-Options:
-  -h, --help  Show this message and exit.
+╭─ Options ──────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                              │
+╰────────────────────────────────────────────────────────────────────────────╯
 ```
 
 
 ## Report
 
 ```console
-$ csaf report
+% csaf report
 
 --------------------------------------------------------------------------------
-  Date: Sun Mar 13 20:49:51 2022 CET
+  Date: Wed Oct 18 17:45:44 2023 CEST
 
                 OS : Darwin
             CPU(s) : 8
            Machine : arm64
       Architecture : 64bit
+               RAM : 16.0 GiB
        Environment : Python
+       File system : apfs
 
-  Python 3.10.2 (main, Jan 29 2022, 17:30:41) [Clang 13.0.0
-  (clang-1300.0.29.30)]
+  Python 3.10.12 (main, Jul 16 2023, 10:40:08) [Clang 16.0.6 ]
 
-              csaf : 2022.3.12+parent.9f9d5c6c
-          jmespath : 0.10.0
+              csaf : 2023.10.18+parent.g7f03927d
+          jmespath : 1.0.1
          langcodes : 3.3.0
           lazr.uri : 1.0.6
-            orjson : 3.6.7
-          pydantic : 1.9.0
-            scooby : 0.5.12
-             typer : 0.4.0
+           msgspec : 0.18.4
+          pydantic : 2.4.2
+            scooby : 0.7.4
+        setuptools : 68.2.2
+             typer : 0.9.0
 --------------------------------------------------------------------------------
 ```
 
 ### Help
 
 ```console
-$ csaf report -h
-Usage: csaf report [OPTIONS]
+% csaf report -h
 
-  Output the report of the environment for support.
+ Usage: csaf report [OPTIONS]
 
-Options:
-  -h, --help  Show this message and exit.
+ Output the report of the environment for support.
+
+╭─ Options ──────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                              │
+╰────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Version
 
 ```console
-$ csaf version
-Common Security Advisory Framework (CSAF) Verification and Validation. version 2022.3.12+parent.6025942a
+% csaf version
+Common Security Advisory Framework (CSAF) Verification and Validation. version 2023.10.18+parent.g7f03927d
 ```
 
 ### Help
 
 ```console
-$ csaf version --help
-Usage: csaf version [OPTIONS]
+% csaf version --help
 
-  Display the csaf version and exit.
+ Usage: csaf version [OPTIONS]
 
-Options:
-  -h, --help  Show this message and exit.
+ Display the csaf version and exit.
+
+╭─ Options ──────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                              │
+╰────────────────────────────────────────────────────────────────────────────╯
 ```
