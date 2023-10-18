@@ -1,6 +1,6 @@
 # Change History
 
-:2023.10.18
+2023.10.18
 :    * Completed migration to pydantic v2 (<https://todo.sr.ht/~sthagen/csaf/5>)
 
 2023.6.18
