@@ -2,7 +2,7 @@
 from typing import List, no_type_check
 
 import pkg_resources
-import scooby  # type: ignore
+import scooby
 
 
 @no_type_check
@@ -14,7 +14,7 @@ def report() -> str:
     monkey_lc = [p.version for p in packages if p.project_name == 'langcodes'][0]  # noqa
     langcodes.__version__ = monkey_lc
 
-    class Report(scooby.Report):  # type: ignore
+    class Report(scooby.Report):
         def __init__(self, additional=None, ncol=3, text_width=80, sort=False):
             """Initiate a scooby.Report instance."""
 
