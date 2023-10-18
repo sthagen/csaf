@@ -1,5 +1,8 @@
 # Change History
 
+:2023.10.18
+:    * Completed migration to pydantic v2 (<https://todo.sr.ht/~sthagen/csaf/5>)
+
 2023.6.18
 :    * Fixed validation failures for CVSS of upstream BSI example (<https://todo.sr.ht/~sthagen/csaf/4>)
 * Moved SBOM noise into folder and added SPDX SBOM (derived) in multiple file formats
