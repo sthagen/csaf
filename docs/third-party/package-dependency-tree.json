@@ -149,8 +149,8 @@
     {
         "key": "scooby",
         "package_name": "scooby",
-        "installed_version": "0.8.0",
-        "required_version": "0.8.0",
+        "installed_version": "0.9.2",
+        "required_version": "0.9.2",
         "dependencies": []
     },
     {
