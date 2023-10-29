@@ -8,15 +8,15 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 
 **Note**: CSAF predecessor CVRF versions 1.1 and 1.2 are out of scope.
 
-[![license](badges/license-spdx-mit.svg)](https://git.sr.ht/~sthagen/csafNAME/tree/default/item/LICENSE)
-[![Country of Origin](badges/country-of-origin-name-switzerland-neutral.svg)](https://git.sr.ht/~sthagen/csafNAME/tree/default/item/COUNTRY-OF-ORIGIN)
-[![Export Classification Control Number (ECCN)](badges/export-control-classification-number_eccn-ear99-neutral.svg)](https://git.sr.ht/~sthagen/csafNAME/tree/default/item/EXPORT-CONTROL-CLASSIFICATION-NUMBER)
+[![license](badges/license-spdx-mit.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE)
+[![Country of Origin](badges/country-of-origin-name-switzerland-neutral.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/COUNTRY-OF-ORIGIN)
+[![Export Classification Control Number (ECCN)](badges/export-control-classification-number_eccn-ear99-neutral.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/EXPORT-CONTROL-CLASSIFICATION-NUMBER)
 [![Configuration](badges/configuration-sbom.svg)](third-party/index.html)
 
-[![Version](https://img.shields.io/pypi/v/csafNAME.svg?style=flat)](https://pypi.python.org/pypi/csafNAME/)
-[![Downloads](https://static.pepy.tech/badge/csafNAME/month)](https://pepy.tech/project/csafNAME)
-[![Supported Versions](https://img.shields.io/pypi/pyversions/csafNAME.svg?style=flat)](https://pypi.python.org/pypi/csafNAME/)
-[![Maintenance Status](https://img.shields.io/github/commit-activity/y/sthagen/csafNAME.svg?style=flat)](https://git.sr.ht/~sthagen/csafNAME/log)
+[![Version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
+[![Downloads](https://static.pepy.tech/badge/csaf/month)](https://pepy.tech/project/csaf)
+[![Supported Versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
+[![Maintenance Status](https://img.shields.io/github/commit-activity/y/sthagen/csaf.svg?style=flat)](https://git.sr.ht/~sthagen/csaf/log)
 
 ## Bug Tracker
 
