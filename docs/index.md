@@ -8,18 +8,15 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 
 **Note**: CSAF predecessor CVRF versions 1.1 and 1.2 are out of scope.
 
-[License: MIT](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE) |
-[Country of origin: Switzerland](https://git.sr.ht/~sthagen/csaf/tree/default/item/COUNTRY-OF-ORIGIN) |
-[Export control classification number(ECCN): EAR99](https://git.sr.ht/~sthagen/csaf/tree/default/item/EXPORT-CONTROL-CLASSIFICATION-NUMBER)
+[![license](badges/license-spdx-mit.svg)](https://git.sr.ht/~sthagen/csafNAME/tree/default/item/LICENSE)
+[![Country of Origin](badges/country-of-origin-name-switzerland-neutral.svg)](https://git.sr.ht/~sthagen/csafNAME/tree/default/item/COUNTRY-OF-ORIGIN)
+[![Export Classification Control Number (ECCN)](badges/export-control-classification-number_eccn-ear99-neutral.svg)](https://git.sr.ht/~sthagen/csafNAME/tree/default/item/EXPORT-CONTROL-CLASSIFICATION-NUMBER)
+[![Configuration](badges/configuration-sbom.svg)](third-party/index.html)
 
-Third party dependencies are documented in the folder [third-party](third-party/README.md).
-
-[![version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![downloads](https://static.pepy.tech/badge/csaf/month)](https://pepy.tech/project/csaf)
-[![wheel](https://img.shields.io/pypi/wheel/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![supported-versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![supported-implementations](https://img.shields.io/pypi/implementation/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![maintenance-status](https://img.shields.io/github/commit-activity/y/sthagen/csaf.svg?style=flat)](https://git.sr.ht/~sthagen/csaf/log)
+[![Version](https://img.shields.io/pypi/v/csafNAME.svg?style=flat)](https://pypi.python.org/pypi/csafNAME/)
+[![Downloads](https://static.pepy.tech/badge/csafNAME/month)](https://pepy.tech/project/csafNAME)
+[![Supported Versions](https://img.shields.io/pypi/pyversions/csafNAME.svg?style=flat)](https://pypi.python.org/pypi/csafNAME/)
+[![Maintenance Status](https://img.shields.io/github/commit-activity/y/sthagen/csafNAME.svg?style=flat)](https://git.sr.ht/~sthagen/csafNAME/log)
 
 ## Bug Tracker
 
