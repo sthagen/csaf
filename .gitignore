@@ -136,3 +136,4 @@ current-bandit.json
 local_*
 .vscode/
 patches/
+book
