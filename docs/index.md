@@ -14,9 +14,9 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 [![Configuration](badges/configuration-sbom.svg)](third-party/index.html)
 
 [![Version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![Downloads](docs/badges/downloads-per-month.svg)](https://pepy.tech/project/csaf)
+[![Downloads](badges/downloads-per-month.svg)](https://pepy.tech/project/csaf)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![Maintenance Status](docs/badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/csaf/log)
+[![Maintenance Status](badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/csaf/log)
 
 ## Bug Tracker
 
