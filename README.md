@@ -10,7 +10,7 @@ Common Security Advisory Framework (CSAF) Verification, Validation, and Applicat
 [![Version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![Downloads](https://static.pepy.tech/badge/csaf/month)](https://pepy.tech/project/csaf)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![Maintenance Status](https://img.shields.io/github/commit-activity/y/sthagen/csaf.svg?style=flat)](https://git.sr.ht/~sthagen/csaf/log)
+[![Maintenance Status](docs/badges/downloads-per-month.svg)](https://git.sr.ht/~sthagen/csaf/log)
 
 In this project the attempt is made, to provide API and tools to support the CSAF communities from a single repository in the easy to prototype python language.
 
