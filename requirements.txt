@@ -1,5 +1,5 @@
 jmespath==1.0.1
-jsonschema==4.19.1
+jsonschema==4.19.2
 langcodes==3.3.0
 lazr.uri==1.0.6
 msgspec==0.18.4
