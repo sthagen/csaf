@@ -16,7 +16,7 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 [![Version](https://img.shields.io/pypi/v/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
 [![Downloads](https://static.pepy.tech/badge/csaf/month)](https://pepy.tech/project/csaf)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
-[![Maintenance Status](https://img.shields.io/github/commit-activity/y/sthagen/csaf.svg?style=flat)](https://git.sr.ht/~sthagen/csaf/log)
+[![Maintenance Status](docs/badges/downloads-per-month.svg)](https://git.sr.ht/~sthagen/csaf/log)
 
 ## Bug Tracker
 
