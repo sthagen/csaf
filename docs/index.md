@@ -15,7 +15,7 @@ If, and when this endeavor succeeds, other languages can easily derive form the 
 
 [![Version](badges/latest-release.svg)](https://pypi.python.org/pypi/csaf/)
 [![Downloads](badges/downloads-per-month.svg)](https://pepy.tech/project/csaf)
-[![Supported Versions](https://img.shields.io/pypi/pyversions/csaf.svg?style=flat)](https://pypi.python.org/pypi/csaf/)
+[![Python](badges/python-versions.svg)](https://pypi.python.org/pypi/csaf/)
 [![Maintenance Status](badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/csaf/log)
 
 ## Bug Tracker
