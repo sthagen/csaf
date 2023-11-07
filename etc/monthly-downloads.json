@@ -98,7 +98,7 @@
     {
       "category": "3.8",
       "date": "2023-05",
-      "downloads": 8
+      "downloads": 7
     },
     {
       "category": "3.8",
@@ -168,7 +168,7 @@
     {
       "category": "null",
       "date": "2023-05",
-      "downloads": 126
+      "downloads": 76
     },
     {
       "category": "null",
@@ -198,7 +198,7 @@
     {
       "category": "null",
       "date": "2023-11",
-      "downloads": 6
+      "downloads": 8
     }
   ],
   "package": "csaf",
