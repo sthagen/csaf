@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([5c0e4a80 ...](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json.sha256 "sha256:5c0e4a8031dcb28aa4e8d27ce6c43ba2715c1b238c93a995fd0c6256b08f6a55")).
-<!--[[[end]]] (checksum: d8bd4b55b4b3f9b2a008a81ae721a0be)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([06389f9e ...](https://git.sr.ht/~sthagen/csaf/blob/default/etc/sbom/cdx.json.sha256 "sha256:06389f9eb7a5a77dac84769eb6de95a969c4854e18f28b9752f13c9a8dc5c339")).
+<!--[[[end]]] (checksum: ee8fd500c0e1fa8d35a437b222a75eaf)-->
 ## Licenses
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -18,11 +18,11 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 | [lazr.uri](https://launchpad.net/lazr.uri)                      | [1.0.6](https://pypi.org/project/lazr.uri/1.0.6/)      | GNU Library or Lesser General Public License (LGPL) | "LAZR Developers" team                                                                                                                                                                                                                                                                                                                                                                                                           | A self-contained, easily reusable library for parsing, manipulating,                                     |
 | [msgspec](https://jcristharif.com/msgspec/)                     | [0.18.4](https://pypi.org/project/msgspec/0.18.4/)     | BSD License                                         | Jim Crist-Harif                                                                                                                                                                                                                                                                                                                                                                                                                  | A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML. |
 | [pydantic](https://github.com/pydantic/pydantic)                | [2.5.0](https://pypi.org/project/pydantic/2.5.0/)      | MIT License                                         | Samuel Colvin <s@muelcolvin.com>, Eric Jolibois <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>, Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, Terrence Dorsey <terry@pydantic.dev>, David Montague <david@pydantic.dev>, Serge Matveenko <lig@countzero.co>, Marcelo Trylesinski <marcelotryle@gmail.com>, Sydney Runkle <sydneymarierunkle@gmail.com>, David Hewitt <mail@davidhewitt.io> | Data validation using Python type hints                                                                  |
-| [referencing](https://github.com/python-jsonschema/referencing) | [0.30.2](https://pypi.org/project/referencing/0.30.2/) | MIT License                                         | Julian Berman                                                                                                                                                                                                                                                                                                                                                                                                                    | JSON Referencing + Python                                                                                |
+| [referencing](https://github.com/python-jsonschema/referencing) | [0.31.0](https://pypi.org/project/referencing/0.31.0/) | MIT License                                         | Julian Berman                                                                                                                                                                                                                                                                                                                                                                                                                    | JSON Referencing + Python                                                                                |
 | [scooby](https://github.com/banesullivan/scooby)                | [0.9.2](https://pypi.org/project/scooby/0.9.2/)        | MIT License                                         | Dieter Werthmüller, Bane Sullivan, Alex Kaszynski, and contributors                                                                                                                                                                                                                                                                                                                                                              | A Great Dane turned Python environment detective                                                         |
 | [setuptools](https://github.com/pypa/setuptools)                | [68.2.2](https://pypi.org/project/setuptools/68.2.2/)  | MIT License                                         | Python Packaging Authority                                                                                                                                                                                                                                                                                                                                                                                                       | Easily download, build, install, upgrade, and uninstall Python packages                                  |
 | [typer](https://github.com/tiangolo/typer)                      | [0.9.0](https://pypi.org/project/typer/0.9.0/)         | MIT License                                         | Sebastián Ramírez                                                                                                                                                                                                                                                                                                                                                                                                                | Typer, build great CLIs. Easy to code. Based on Python type hints.                                       |
-<!--[[[end]]] (checksum: a754057fdca826ed330cfd0ec3dd4c96)-->
+<!--[[[end]]] (checksum: 405616e0e36a4127d669f637ca6f5cdd)-->
 
 ### Indirect Dependencies
 
@@ -56,10 +56,10 @@ jmespath==1.0.1
 jsonschema==4.19.2
 ├── attrs [required: >=22.2.0, installed: 23.1.0]
 ├── jsonschema-specifications [required: >=2023.03.6, installed: 2023.6.1]
-│   └── referencing [required: >=0.28.0, installed: 0.30.2]
+│   └── referencing [required: >=0.28.0, installed: 0.31.0]
 │       ├── attrs [required: >=22.2.0, installed: 23.1.0]
 │       └── rpds-py [required: >=0.7.0, installed: 0.8.11]
-├── referencing [required: >=0.28.4, installed: 0.30.2]
+├── referencing [required: >=0.28.4, installed: 0.31.0]
 │   ├── attrs [required: >=22.2.0, installed: 23.1.0]
 │   └── rpds-py [required: >=0.7.0, installed: 0.8.11]
 └── rpds-py [required: >=0.7.1, installed: 0.8.11]
@@ -77,4 +77,4 @@ typer==0.9.0
 ├── click [required: >=7.1.1,<9.0.0, installed: 8.1.5]
 └── typing-extensions [required: >=3.7.4.3, installed: 4.7.1]
 ````
-<!--[[[end]]] (checksum: 8b0c09df04917685039fafaef8da1abc)-->
+<!--[[[end]]] (checksum: 47ca81cb6aacc7547cb486580c1bcf80)-->
