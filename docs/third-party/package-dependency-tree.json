@@ -112,8 +112,8 @@
     {
         "key": "pydantic",
         "package_name": "pydantic",
-        "installed_version": "2.5.0",
-        "required_version": "2.5.0",
+        "installed_version": "2.5.1",
+        "required_version": "2.5.1",
         "dependencies": [
             {
                 "key": "annotated-types",
@@ -125,8 +125,8 @@
             {
                 "key": "pydantic-core",
                 "package_name": "pydantic-core",
-                "installed_version": "2.14.1",
-                "required_version": "==2.14.1",
+                "installed_version": "2.14.3",
+                "required_version": "==2.14.3",
                 "dependencies": [
                     {
                         "key": "typing-extensions",
