@@ -96,7 +96,7 @@
             {
                 "key": "setuptools",
                 "package_name": "setuptools",
-                "installed_version": "69.0.0",
+                "installed_version": "69.0.1",
                 "required_version": "Any",
                 "dependencies": []
             }
