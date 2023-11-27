@@ -40,7 +40,6 @@ class Tracking(BaseModel):
         Optional[List[Alias]],
         Field(
             description='Contains a list of alternate names for the same document.',
-            min_length=1,
             title='Aliases',
         ),
     ] = None
@@ -98,6 +97,14 @@ class Tracking(BaseModel):
         ),
     ]
     version: Version
+
+    @classmethod
+    @no_type_check
+    @field_validator('aliases')
+    def check_len(cls, v):
+        if not v:
+            raise ValueError('optional element if present must not be empty')
+        return v
 
     @classmethod
     @no_type_check
