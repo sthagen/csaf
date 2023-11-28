@@ -100,15 +100,7 @@ class Tracking(BaseModel):
 
     @classmethod
     @no_type_check
-    @field_validator('aliases')
-    def check_when_present_not_empty(cls, v):
-        if not v:
-            raise ValueError('optional element if present must not be empty')
-        return v
-
-    @classmethod
-    @no_type_check
-    @field_validator('revision_history')
+    @field_validator('aliases', 'revision_history')
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')

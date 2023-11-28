@@ -412,7 +412,13 @@ class References(
 ):
     """Holds a list of references."""
 
-    pass
+    @classmethod
+    @no_type_check
+    @model_validator(mode='before')
+    def check_len(cls, v):
+        if not v:
+            raise ValueError('mandatory element present but empty')
+        return v
 
 
 class Version(
