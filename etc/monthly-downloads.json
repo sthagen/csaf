@@ -2,11 +2,6 @@
   "data": [
     {
       "category": "3.10",
-      "date": "2023-05",
-      "downloads": 2
-    },
-    {
-      "category": "3.10",
       "date": "2023-06",
       "downloads": 31
     },
@@ -33,12 +28,7 @@
     {
       "category": "3.10",
       "date": "2023-11",
-      "downloads": 165
-    },
-    {
-      "category": "3.11",
-      "date": "2023-05",
-      "downloads": 1
+      "downloads": 173
     },
     {
       "category": "3.11",
@@ -68,7 +58,7 @@
     {
       "category": "3.11",
       "date": "2023-11",
-      "downloads": 155
+      "downloads": 163
     },
     {
       "category": "3.12",
@@ -102,11 +92,6 @@
     },
     {
       "category": "3.8",
-      "date": "2023-05",
-      "downloads": 1
-    },
-    {
-      "category": "3.8",
       "date": "2023-06",
       "downloads": 24
     },
@@ -133,12 +118,7 @@
     {
       "category": "3.8",
       "date": "2023-11",
-      "downloads": 77
-    },
-    {
-      "category": "3.9",
-      "date": "2023-05",
-      "downloads": 1
+      "downloads": 83
     },
     {
       "category": "3.9",
@@ -172,11 +152,6 @@
     },
     {
       "category": "null",
-      "date": "2023-05",
-      "downloads": 3
-    },
-    {
-      "category": "null",
       "date": "2023-06",
       "downloads": 151
     },
@@ -203,7 +178,7 @@
     {
       "category": "null",
       "date": "2023-11",
-      "downloads": 86
+      "downloads": 95
     }
   ],
   "package": "csaf",
