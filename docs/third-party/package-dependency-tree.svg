@@ -132,7 +132,7 @@
 <title>msgspec</title>
 <ellipse fill="none" stroke="black" cx="588.32" cy="-360.44" rx="44.72" ry="28.99"/>
 <text text-anchor="middle" x="588.32" y="-363.64" font-family="Times,serif" font-size="14.00">msgspec</text>
-<text text-anchor="middle" x="588.32" y="-347.14" font-family="Times,serif" font-size="14.00">0.18.4</text>
+<text text-anchor="middle" x="588.32" y="-347.14" font-family="Times,serif" font-size="14.00">0.18.5</text>
 </g>
 <!-- pydantic -->
 <g id="node11" class="node">
