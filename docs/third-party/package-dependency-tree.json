@@ -15,7 +15,7 @@
             {
                 "key": "attrs",
                 "package_name": "attrs",
-                "installed_version": "23.1.0",
+                "installed_version": "23.2.0",
                 "required_version": ">=22.2.0",
                 "dependencies": []
             },
@@ -28,13 +28,13 @@
                     {
                         "key": "referencing",
                         "package_name": "referencing",
-                        "installed_version": "0.32.0",
+                        "installed_version": "0.32.1",
                         "required_version": ">=0.28.0",
                         "dependencies": [
                             {
                                 "key": "attrs",
                                 "package_name": "attrs",
-                                "installed_version": "23.1.0",
+                                "installed_version": "23.2.0",
                                 "required_version": ">=22.2.0",
                                 "dependencies": []
                             },
@@ -52,13 +52,13 @@
             {
                 "key": "referencing",
                 "package_name": "referencing",
-                "installed_version": "0.32.0",
+                "installed_version": "0.32.1",
                 "required_version": ">=0.28.4",
                 "dependencies": [
                     {
                         "key": "attrs",
                         "package_name": "attrs",
-                        "installed_version": "23.1.0",
+                        "installed_version": "23.2.0",
                         "required_version": ">=22.2.0",
                         "dependencies": []
                     },
@@ -96,7 +96,7 @@
             {
                 "key": "setuptools",
                 "package_name": "setuptools",
-                "installed_version": "69.0.2",
+                "installed_version": "69.0.3",
                 "required_version": "Any",
                 "dependencies": []
             }

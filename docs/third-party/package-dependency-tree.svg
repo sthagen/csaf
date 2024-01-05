@@ -27,7 +27,7 @@
 <title>attrs</title>
 <ellipse fill="none" stroke="black" cx="135.32" cy="-28.99" rx="35.71" ry="28.99"/>
 <text text-anchor="middle" x="135.32" y="-32.19" font-family="Times,serif" font-size="14.00">attrs</text>
-<text text-anchor="middle" x="135.32" y="-15.69" font-family="Times,serif" font-size="14.00">23.1.0</text>
+<text text-anchor="middle" x="135.32" y="-15.69" font-family="Times,serif" font-size="14.00">23.2.0</text>
 </g>
 <!-- jsonschema&#45;&gt;attrs -->
 <g id="edge1" class="edge">
@@ -55,7 +55,7 @@
 <title>referencing</title>
 <ellipse fill="none" stroke="black" cx="247.32" cy="-139.47" rx="54.8" ry="28.99"/>
 <text text-anchor="middle" x="247.32" y="-142.67" font-family="Times,serif" font-size="14.00">referencing</text>
-<text text-anchor="middle" x="247.32" y="-126.17" font-family="Times,serif" font-size="14.00">0.32.0</text>
+<text text-anchor="middle" x="247.32" y="-126.17" font-family="Times,serif" font-size="14.00">0.32.1</text>
 </g>
 <!-- jsonschema&#45;&gt;referencing -->
 <g id="edge3" class="edge">
@@ -118,7 +118,7 @@
 <title>setuptools</title>
 <ellipse fill="none" stroke="black" cx="444.32" cy="-249.96" rx="50.03" ry="28.99"/>
 <text text-anchor="middle" x="444.32" y="-253.16" font-family="Times,serif" font-size="14.00">setuptools</text>
-<text text-anchor="middle" x="444.32" y="-236.66" font-family="Times,serif" font-size="14.00">69.0.2</text>
+<text text-anchor="middle" x="444.32" y="-236.66" font-family="Times,serif" font-size="14.00">69.0.3</text>
 </g>
 <!-- lazr.uri&#45;&gt;setuptools -->
 <g id="edge8" class="edge">
