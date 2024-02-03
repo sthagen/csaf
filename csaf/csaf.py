@@ -5,6 +5,7 @@ Minimal length of CSAF (spam) JSON is 116 bytes:
 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012
 {"document":{"category":" ","csaf_version":"2.0","publisher":{},"title":" ","tracking":{}}}}
 """
+
 from __future__ import annotations
 
 import pathlib

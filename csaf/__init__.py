@@ -1,4 +1,5 @@
 """Common Security Advisory Framework (CSAF) Verification and Validation."""
+
 import logging
 import os
 import pathlib

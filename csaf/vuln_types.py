@@ -1,4 +1,5 @@
 """CVSS 2/3.0/3.1 general definitions."""
+
 from __future__ import annotations
 
 from enum import Enum

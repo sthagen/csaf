@@ -1,4 +1,5 @@
 """CSAF CVSS 2/3.0/3.1 proxy implementation."""
+
 from __future__ import annotations
 
 from enum import Enum
@@ -85,9 +86,9 @@ class CVSS2(BaseModel):
         Field(alias='collateralDamagePotential'),
     ] = None
     target_distribution: Annotated[Optional[TargetDistributionType], Field(alias='targetDistribution')] = None
-    confidentiality_requirement: Annotated[
-        Optional[CiaRequirementType], Field(alias='confidentialityRequirement')
-    ] = None
+    confidentiality_requirement: Annotated[Optional[CiaRequirementType], Field(alias='confidentialityRequirement')] = (
+        None
+    )
     integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrityRequirement')] = None
     availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availabilityRequirement')] = None
     environmental_score: Annotated[Optional[ScoreType], Field(alias='environmentalScore')] = None
@@ -127,9 +128,9 @@ class CVSS30(BaseModel):
     report_confidence: Annotated[Optional[ConfidenceType], Field(alias='reportConfidence')] = None
     temporal_score: Annotated[Optional[ScoreType], Field(alias='temporalScore')] = None
     temporal_severity: Annotated[Optional[SeverityType], Field(alias='temporalSeverity')] = None
-    confidentiality_requirement: Annotated[
-        Optional[CiaRequirementType], Field(alias='confidentialityRequirement')
-    ] = None
+    confidentiality_requirement: Annotated[Optional[CiaRequirementType], Field(alias='confidentialityRequirement')] = (
+        None
+    )
     integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrityRequirement')] = None
     availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availabilityRequirement')] = None
     modified_attack_vector: Annotated[Optional[ModifiedAttackVectorType], Field(alias='modifiedAttackVector')] = None
@@ -187,9 +188,9 @@ class CVSS31(BaseModel):
     report_confidence: Annotated[Optional[ConfidenceType], Field(alias='reportConfidence')] = None
     temporal_score: Annotated[Optional[ScoreType], Field(alias='temporalScore')] = None
     temporal_severity: Annotated[Optional[SeverityType], Field(alias='temporalSeverity')] = None
-    confidentiality_requirement: Annotated[
-        Optional[CiaRequirementType], Field(alias='confidentialityRequirement')
-    ] = None
+    confidentiality_requirement: Annotated[Optional[CiaRequirementType], Field(alias='confidentialityRequirement')] = (
+        None
+    )
     integrity_requirement: Annotated[Optional[CiaRequirementType], Field(alias='integrityRequirement')] = None
     availability_requirement: Annotated[Optional[CiaRequirementType], Field(alias='availabilityRequirement')] = None
     modified_attack_vector: Annotated[Optional[ModifiedAttackVectorType], Field(alias='modifiedAttackVector')] = None

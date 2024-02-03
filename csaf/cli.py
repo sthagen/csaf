@@ -1,4 +1,5 @@
 """Commandline API gateway for csaf."""
+
 import sys
 from typing import List, Mapping
 

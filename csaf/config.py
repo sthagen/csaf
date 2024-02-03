@@ -1,4 +1,5 @@
 """Configuration API for csaf."""
+
 import pathlib
 from typing import Any, Mapping, Union
 

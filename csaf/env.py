@@ -1,4 +1,5 @@
 """Report environment to support resolution of user issues."""
+
 from typing import List, no_type_check
 
 import pkg_resources
