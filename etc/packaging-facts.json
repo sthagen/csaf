@@ -23,6 +23,7 @@
       "last_month": -1,
       "last_week": -1
     },
+    "dynamic": null,
     "home_page": "",
     "keywords": "code-generation,developer-tools,validation,verification",
     "license": "",
@@ -39,6 +40,7 @@
       "Source-Code": "https://git.sr.ht/~sthagen/csaf",
       "Test-Coverage": "https://codes.dilettant.life/coverage/csaf"
     },
+    "provides_extra": null,
     "release_url": "https://pypi.org/project/csaf/2023.11.27/",
     "requires_dist": [
       "jmespath >=1.0.1",
