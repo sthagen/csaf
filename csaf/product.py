@@ -465,6 +465,7 @@ class BranchCategory(Enum):
     product_family = 'product_family'
     product_name = 'product_name'
     product_version = 'product_version'
+    product_version_range = 'product_version_range'
     service_pack = 'service_pack'
     specification = 'specification'
     vendor = 'vendor'
