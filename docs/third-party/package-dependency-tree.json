@@ -22,14 +22,14 @@
             {
                 "key": "jsonschema-specifications",
                 "package_name": "jsonschema-specifications",
-                "installed_version": "2023.6.1",
+                "installed_version": "2023.12.1",
                 "required_version": ">=2023.03.6",
                 "dependencies": [
                     {
                         "key": "referencing",
                         "package_name": "referencing",
                         "installed_version": "0.32.1",
-                        "required_version": ">=0.28.0",
+                        "required_version": ">=0.31.0",
                         "dependencies": [
                             {
                                 "key": "attrs",
@@ -41,7 +41,7 @@
                             {
                                 "key": "rpds-py",
                                 "package_name": "rpds-py",
-                                "installed_version": "0.8.11",
+                                "installed_version": "0.17.1",
                                 "required_version": ">=0.7.0",
                                 "dependencies": []
                             }
@@ -65,7 +65,7 @@
                     {
                         "key": "rpds-py",
                         "package_name": "rpds-py",
-                        "installed_version": "0.8.11",
+                        "installed_version": "0.17.1",
                         "required_version": ">=0.7.0",
                         "dependencies": []
                     }
@@ -74,7 +74,7 @@
             {
                 "key": "rpds-py",
                 "package_name": "rpds-py",
-                "installed_version": "0.8.11",
+                "installed_version": "0.17.1",
                 "required_version": ">=0.7.1",
                 "dependencies": []
             }
@@ -88,7 +88,7 @@
         "dependencies": []
     },
     {
-        "key": "lazr.uri",
+        "key": "lazr-uri",
         "package_name": "lazr.uri",
         "installed_version": "1.0.6",
         "required_version": "1.0.6",
@@ -96,7 +96,7 @@
             {
                 "key": "setuptools",
                 "package_name": "setuptools",
-                "installed_version": "69.0.3",
+                "installed_version": "70.0.0",
                 "required_version": "Any",
                 "dependencies": []
             }
@@ -118,20 +118,20 @@
             {
                 "key": "annotated-types",
                 "package_name": "annotated-types",
-                "installed_version": "0.5.0",
+                "installed_version": "0.6.0",
                 "required_version": ">=0.4.0",
                 "dependencies": []
             },
             {
                 "key": "pydantic-core",
-                "package_name": "pydantic-core",
+                "package_name": "pydantic_core",
                 "installed_version": "2.14.6",
                 "required_version": "==2.14.6",
                 "dependencies": [
                     {
                         "key": "typing-extensions",
-                        "package_name": "typing-extensions",
-                        "installed_version": "4.7.1",
+                        "package_name": "typing_extensions",
+                        "installed_version": "4.9.0",
                         "required_version": ">=4.6.0,!=4.7.0",
                         "dependencies": []
                     }
@@ -139,8 +139,8 @@
             },
             {
                 "key": "typing-extensions",
-                "package_name": "typing-extensions",
-                "installed_version": "4.7.1",
+                "package_name": "typing_extensions",
+                "installed_version": "4.9.0",
                 "required_version": ">=4.6.1",
                 "dependencies": []
             }
@@ -162,14 +162,14 @@
             {
                 "key": "click",
                 "package_name": "click",
-                "installed_version": "8.1.5",
+                "installed_version": "8.1.7",
                 "required_version": ">=7.1.1,<9.0.0",
                 "dependencies": []
             },
             {
                 "key": "typing-extensions",
-                "package_name": "typing-extensions",
-                "installed_version": "4.7.1",
+                "package_name": "typing_extensions",
+                "installed_version": "4.9.0",
                 "required_version": ">=3.7.4.3",
                 "dependencies": []
             }
