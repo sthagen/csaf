@@ -33,7 +33,7 @@
     {
       "category": "3.10",
       "date": "2025-03",
-      "downloads": 221
+      "downloads": 229
     },
     {
       "category": "3.11",
@@ -68,7 +68,7 @@
     {
       "category": "3.11",
       "date": "2025-03",
-      "downloads": 217
+      "downloads": 225
     },
     {
       "category": "3.12",
@@ -103,7 +103,7 @@
     {
       "category": "3.12",
       "date": "2025-03",
-      "downloads": 267
+      "downloads": 280
     },
     {
       "category": "3.13",
@@ -158,7 +158,7 @@
     {
       "category": "3.8",
       "date": "2025-03",
-      "downloads": 216
+      "downloads": 224
     },
     {
       "category": "3.9",
@@ -218,7 +218,7 @@
     {
       "category": "null",
       "date": "2025-03",
-      "downloads": 325
+      "downloads": 347
     }
   ],
   "package": "csaf",
