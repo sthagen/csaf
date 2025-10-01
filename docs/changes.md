@@ -1,5 +1,8 @@
 # Change History
 
+2025.10.2
+:    Fixed the list of product IDs implementation (contribution from Tom Klaver, NCSC-NL)
+
 2024.12.18
 :    Fixed mis-alignm,ent between implementation and upstream CSAF v2.0 OASIS Standard schema
 * Added missing members of upstream CSAF v2.0 OASIS Standard schema
