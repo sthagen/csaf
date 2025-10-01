@@ -6,7 +6,6 @@
     "classifiers": [
       "Development Status :: 3 - Alpha",
       "Intended Audience :: Developers",
-      "License :: OSI Approved :: MIT License",
       "Programming Language :: Python :: 3.10",
       "Programming Language :: Python :: 3.11",
       "Programming Language :: Python :: 3.12",
@@ -15,7 +14,7 @@
       "Topic :: Software Development :: Build Tools",
       "Topic :: Software Development :: Libraries"
     ],
-    "description": "# CSAF\n\nCommon Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API).\n\n[![License](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/license-spdx-mit.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE)\n[![Country of Origin](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/country-of-origin-name-switzerland-neutral.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/COUNTRY-OF-ORIGIN)\n[![Export Classification Control Number (ECCN)](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/export-control-classification-number_eccn-ear99-neutral.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/EXPORT-CONTROL-CLASSIFICATION-NUMBER)\n[![Configuration](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/configuration-sbom.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/docs/third-party/README.md)\n\n[![Version](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/latest-release.svg)](https://pypi.python.org/pypi/csaf/)\n[![Downloads](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/downloads-per-month.svg)](https://pepy.tech/project/csaf)\n[![Python](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/python-versions.svg)](https://pypi.python.org/pypi/csaf/)\n[![Maintenance Status](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/csaf/log)\n\nIn this project the attempt is made, to provide API and tools to support the CSAF communities from a single repository in the easy to prototype python language.\n\nIf, and when this endeavor succeeds, other languages can easily derive form the approach (as long as these offer similar capabilties to keep the effort in check).\n\n**Note**: CSAF predecessor CVRF versions 1.1 and 1.2 are out of scope.\n\n## Documentation\n\nUser and developer [documentation of csaf](https://codes.dilettant.life/docs/csaf).\n\n## Bug Tracker\n\nAny feature requests or bug reports shall go to the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).\n\n## Primary Source repository\n\nThe main source of `csaf` is on a mountain in central Switzerland.\nWe use distributed version control (git).\nThere is no central hub.\nEvery clone can become a new source for the benefit of all.\nThe preferred public clone of `csaf` is:\n\n* [at sourcehut](https://git.sr.ht/~sthagen/csaf) - a collection of tools useful for software development.\n\n## Contributions\n\nPlease do not submit \"pull requests\" (I found no way to disable that \"feature\" on GitHub).\nIf you like to share small changes under the repositories license please kindly do so by sending a patchset.\nYou can either send such a patchset per email using [git send-email](https://git-send-email.io) or \nif you are a sourcehut user by selecting \"Prepare a patchset\" on the summary page of your fork at [sourcehut](https://git.sr.ht/).\n\n## Support\n\nPlease kindly submit issues at https://todo.sr.ht/~sthagen/csaf or write plain text email to ~sthagen/csaf@lists.sr.ht to submit patches and request support. Thanks.\n\n## Contributors\n\nIn alphabetical order:\n\n* Anthony Harrison\n* Jacco Ligthart\n* Ji\u0159\u00ed Pe\u0161\u00edk\n\n## Status\n\nExperimental\n\n**Note**: The default branch is `default`.\n",
+    "description": "# CSAF\n\nCommon Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API).\n\n[![License](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/license-spdx-mit.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/LICENSE)\n[![Country of Origin](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/country-of-origin-name-switzerland-neutral.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/COUNTRY-OF-ORIGIN)\n[![Export Classification Control Number (ECCN)](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/export-control-classification-number_eccn-ear99-neutral.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/EXPORT-CONTROL-CLASSIFICATION-NUMBER)\n[![Configuration](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/configuration-sbom.svg)](https://git.sr.ht/~sthagen/csaf/tree/default/item/docs/third-party/README.md)\n\n[![Version](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/latest-release.svg)](https://pypi.python.org/pypi/csaf/)\n[![Downloads](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/downloads-per-month.svg)](https://pepy.tech/project/csaf)\n[![Python](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/python-versions.svg)](https://pypi.python.org/pypi/csaf/)\n[![Maintenance Status](https://git.sr.ht/~sthagen/csaf/blob/default/docs/badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/csaf/log)\n\nIn this project the attempt is made, to provide API and tools to support the CSAF communities from a single repository in the easy to prototype python language.\n\nIf, and when this endeavor succeeds, other languages can easily derive form the approach (as long as these offer similar capabilties to keep the effort in check).\n\n**Note**: CSAF predecessor CVRF versions 1.1 and 1.2 are out of scope.\n\n## Documentation\n\nUser and developer [documentation of csaf](https://codes.dilettant.life/docs/csaf).\n\n## Bug Tracker\n\nAny feature requests or bug reports shall go to the [todos of csaf](https://todo.sr.ht/~sthagen/csaf).\n\n## Primary Source repository\n\nThe main source of `csaf` is on a mountain in central Switzerland.\nWe use distributed version control (git).\nThere is no central hub.\nEvery clone can become a new source for the benefit of all.\nThe preferred public clone of `csaf` is:\n\n* [at sourcehut](https://git.sr.ht/~sthagen/csaf) - a collection of tools useful for software development.\n\n## Contributions\n\nPlease do not submit \"pull requests\" (I found no way to disable that \"feature\" on GitHub).\nIf you like to share small changes under the repositories license please kindly do so by sending a patchset.\nYou can either send such a patchset per email using [git send-email](https://git-send-email.io) or \nif you are a sourcehut user by selecting \"Prepare a patchset\" on the summary page of your fork at [sourcehut](https://git.sr.ht/).\n\n## Support\n\nPlease kindly submit issues at https://todo.sr.ht/~sthagen/csaf or write plain text email to ~sthagen/csaf@lists.sr.ht to submit patches and request support. Thanks.\n\n## Contributors\n\nIn alphabetical order:\n\n* Anthony Harrison\n* Jacco Ligthart\n* Ji\u0159\u00ed Pe\u0161\u00edk\n* Tom Klaver\n\n## Status\n\nExperimental\n\n**Note**: The default branch is `default`.\n",
     "description_content_type": "text/markdown",
     "docs_url": null,
     "download_url": null,
@@ -24,12 +23,16 @@
       "last_month": -1,
       "last_week": -1
     },
-    "dynamic": null,
+    "dynamic": [
+      "License-File"
+    ],
     "home_page": null,
     "keywords": "code-generation, developer-tools, validation, verification",
-    "license": "MIT License  Copyright (c) 2024 Stefan Hagen  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. ",
-    "license_expression": null,
-    "license_files": null,
+    "license": null,
+    "license_expression": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
     "maintainer": null,
     "maintainer_email": "Stefan Hagen <stefan@hagen.link>",
     "name": "csaf",
@@ -46,7 +49,7 @@
     "provides_extra": [
       "dev"
     ],
-    "release_url": "https://pypi.org/project/csaf/2024.12.18/",
+    "release_url": "https://pypi.org/project/csaf/2025.10.2/",
     "requires_dist": [
       "jmespath>=1.0.1",
       "jsonschema>=4.23.0",
@@ -69,11 +72,11 @@
     ],
     "requires_python": ">=3.9",
     "summary": "Common Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API).",
-    "version": "2024.12.18",
+    "version": "2025.10.2",
     "yanked": false,
     "yanked_reason": null
   },
-  "last_serial": 26581286,
+  "last_serial": 31569783,
   "releases": {
     "0.0.1": [
       {
@@ -514,48 +517,92 @@
         "yanked": false,
         "yanked_reason": null
       }
+    ],
+    "2025.10.2": [
+      {
+        "comment_text": null,
+        "digests": {
+          "blake2b_256": "47e97501adc64e0278d28c650ed5ac5b9f23c1510f68f553ed195de056180aa4",
+          "md5": "a171e74d63e53aa33cf52d6b12c0e17d",
+          "sha256": "394380dd5df0a9743ed3c28e2127cf1eb320a44d0d7162564bf21b21f5473c4f"
+        },
+        "downloads": -1,
+        "filename": "csaf-2025.10.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "a171e74d63e53aa33cf52d6b12c0e17d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.9",
+        "size": 39573,
+        "upload_time": "2025-10-01T23:16:46",
+        "upload_time_iso_8601": "2025-10-01T23:16:46.557493Z",
+        "url": "https://files.pythonhosted.org/packages/47/e9/7501adc64e0278d28c650ed5ac5b9f23c1510f68f553ed195de056180aa4/csaf-2025.10.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "digests": {
+          "blake2b_256": "751d778dc3b7361ce8d03bb4cfbef76c9d5ffce58dede4f9902b662a7a29246c",
+          "md5": "469e236941d08864cf3d4843b83f413e",
+          "sha256": "98613f27a8fff1c26e9119560f5d0472b97d4bdaee5ec8f21c39fe7e8bf5b6fe"
+        },
+        "downloads": -1,
+        "filename": "csaf-2025.10.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "469e236941d08864cf3d4843b83f413e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.9",
+        "size": 41559,
+        "upload_time": "2025-10-01T23:16:48",
+        "upload_time_iso_8601": "2025-10-01T23:16:48.042126Z",
+        "url": "https://files.pythonhosted.org/packages/75/1d/778dc3b7361ce8d03bb4cfbef76c9d5ffce58dede4f9902b662a7a29246c/csaf-2025.10.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
     ]
   },
   "urls": [
     {
-      "comment_text": "",
+      "comment_text": null,
       "digests": {
-        "blake2b_256": "7d5bfe9dbfa34da384cdc37a841ffa8d9270c0951415234d73646a2dc17338b0",
-        "md5": "fdaf105aa6df34562543e0bdd53c5cbe",
-        "sha256": "c9b6bf25da95701b2a606fd5f76f02788e9bf269cf4a7dc81b8274bd0917694b"
+        "blake2b_256": "47e97501adc64e0278d28c650ed5ac5b9f23c1510f68f553ed195de056180aa4",
+        "md5": "a171e74d63e53aa33cf52d6b12c0e17d",
+        "sha256": "394380dd5df0a9743ed3c28e2127cf1eb320a44d0d7162564bf21b21f5473c4f"
       },
       "downloads": -1,
-      "filename": "csaf-2024.12.18-py3-none-any.whl",
+      "filename": "csaf-2025.10.2-py3-none-any.whl",
       "has_sig": false,
-      "md5_digest": "fdaf105aa6df34562543e0bdd53c5cbe",
+      "md5_digest": "a171e74d63e53aa33cf52d6b12c0e17d",
       "packagetype": "bdist_wheel",
       "python_version": "py3",
       "requires_python": ">=3.9",
-      "size": 40173,
-      "upload_time": "2024-12-18T20:10:32",
-      "upload_time_iso_8601": "2024-12-18T20:10:32.353076Z",
-      "url": "https://files.pythonhosted.org/packages/7d/5b/fe9dbfa34da384cdc37a841ffa8d9270c0951415234d73646a2dc17338b0/csaf-2024.12.18-py3-none-any.whl",
+      "size": 39573,
+      "upload_time": "2025-10-01T23:16:46",
+      "upload_time_iso_8601": "2025-10-01T23:16:46.557493Z",
+      "url": "https://files.pythonhosted.org/packages/47/e9/7501adc64e0278d28c650ed5ac5b9f23c1510f68f553ed195de056180aa4/csaf-2025.10.2-py3-none-any.whl",
       "yanked": false,
       "yanked_reason": null
     },
     {
-      "comment_text": "",
+      "comment_text": null,
       "digests": {
-        "blake2b_256": "7791b05315432309d7ff44a2b6777e51df709801facc177f001d69bbb418e386",
-        "md5": "1813ba01998a27c701c38d8bff1b6c65",
-        "sha256": "e3e693f24c605083ce16bf967319b21bf43802c856909ffd3b582d786ceffaff"
+        "blake2b_256": "751d778dc3b7361ce8d03bb4cfbef76c9d5ffce58dede4f9902b662a7a29246c",
+        "md5": "469e236941d08864cf3d4843b83f413e",
+        "sha256": "98613f27a8fff1c26e9119560f5d0472b97d4bdaee5ec8f21c39fe7e8bf5b6fe"
       },
       "downloads": -1,
-      "filename": "csaf-2024.12.18.tar.gz",
+      "filename": "csaf-2025.10.2.tar.gz",
       "has_sig": false,
-      "md5_digest": "1813ba01998a27c701c38d8bff1b6c65",
+      "md5_digest": "469e236941d08864cf3d4843b83f413e",
       "packagetype": "sdist",
       "python_version": "source",
       "requires_python": ">=3.9",
-      "size": 42253,
-      "upload_time": "2024-12-18T20:10:33",
-      "upload_time_iso_8601": "2024-12-18T20:10:33.700066Z",
-      "url": "https://files.pythonhosted.org/packages/77/91/b05315432309d7ff44a2b6777e51df709801facc177f001d69bbb418e386/csaf-2024.12.18.tar.gz",
+      "size": 41559,
+      "upload_time": "2025-10-01T23:16:48",
+      "upload_time_iso_8601": "2025-10-01T23:16:48.042126Z",
+      "url": "https://files.pythonhosted.org/packages/75/1d/778dc3b7361ce8d03bb4cfbef76c9d5ffce58dede4f9902b662a7a29246c/csaf-2025.10.2.tar.gz",
       "yanked": false,
       "yanked_reason": null
     }

@@ -1,14 +1,14 @@
 {
   "csaf": {
     "format": 3,
-    "coverage_tool_version": "7.6.9",
-    "timestamp": "2024-12-18 20:12:55 +00:00",
+    "coverage_tool_version": "7.10.7",
+    "timestamp": "2025-10-01 23:20:03 +00:00",
     "branch_coverage": true,
     "show_contexts": true,
-    "covered_lines": 923,
-    "num_statements": 1348,
-    "percent_covered": 56.81265206812652,
-    "percent_covered_display": "56.81",
+    "covered_lines": 922,
+    "num_statements": 1347,
+    "percent_covered": 56.78636640292149,
+    "percent_covered_display": "56.79",
     "missing_lines": 425,
     "excluded_lines": 0,
     "num_branches": 296,
@@ -49,14 +49,14 @@
       "csaf/vuln_types.py",
       "csaf/vulnerability.py"
     ],
-    "blake3": "159d6e90e3ff9f3e3d5468f4fa787e631fcb534115c314042d96fc313c07c5db",
-    "blake2": "e1a2980e07be341e540365303e42dea0380f8e5f7879ed7399d1ce195cc130b24968064d971395b10e7f94f21fb0908ef8772f58ace06a717c3ef706b10d465e",
-    "sha512": "1378cb3d62806f1ee731ce310febd224eb9fa635a10fc1b55730c6a897a026db4aaf01546597c1bb48274cbf40153debaa3a63dc5ed661e54e79ae4a4430f19c",
-    "sha384": "cd611da992df6cfe89e3844baecd9d635c04460d5e84c864773ebc5e6f8fe5d7fa45243cc3159e68267aaba5d89ce67d",
-    "sha256": "dad2d923d4788c7f5b3b1d89bdb91e5960f44fffda5aab59f0fe77d344ada30b",
-    "sha1": "6b7d3f4af8622a943de7ee772be0abdfd736a12b",
-    "md5": "bc25d789905150e27aafe611ac0ef7fc",
+    "blake3": "f0104418d75b5fa1ad407486302771a42623cc74e1d9ebb0497d1c8b3743dbc4",
+    "blake2": "581d5d6a0aa77e2900c5fe62ad7fed3f9761750e49e7ee328f1461faa954d3499d5bc0956addf298911691e43efaf11cd19a5af4cf43b13652f692d6843e1f5e",
+    "sha512": "b7fbc5bf73eff86d819bfffc616be183360ad2071bd082459a900274f36eea296b54438d221f77f2d4ddef6ae86c7d6163fe2dbee3ef4bc31b1c88e73ae9e75c",
+    "sha384": "155ff523cf41f195e4026bedee401843085e09050a8603ce9710b4e93d40e87c7732584cedc0696a5d05b8d43f5f9816",
+    "sha256": "1fa22e00278ae991e3c4188be2b7ec6772e7c10b0af85c1c815461fdab4f53d7",
+    "sha1": "f64a5de0d91737819765ac0d1f13c4fb8a574de9",
+    "md5": "47f111e6adc5a8a4b4efa009ba158892",
     "python_version": "3.12.1",
-    "entropy": 4.785781
+    "entropy": 4.784913
   }
 }
