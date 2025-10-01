@@ -338,21 +338,23 @@ class ReferenceTokenForProductInstance(
     pass
 
 
-class ListOfProductIds(BaseModel):
-    """Specifies a list of product_ids to give context to the parent item."""
-
-    product_ids: Annotated[
-        Sequence[ReferenceTokenForProductInstance],
-        Field(
-            description='Specifies a list of product_ids to give context to the parent item.',
-            # min_items=1,
-            title='List of product_ids',
-        ),
+class ListOfProductIds(
+    RootModel[
+        Annotated[
+            Sequence[ReferenceTokenForProductInstance],
+            Field(
+                description=('Specifies a list of product_ids to give context to the parent item.'),
+                min_length=1,
+                title='List of product_ids',
+            ),
+        ]
     ]
+):
+    """Specifies a list of product_ids to give context to the parent item."""
 
     @classmethod
     @no_type_check
-    @field_validator('product_ids')
+    @model_validator(mode='before')
     def check_len(cls, v):
         if not v:
             raise ValueError('mandatory element present but empty')
