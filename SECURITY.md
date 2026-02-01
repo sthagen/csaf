@@ -4,10 +4,10 @@
 
 Versions of csaf currently being supported with security updates.
 
-| Version(s)  | Supported |
-|:------------|:----------|
-| 2025.10.2   | yes       |
-| < 2025.10.2 | no        |
+| Version(s) | Supported |
+|:-----------|:----------|
+| 2026.2.1   | yes       |
+| < 2026.2.1 | no        |
 
 ## Reporting a Vulnerability
 

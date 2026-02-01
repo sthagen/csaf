@@ -1,13 +1,13 @@
 name: csaf
 description: Common Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API).
 license_spdx: MIT
-version: 2025.10.2
+version: 2026.2.1
 spec_version: 1.0
 home_url: https://git.sr.ht/~sthagen/csaf
 news_url: https://libraries.io/pypi/csaf/versions.atom
-date: 2025-10-02
+date: 2026-02-01
 about_resource: ./
-libraries_io_url: https://libraries.io/pypi/csaf?number=2025.10.2
+libraries_io_url: https://libraries.io/pypi/csaf?number=2026.2.1
 vcs_tool: git
 vcs_repository: https://git.sr.ht/~sthagen/csaf
 vcs_branch: default
