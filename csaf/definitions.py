@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Sequence
 from datetime import datetime
 from enum import Enum
-from typing import Annotated, List, Optional, no_type_check
+from typing import Annotated, no_type_check
 
 from pydantic import AnyUrl, BaseModel, Field, RootModel, field_validator, model_validator
 
@@ -26,7 +26,7 @@ class Flag(BaseModel):
     """Contains product specific information in regard to this vulnerability as a single machine readable flag."""
 
     date: Annotated[
-        Optional[datetime],
+        datetime | None,
         Field(
             description='Contains the date when assessment was done or the flag was assigned.',
             title='Date of the flag',
@@ -34,7 +34,7 @@ class Flag(BaseModel):
     ] = None
 
     group_ids: Annotated[
-        Optional[ProductGroupIds],
+        ProductGroupIds | None,
         Field(
             description='Specifies a list of product_group_ids to give context to the parent item.',
             title='List of product_group_ids',
@@ -49,7 +49,7 @@ class Flag(BaseModel):
         ),
     ]
     product_ids: Annotated[
-        Optional[ListOfProductIds],
+        ListOfProductIds | None,
         Field(
             description='Specifies a list of product_ids to give context to the parent item.',
             title='List of product_ids',
@@ -60,7 +60,7 @@ class Flag(BaseModel):
 class Flags(
     RootModel[
         Annotated[
-            List[Flag],
+            list[Flag],
             Field(
                 description='Contains a list of machine readable flags.',
                 min_length=1,
@@ -107,7 +107,7 @@ class Id(BaseModel):
 class Ids(
     RootModel[
         Annotated[
-            List[Id],
+            list[Id],
             Field(
                 description=(
                     'Represents a list of unique labels or tracking IDs for the vulnerability'
@@ -152,7 +152,7 @@ class Acknowledgment(BaseModel):
     """
 
     names: Annotated[
-        Optional[List[Name]],
+        list[Name] | None,
         Field(
             description='Contains the names of contributors being recognized.',
             min_length=1,
@@ -160,7 +160,7 @@ class Acknowledgment(BaseModel):
         ),
     ] = None
     organization: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Contains the name of a contributing organization being recognized.',
             examples=['CISA', 'Google Project Zero', 'Talos'],
@@ -169,7 +169,7 @@ class Acknowledgment(BaseModel):
         ),
     ] = None
     summary: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='SHOULD represent any contextual details the document producers wish to make known about the'
             ' acknowledgment or acknowledged parties.',
@@ -179,7 +179,7 @@ class Acknowledgment(BaseModel):
         ),
     ] = None
     urls: Annotated[
-        Optional[List[AnyUrl]],
+        list[AnyUrl] | None,
         Field(
             description='Specifies a list of URLs or location of the reference to be acknowledged.',
             min_length=1,
@@ -199,7 +199,7 @@ class Acknowledgment(BaseModel):
 class Acknowledgments(
     RootModel[
         Annotated[
-            List[Acknowledgment],
+            list[Acknowledgment],
             Field(
                 description='Contains a list of acknowledgment elements.',
                 min_length=1,
@@ -261,7 +261,7 @@ class ProductGroupId(
 class ProductGroupIds(
     RootModel[
         Annotated[
-            List[ProductGroupId],
+            list[ProductGroupId],
             Field(
                 description='Specifies a list of product_group_ids to give context to the parent item.',
                 min_length=1,
@@ -303,7 +303,7 @@ class ProductId(
 class Products(
     RootModel[
         Annotated[
-            List[ProductId],
+            list[ProductId],
             Field(
                 description='Specifies a list of product_ids to give context to the parent item.',
                 min_length=1,
@@ -398,7 +398,7 @@ class Note(BaseModel):
     """Is a place to put all manner of text blobs related to the current context."""
 
     audience: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Indicates who is intended to read it.',
             examples=[
@@ -424,7 +424,7 @@ class Note(BaseModel):
         ),
     ]
     title: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Provides a concise description of what is contained in the text of the note.',
             examples=[
@@ -442,7 +442,7 @@ class Note(BaseModel):
 class Notes(
     RootModel[
         Annotated[
-            List[Note],
+            list[Note],
             Field(
                 description='Contains notes which are specific to the current context.',
                 min_length=1,
@@ -475,7 +475,7 @@ class Reference(BaseModel):
     related to either a surrounding part of or the entire document and to be of value to the document consumer."""
 
     category: Annotated[
-        Optional[ReferenceCategory],
+        ReferenceCategory | None,
         Field(
             description='Indicates whether the reference points to the same document or vulnerability in focus'
             ' (depending on scope) or to an external resource.',
@@ -499,7 +499,7 @@ class Reference(BaseModel):
 class References(
     RootModel[
         Annotated[
-            List[Reference],
+            list[Reference],
             Field(
                 description='Holds a list of references.',
                 min_length=1,

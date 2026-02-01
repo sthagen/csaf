@@ -15,7 +15,6 @@ from csaf.cvss import (
     Version as CvssVersion,
 )
 
-
 CVSS31_BASE_SEVERITY_LOG4J = 'CRITICAL'  # str(CvssSeverityType.critical)
 CVSS30_BASE_SEVERITY_LOG4J = 'CRITICAL'  # str(CvssSeverityType.critical)
 

@@ -1,4 +1,4 @@
-from typing import Dict, List, Tuple, no_type_check
+from typing import no_type_check
 
 import jmespath
 
@@ -118,7 +118,7 @@ def is_valid_defined_group_ids(document: dict) -> bool:
 
 
 @no_type_check
-def exists(document: dict, claims: Dict[str, List[str]]) -> Tuple[Tuple[str, str, bool]]:
+def exists(document: dict, claims: dict[str, list[str]]) -> tuple[tuple[str, str, bool], ...]:
     """Verify the existence and return tuple of triplets with claim, path and result."""
     return tuple(
         (claim, path, bool(jmespath.search(path, document))) for claim, paths in claims.items() for path in paths
@@ -126,7 +126,7 @@ def exists(document: dict, claims: Dict[str, List[str]]) -> Tuple[Tuple[str, str
 
 
 @no_type_check
-def must_skip(document: dict, path: str, skip_these: Tuple[str, ...]) -> Tuple[str, str, bool]:
+def must_skip(document: dict, path: str, skip_these: tuple[str, ...]) -> tuple[str, str, bool]:
     """Verify any skips and return tuple of triplets with claim, path and result."""
     value = jmespath.search(path, document)
     return value, path, any(value == skip for skip in skip_these)

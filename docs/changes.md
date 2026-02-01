@@ -1,5 +1,8 @@
 # Change History
 
+2026.2.1
+:    Removed python 3.9 support
+
 2025.10.2
 :    Fixed the list of product IDs implementation (contribution from Tom Klaver, NCSC-NL)
 

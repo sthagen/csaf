@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
-from typing import Annotated, List, Optional, no_type_check
+from typing import Annotated, no_type_check
 
 from pydantic import AnyUrl, BaseModel, Field, RootModel, field_validator
 
@@ -21,7 +21,7 @@ class Revision(BaseModel):
         Field(description='The date of the revision entry', title='Date of the revision'),
     ]
     legacy_version: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Contains the version string used in an existing document with the same content.',
             min_length=1,
@@ -46,7 +46,7 @@ class Tracking(BaseModel):
     """
 
     aliases: Annotated[
-        Optional[List[Alias]],
+        list[Alias] | None,
         Field(
             description='Contains a list of alternate names for the same document.',
             title='Aliases',
@@ -60,7 +60,7 @@ class Tracking(BaseModel):
         ),
     ]
     generator: Annotated[
-        Optional[Generator],
+        Generator | None,
         Field(
             description='Is a container to hold all elements related to the generation of the document.'
             ' These items will reference when the document was actually created,'
@@ -92,7 +92,7 @@ class Tracking(BaseModel):
         ),
     ]
     revision_history: Annotated[
-        List[Revision],
+        list[Revision],
         Field(
             description='Holds one revision item for each version of the CSAF document, including the initial one.',
             min_length=1,
@@ -126,7 +126,7 @@ class AggregateSeverity(BaseModel):
     """
 
     namespace: Annotated[
-        Optional[AnyUrl],
+        AnyUrl | None,
         Field(
             description='Points to the namespace so referenced.',
             title='Namespace of aggregate severity',
@@ -173,7 +173,7 @@ class TrafficLightProtocol(BaseModel):
         Field(description='Provides the TLP label of the document.', title='Label of TLP'),
     ]
     url: Annotated[
-        Optional[AnyUrl],
+        AnyUrl | None,
         Field(
             description='Provides a URL where to find the textual description of the TLP version which is used in this'
             ' document. Default is the URL to the definition by FIRST.',
@@ -192,7 +192,7 @@ class Distribution(BaseModel):
     """
 
     text: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Provides a textual description of additional constraints.',
             examples=[
@@ -205,7 +205,7 @@ class Distribution(BaseModel):
         ),
     ] = None
     tlp: Annotated[
-        Optional[TrafficLightProtocol],
+        TrafficLightProtocol | None,
         Field(
             description='Provides details about the TLP classification of the document.',
             title='Traffic Light Protocol (TLP)',
@@ -239,7 +239,7 @@ class Publisher(BaseModel):
         ),
     ]
     contact_details: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Information on how to contact the publisher, possibly including details such as web sites,'
             ' email addresses, phone numbers, and postal mail addresses.',
@@ -252,7 +252,7 @@ class Publisher(BaseModel):
         ),
     ] = None
     issuing_authority: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Provides information about the authority of the issuing party to release the document,'
             " in particular, the party's constituency and responsibilities or other obligations.",
@@ -312,7 +312,7 @@ class Engine(BaseModel):
         ),
     ]
     version: Annotated[
-        Optional[str],
+        str | None,
         Field(
             description='Contains the version of the engine that generated the CSAF document.',
             examples=['0.6.0', '1.0.0-beta+exp.sha.a1c44f85', '2'],
@@ -329,7 +329,7 @@ class Generator(BaseModel):
     """
 
     date: Annotated[
-        Optional[datetime],
+        datetime | None,
         Field(
             description='This SHOULD be the current date that the document was generated. Because documents are'
             ' often generated internally by a document producer and exist for a nonzero amount of time'
@@ -375,14 +375,14 @@ class Document(BaseModel):
     """
 
     acknowledgments: Annotated[
-        Optional[Acknowledgments],
+        Acknowledgments | None,
         Field(
             description='Contains a list of acknowledgment elements associated with the whole document.',
             title='Document acknowledgments',
         ),
     ] = None
     aggregate_severity: Annotated[
-        Optional[AggregateSeverity],
+        AggregateSeverity | None,
         Field(
             description='Is a vehicle that is provided by the document producer to convey the urgency and'
             ' criticality with which the one or more vulnerabilities reported should be addressed.'
@@ -416,21 +416,21 @@ class Document(BaseModel):
         ),
     ]
     distribution: Annotated[
-        Optional[Distribution],
+        Distribution | None,
         Field(
             description='Describe any constraints on how this document might be shared.',
             title='Rules for sharing document',
         ),
     ] = None
     lang: Annotated[
-        Optional[Lang],
+        Lang | None,
         Field(
             description='Identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646.',
             title='Document language',
         ),
     ] = None
     notes: Annotated[
-        Optional[Notes],
+        Notes | None,
         Field(
             description='Holds notes associated with the whole document.',
             title='Document notes',
@@ -444,14 +444,14 @@ class Document(BaseModel):
         ),
     ]
     references: Annotated[
-        Optional[References],
+        References | None,
         Field(
             description='Holds a list of references associated with the whole document.',
             title='Document references',
         ),
     ] = None
     source_lang: Annotated[
-        Optional[Lang],
+        Lang | None,
         Field(
             description='If this copy of the document is a translation then the value of this property describes'
             ' from which language this document was translated.',

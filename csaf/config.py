@@ -1,7 +1,7 @@
 """Configuration API for csaf."""
 
 import pathlib
-from typing import Any, Mapping, Union
+from typing import Any, Mapping
 
 import msgspec
 
@@ -27,7 +27,7 @@ def generate_template() -> str:
     return TEMPLATE_EXAMPLE
 
 
-def read_configuration(path: Union[pathlib.Path, str]) -> Union[Any, Mapping[str, object]]:
+def read_configuration(path: pathlib.Path | str) -> Any | Mapping[str, object]:
     """LaterAlligator."""
     with open(str(path), 'rb') as handle:
         return msgspec.json.decode(handle.read())

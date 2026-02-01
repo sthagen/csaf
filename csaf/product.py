@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from collections.abc import Sequence
 from enum import Enum
-from typing import Annotated, List, Optional, no_type_check
+from typing import Annotated, Optional, no_type_check
 
 from pydantic import BaseModel, ConfigDict, Field, RootModel, field_validator, model_validator
 
@@ -445,7 +445,7 @@ class ProductTree(BaseModel):
 
     branches: Optional[Branches] = None
     full_product_names: Annotated[
-        Optional[List[FullProductName]],
+        Optional[list[FullProductName]],
         Field(
             description='Contains a list of full product names.',
             min_length=1,
@@ -453,7 +453,7 @@ class ProductTree(BaseModel):
         ),
     ] = None
     product_groups: Annotated[
-        Optional[List[ProductGroup]],
+        Optional[list[ProductGroup]],
         Field(
             description='Contains a list of product groups.',
             min_length=1,
@@ -461,7 +461,7 @@ class ProductTree(BaseModel):
         ),
     ] = None
     relationships: Annotated[
-        Optional[List[Relationship]],
+        Optional[list[Relationship]],
         Field(
             description='Contains a list of relationships.',
             min_length=1,
@@ -534,7 +534,7 @@ class Branch(BaseModel):
 class Branches(
     RootModel[
         Annotated[
-            List[Branch],
+            list[Branch],
             Field(
                 description='Contains branch elements as children of the current element.',
                 min_length=1,

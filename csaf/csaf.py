@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import pathlib
 from itertools import chain
-from typing import Annotated, Dict, Iterator, List, Mapping, Optional, Tuple, no_type_check
+from typing import Annotated, Iterator, Mapping, no_type_check
 
 import jmespath
 import msgspec
@@ -53,7 +53,7 @@ class CSAF(BaseModel):
         ),
     ]
     product_tree: Annotated[
-        Optional[ProductTree],
+        ProductTree | None,
         Field(
             description='Is a container for all fully qualified product names that can be referenced elsewhere'
             ' in the document.',
@@ -61,7 +61,7 @@ class CSAF(BaseModel):
         ),
     ] = None
     vulnerabilities: Annotated[
-        Optional[List[Vulnerability]],
+        list[Vulnerability] | None,
         Field(
             description='Represents a list of all relevant vulnerability information items.',
             min_length=1,
@@ -353,7 +353,7 @@ def peek(data: str) -> str:
     return 'UNKNOWN'
 
 
-def verify_request(argv: Optional[List[str]]) -> Tuple[int, str, List[str]]:
+def verify_request(argv: list[str] | None) -> tuple[int, str, list[str]]:
     """Fail with grace."""
     if not argv or len(argv) != 3:
         return 2, 'received wrong number of arguments', ['']
@@ -379,7 +379,7 @@ def verify_request(argv: Optional[List[str]]) -> Tuple[int, str, List[str]]:
     return 0, '', argv
 
 
-def verify_json(data: str) -> Tuple[int, str, List[str], Dict[str, object]]:
+def verify_json(data: str) -> tuple[int, str, list[str], dict[str, object]]:
     """Verify the JSON as CSAF."""
     try:
         doc = msgspec.json.decode(data)
@@ -431,7 +431,7 @@ def slugify(error):
     return str(error).replace('\n', '')
 
 
-def process(command: str, transaction_mode: str, path: str, options: Mapping[str, object]) -> Tuple[int, str]:
+def process(command: str, transaction_mode: str, path: str, options: Mapping[str, object]) -> tuple[int, str]:
     """Drive the verification and validation.
     This function acts as the command line interface backend.
     There is some duplication to support testability.

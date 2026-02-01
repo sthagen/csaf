@@ -1,7 +1,7 @@
 """Commandline API gateway for csaf."""
 
 import sys
-from typing import List, Mapping
+from typing import Mapping
 
 import typer
 
@@ -61,7 +61,7 @@ def report() -> int:
 
 @app.command('validate')
 def validate(
-    source: List[str],
+    source: list[str],
     inp: str = typer.Option(
         '',
         '-i',
