@@ -1,8 +1,8 @@
 {
   "csaf": {
     "format": 3,
-    "coverage_tool_version": "7.10.7",
-    "timestamp": "2025-10-01 23:20:03 +00:00",
+    "coverage_tool_version": "7.13.2",
+    "timestamp": "2026-02-03 22:59:59 +00:00",
     "branch_coverage": true,
     "show_contexts": true,
     "covered_lines": 922,
@@ -11,11 +11,15 @@
     "percent_covered_display": "56.79",
     "missing_lines": 425,
     "excluded_lines": 0,
+    "percent_statements_covered": 68.44840386043059,
+    "percent_statements_covered_display": "68.45",
     "num_branches": 296,
     "num_partial_branches": 7,
     "covered_branches": 11,
     "missing_branches": 285,
-    "node_id": "c79891e5-aabf-3a83-95b9-588edcd8327f",
+    "percent_branches_covered": 3.716216216216216,
+    "percent_branches_covered_display": "3.72",
+    "node_id": "807d4647-bb4f-3886-b29b-67cbc762ab28",
     "nfiles": 30,
     "files": [
       "csaf/__init__.py",
@@ -49,14 +53,14 @@
       "csaf/vuln_types.py",
       "csaf/vulnerability.py"
     ],
-    "blake3": "f0104418d75b5fa1ad407486302771a42623cc74e1d9ebb0497d1c8b3743dbc4",
-    "blake2": "581d5d6a0aa77e2900c5fe62ad7fed3f9761750e49e7ee328f1461faa954d3499d5bc0956addf298911691e43efaf11cd19a5af4cf43b13652f692d6843e1f5e",
-    "sha512": "b7fbc5bf73eff86d819bfffc616be183360ad2071bd082459a900274f36eea296b54438d221f77f2d4ddef6ae86c7d6163fe2dbee3ef4bc31b1c88e73ae9e75c",
-    "sha384": "155ff523cf41f195e4026bedee401843085e09050a8603ce9710b4e93d40e87c7732584cedc0696a5d05b8d43f5f9816",
-    "sha256": "1fa22e00278ae991e3c4188be2b7ec6772e7c10b0af85c1c815461fdab4f53d7",
-    "sha1": "f64a5de0d91737819765ac0d1f13c4fb8a574de9",
-    "md5": "47f111e6adc5a8a4b4efa009ba158892",
+    "blake3": "c2d1a3c8879e401ed2f1bcc21553a6b3d9eac796b4f81a0608ea39081fcf36fa",
+    "blake2": "0187f6b933588e38b0a399e969f8a64e3fe0b0f3376acfa64d2b9d8e3790523e2561e5d990e0d36232389c0f9a9eb29cd167c5e2e700a9fd2fa3e913b706c4cc",
+    "sha512": "6a102c60a262765485782c3952df885a2e1fc5f4bc09351f98b02709d5c0bc7a2b14729a114d31fdd243b14dbfe89e7df7ff40bf6da793a9901f8af510cbd88e",
+    "sha384": "16e842468ad33ee08072476702bfc131f4c36965a27a1a5320186a393eaeb31b5f19868d3ea535428a2cbf9febe71e21",
+    "sha256": "9d3e926047e180c110bceec0c745d91ea5339ccab3af197c39c79a278be6ab6a",
+    "sha1": "8465f85c74cbf8fd261dcd6d9f861fd6ced4a8ad",
+    "md5": "6bb34772fe17ff0997f985d70933ffba",
     "python_version": "3.12.1",
-    "entropy": 4.784913
+    "entropy": 4.779163
   }
 }

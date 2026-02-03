@@ -10,7 +10,7 @@
       "Programming Language :: Python :: 3.11",
       "Programming Language :: Python :: 3.12",
       "Programming Language :: Python :: 3.13",
-      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.14",
       "Topic :: Software Development :: Build Tools",
       "Topic :: Software Development :: Libraries"
     ],
@@ -49,18 +49,18 @@
     "provides_extra": [
       "dev"
     ],
-    "release_url": "https://pypi.org/project/csaf/2025.10.2/",
+    "release_url": "https://pypi.org/project/csaf/2026.2.1/",
     "requires_dist": [
-      "jmespath>=1.0.1",
-      "jsonschema>=4.23.0",
-      "langcodes>=3.5.0",
+      "jmespath>=1.1.0",
+      "jsonschema>=4.26.0",
+      "langcodes>=3.5.1",
       "lazr.uri>=1.0.7",
-      "msgspec>=0.18.6",
-      "pydantic>=2.10.3",
-      "referencing>=0.35.1",
-      "scooby>=0.10.0",
-      "setuptools>=75.6.0",
-      "typer>=0.15.1",
+      "msgspec>=0.20.0",
+      "pydantic>=2.12.5",
+      "referencing>=0.37.0",
+      "scooby>=0.11.0",
+      "setuptools>=80.10.2",
+      "typer>=0.21.1",
       "black; extra == \"dev\"",
       "coverage; extra == \"dev\"",
       "hypothesis; extra == \"dev\"",
@@ -70,13 +70,13 @@
       "pytest-flake8; extra == \"dev\"",
       "ruff; extra == \"dev\""
     ],
-    "requires_python": ">=3.9",
+    "requires_python": ">=3.10",
     "summary": "Common Security Advisory Framework (CSAF) Verification, Validation, and Application Programming Interface (API).",
-    "version": "2025.10.2",
+    "version": "2026.2.1",
     "yanked": false,
     "yanked_reason": null
   },
-  "last_serial": 31569783,
+  "last_serial": 33968886,
   "releases": {
     "0.0.1": [
       {
@@ -561,48 +561,92 @@
         "yanked": false,
         "yanked_reason": null
       }
+    ],
+    "2026.2.1": [
+      {
+        "comment_text": null,
+        "digests": {
+          "blake2b_256": "5c34c89a3fcd673d10de431cb7fe0377db90a840a7ed7749d4e8a3ef9976100e",
+          "md5": "ee05aeb4886da3a20f29ede21a023f6b",
+          "sha256": "06822560d770fd79f640c8d12f4f8767d3753497811d29670049ceaee8891bd1"
+        },
+        "downloads": -1,
+        "filename": "csaf-2026.2.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "ee05aeb4886da3a20f29ede21a023f6b",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 39441,
+        "upload_time": "2026-02-01T18:44:13",
+        "upload_time_iso_8601": "2026-02-01T18:44:13.105751Z",
+        "url": "https://files.pythonhosted.org/packages/5c/34/c89a3fcd673d10de431cb7fe0377db90a840a7ed7749d4e8a3ef9976100e/csaf-2026.2.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "digests": {
+          "blake2b_256": "d3b0c13bc07fc68b359d3cd78f9d5ee4c4a3d215355410d222b5e28282f6cade",
+          "md5": "b31eb93fadb8eec805b2851d847c668b",
+          "sha256": "0269027ff51bb355880f984da72c3142fcdb19842f5c09a57999a6f97a8ffe8d"
+        },
+        "downloads": -1,
+        "filename": "csaf-2026.2.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "b31eb93fadb8eec805b2851d847c668b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 41399,
+        "upload_time": "2026-02-01T18:44:14",
+        "upload_time_iso_8601": "2026-02-01T18:44:14.657712Z",
+        "url": "https://files.pythonhosted.org/packages/d3/b0/c13bc07fc68b359d3cd78f9d5ee4c4a3d215355410d222b5e28282f6cade/csaf-2026.2.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
     ]
   },
   "urls": [
     {
       "comment_text": null,
       "digests": {
-        "blake2b_256": "47e97501adc64e0278d28c650ed5ac5b9f23c1510f68f553ed195de056180aa4",
-        "md5": "a171e74d63e53aa33cf52d6b12c0e17d",
-        "sha256": "394380dd5df0a9743ed3c28e2127cf1eb320a44d0d7162564bf21b21f5473c4f"
+        "blake2b_256": "5c34c89a3fcd673d10de431cb7fe0377db90a840a7ed7749d4e8a3ef9976100e",
+        "md5": "ee05aeb4886da3a20f29ede21a023f6b",
+        "sha256": "06822560d770fd79f640c8d12f4f8767d3753497811d29670049ceaee8891bd1"
       },
       "downloads": -1,
-      "filename": "csaf-2025.10.2-py3-none-any.whl",
+      "filename": "csaf-2026.2.1-py3-none-any.whl",
       "has_sig": false,
-      "md5_digest": "a171e74d63e53aa33cf52d6b12c0e17d",
+      "md5_digest": "ee05aeb4886da3a20f29ede21a023f6b",
       "packagetype": "bdist_wheel",
       "python_version": "py3",
-      "requires_python": ">=3.9",
-      "size": 39573,
-      "upload_time": "2025-10-01T23:16:46",
-      "upload_time_iso_8601": "2025-10-01T23:16:46.557493Z",
-      "url": "https://files.pythonhosted.org/packages/47/e9/7501adc64e0278d28c650ed5ac5b9f23c1510f68f553ed195de056180aa4/csaf-2025.10.2-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "size": 39441,
+      "upload_time": "2026-02-01T18:44:13",
+      "upload_time_iso_8601": "2026-02-01T18:44:13.105751Z",
+      "url": "https://files.pythonhosted.org/packages/5c/34/c89a3fcd673d10de431cb7fe0377db90a840a7ed7749d4e8a3ef9976100e/csaf-2026.2.1-py3-none-any.whl",
       "yanked": false,
       "yanked_reason": null
     },
     {
       "comment_text": null,
       "digests": {
-        "blake2b_256": "751d778dc3b7361ce8d03bb4cfbef76c9d5ffce58dede4f9902b662a7a29246c",
-        "md5": "469e236941d08864cf3d4843b83f413e",
-        "sha256": "98613f27a8fff1c26e9119560f5d0472b97d4bdaee5ec8f21c39fe7e8bf5b6fe"
+        "blake2b_256": "d3b0c13bc07fc68b359d3cd78f9d5ee4c4a3d215355410d222b5e28282f6cade",
+        "md5": "b31eb93fadb8eec805b2851d847c668b",
+        "sha256": "0269027ff51bb355880f984da72c3142fcdb19842f5c09a57999a6f97a8ffe8d"
       },
       "downloads": -1,
-      "filename": "csaf-2025.10.2.tar.gz",
+      "filename": "csaf-2026.2.1.tar.gz",
       "has_sig": false,
-      "md5_digest": "469e236941d08864cf3d4843b83f413e",
+      "md5_digest": "b31eb93fadb8eec805b2851d847c668b",
       "packagetype": "sdist",
       "python_version": "source",
-      "requires_python": ">=3.9",
-      "size": 41559,
-      "upload_time": "2025-10-01T23:16:48",
-      "upload_time_iso_8601": "2025-10-01T23:16:48.042126Z",
-      "url": "https://files.pythonhosted.org/packages/75/1d/778dc3b7361ce8d03bb4cfbef76c9d5ffce58dede4f9902b662a7a29246c/csaf-2025.10.2.tar.gz",
+      "requires_python": ">=3.10",
+      "size": 41399,
+      "upload_time": "2026-02-01T18:44:14",
+      "upload_time_iso_8601": "2026-02-01T18:44:14.657712Z",
+      "url": "https://files.pythonhosted.org/packages/d3/b0/c13bc07fc68b359d3cd78f9d5ee4c4a3d215355410d222b5e28282f6cade/csaf-2026.2.1.tar.gz",
       "yanked": false,
       "yanked_reason": null
     }
